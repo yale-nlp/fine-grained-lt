@@ -1,0 +1,1836 @@
+{
+    "train": [
+        {
+            "input": "Adjacent counties are Marin (to the south), Mendocino (to the north), Lake (northeast), Napa (to the east), and Solano and Contra Costa (to the southeast).",
+            "labels": [
+                "Counties next door are Marin (south), Mendocino (north), Lake (northeast), Napa (east), and Solano and Contra Costa (southeast)."
+            ]
+        },
+        {
+            "input": "A Georgian inscription around the drum attests his name.",
+            "labels": [
+                "Georgian writing around the drum verifies his name."
+            ]
+        },
+        {
+            "input": "They would later return to the revived series in the 2008 Christmas Special \"The Next Doctor\", introducing two new variants of the race; the Cyber-Shades and the Cyber-King.",
+            "labels": [
+                "The returned in the 2008 Christmas Special, \"The Next Doctor\" with (2) new forms of the race, the Cyber-Shades and the Cyber-King."
+            ]
+        },
+        {
+            "input": "Jameson's autobiography, How to Make Love Like a Porn Star: A Cautionary Tale was published August 17, 2004.",
+            "labels": [
+                "Jameson's life story, \"How to Make Love Like a Porn Star: A Cautionary Tale\" was printed 8/17/2004."
+            ]
+        },
+        {
+            "input": "It is particularly famous for the cultivation of kiwifruit.",
+            "labels": [
+                "It is especially famous for the cultivation of kiwi fruit."
+            ]
+        },
+        {
+            "input": "Singles competition (2002 \u2013 2003) After years in the tag team division, Hardy took on The Undertaker in a ladder match for the Undisputed Championship.",
+            "labels": [
+                "Singles contest (2002 \u2013 2003) After years in the tag team division, Hardy took over The Undertaker in a ladder match for the Undisputed Championship."
+            ]
+        },
+        {
+            "input": "Many of the churches work together for town-wide projects under the banner of \"Churches Together in Stevenage\".",
+            "labels": [
+                "Several other churches work together for city-wide projects under the banner of \"Churches Together in Stevenage.\""
+            ]
+        },
+        {
+            "input": "Word processing templates enable the ability to bypass the initial setup and configuration time necessary to create standardized documents such as a resume.",
+            "labels": [
+                "Word processing templates enable the ability to remove the initial setup and configuration time needed to create standard documents such as a resume."
+            ]
+        },
+        {
+            "input": "Rollins retired in 1962 and opted to become a coach.",
+            "labels": [
+                "Rollins became a coach after retiring in 1962."
+            ]
+        },
+        {
+            "input": "History Landsberg prison, which is in the town's western outskirts, was completed in 1910.",
+            "labels": [
+                "The historical Landsberg prison was completed in 1910. The prison is in the town's western outskirts."
+            ]
+        },
+        {
+            "input": "A hunting dog refers to any dog who assists humans in hunting.",
+            "labels": [
+                "A hunting dog assists humans with hunting."
+            ]
+        },
+        {
+            "input": "The Empire of Nicaea succeeded in capturing Constantinople and the rest of the Latin Empire, thus re-establishing the Byzantine Empire.",
+            "labels": [
+                "The constantinople and the entire Latin Empire was captured by the Nicaea Empire. This brought back the Byzantine Empire."
+            ]
+        },
+        {
+            "input": "This led scientists to re-examine the old photos again, and the satellite was finally found in the images.",
+            "labels": [
+                "This led scientists to re-examine the old photos, and the satellite was finally found in the images."
+            ]
+        },
+        {
+            "input": "Marcel Junod (1904 - 1961), a physician from Geneva, was another famous delegate during the Second World War.",
+            "labels": [
+                "Marcel Junod (1904-1961), a doctor from Geneva, was also a famous delegate during the Second World War."
+            ]
+        },
+        {
+            "input": "Whisenhunt's career as a player included 4 years (1985 - 88) as a tight end with the Atlanta Falcons, who drafted him in the twelfth round, and then spells with the Washington Redskins and New York Jets.",
+            "labels": [
+                "Whisenhunt's career as a player would include four years (1985-88) as a close-up with the Atlanta Falcons, who drew him in the twelfth round, and then the Washington Redskins and New York Jets."
+            ]
+        },
+        {
+            "input": "In return, Romania ceded three southern districts of Bessarabia to Russia and acquired Dobruja.",
+            "labels": [
+                "In return, Romania signed away to Russia three southern districts of Bessarabia and acquired Dobruja."
+            ]
+        },
+        {
+            "input": "In March 2001, the World Wrestling Federation purchased World Championship Wrestling.",
+            "labels": [
+                "WWF wrestling bought WCW wrestling in March, 2001."
+            ]
+        },
+        {
+            "input": "The West Coast blues is a type of blues music characterized by jazz and jump blues influences, strong piano-dominated sounds and jazzy guitar solos, which originated from Texas blues players relocated to California in the 1940s.",
+            "labels": [
+                "West Coast blues started when Texas blues players moved to California in the 1940's, and is known by the strong piano dominate sound with jazzy guitar solos."
+            ]
+        },
+        {
+            "input": "Subsequent visits reported seeing the flag flying from places of honor.",
+            "labels": [
+                "Later visits said the flag flew in places of honor."
+            ]
+        },
+        {
+            "input": "Agriculture Locals grow seasonal crops such as Maize (makai) and Wheat (kanak).",
+            "labels": [
+                "Locals grow crops each season like Maize (makai) & Wheat (kanak)."
+            ]
+        },
+        {
+            "input": "In 2004, Roy was selected as the greatest goaltender in NHL history by a panel of 41 writers, coupled with a simultaneous fan poll.",
+            "labels": [
+                "In 2004, Roy was picked as the best NHL goalie of all time by a group of 41 writers as well as by a fan poll."
+            ]
+        },
+        {
+            "input": "Frances was later absorbed by an extratropical cyclone on November 21.",
+            "labels": [
+                "Frances was eaten up by an extratropical cyclone on Nov. 21."
+            ]
+        },
+        {
+            "input": "Tracking northwestward, the depression moved ashore near Fort Walton Beach early on September 22, and shortly thereafter it dissipated over southeastern Alabama.",
+            "labels": [
+                "Moving northwest, the system came over Fort Walton Beach on Sept. 22, and then it broke apart over south Alabama."
+            ]
+        },
+        {
+            "input": "Anthony McGill is the principal clarinetist for the Metropolitan Opera.",
+            "labels": [
+                "Anthony McGill is the main clarinet player for the Metropolitan Opera."
+            ]
+        },
+        {
+            "input": "The author (s) and publisher (s) of the Document do not by this License give permission to use their names for publicity for or to assert or imply endorsement of any Modified Version.",
+            "labels": [
+                "The author and publisher of the Document do not give permission to use their names for publicity for or to assert or imply support of any Modified Version."
+            ]
+        },
+        {
+            "input": "The British Rail Class 91 is a class of 140 mph (225 km / h), 4.54MW / 6,300 hp electric locomotives ordered as a component of the East Coast Main Line modernisation and electrification programme of the late 1980s.",
+            "labels": [
+                "The British Rail Class 91 is a class of 140 mph, 6,300 hp, electric locomotives. They were ordered as a part of the East Coast Main Line modernization and electrification program of the late 1980s."
+            ]
+        },
+        {
+            "input": "The premiere received a 2.79 rating, making it the highest rated show on cable in its time slot.",
+            "labels": [
+                "The premiere received a 2.79 rating. This make it the highest rated show on cable in its time slot."
+            ]
+        },
+        {
+            "input": "There are claims that thousands of people were impaled at a single time.",
+            "labels": [
+                "There are claims that thousands of people were impaled at once."
+            ]
+        },
+        {
+            "input": "The name \"hornet\" is used for this and related species primarily because of their habit of making aerial nests (similar to the true hornets) rather than subterranean nests.",
+            "labels": [
+                "The name hornet is used for species that make aerial nests rather than subterranean nests."
+            ]
+        },
+        {
+            "input": "In 1589, salt began to be made in Sunderland.",
+            "labels": [
+                "Salt started being made in Sunderland in 1589."
+            ]
+        },
+        {
+            "input": "Some trails are designated as nature trails, and are used by people learning about the natural world.",
+            "labels": [
+                "Some of the trails are nature trails to help people learn about the natural world."
+            ]
+        },
+        {
+            "input": "In August 2007, Hager was reassigned to Florida Championship Wrestling, where he began a feud with TJ Wilson.",
+            "labels": [
+                "Hager began a feud with TJ Wilson after being reassigned to Florida in August 2007."
+            ]
+        },
+        {
+            "input": "These rock formations are characteristically composed of sandstone with layers of quartz.",
+            "labels": [
+                "The rock formations are composed of sandstone with layers of quartz."
+            ]
+        },
+        {
+            "input": "Notably absent from the city are fortifications and military structures.",
+            "labels": [
+                "Fortifications and military structures are absent from the city."
+            ]
+        },
+        {
+            "input": "San Francisco Bay is located in the U. S. state of California, surrounded by a contiguous region known as the San Francisco Bay Area, dominated by the large cities San Francisco, Oakland and San Jose.",
+            "labels": [
+                "San Francisco Bay is located in the U. S. state of California. It is surrounded by a contiguous region known as the San Francisco Bay Area. It is dominated by the large cities of San Francisco, Oakland and San Jose."
+            ]
+        },
+        {
+            "input": "Adrastea was discovered by David C. Jewitt and G. Edward Danielson in Voyager 2 probe photographs taken on July 8, 1979, and received the designation.",
+            "labels": [
+                "Adrastea was discovered by David C. Jewitt and G. Edward Danielson in the Voyager 2 probe photographs that were taken on July 8, 1979. It received the designation."
+            ]
+        },
+        {
+            "input": "Picasa Web Albums was first leaked on June 6, 2006.",
+            "labels": [
+                "Picasa Web Albums was first leaked on June 6, 2006."
+            ]
+        },
+        {
+            "input": "It is probably a primitive body composed of carbonates.",
+            "labels": [
+                "It is probably an old body made up of carbonates."
+            ]
+        },
+        {
+            "input": "Either way, Artemis was born first and then assisted with the birth of Apollo.",
+            "labels": [
+                "Artemis was born first and then assisted with the birth of Apollo."
+            ]
+        },
+        {
+            "input": "The park has become a traditional location for mass demonstrations.",
+            "labels": [
+                "The park has become a traditional location for mass demonstrations."
+            ]
+        },
+        {
+            "input": "Breaking Dawn is the fourth and final novel in the Twilight series by Stephenie Meyer.",
+            "labels": [
+                "There are 4 novels in the Twilight series by Stephenie Meyer. The final novel in this series is Breaking Dawn."
+            ]
+        },
+        {
+            "input": "The main town is Abingdon, other places include Faringdon and Wantage.",
+            "labels": [
+                "The main town is Abingdon. Other places include Faringdon and Wantage."
+            ]
+        },
+        {
+            "input": "The municipality has about 5700 inhabitants.",
+            "labels": [
+                "The municipality has about 5700 local residents."
+            ]
+        },
+        {
+            "input": "42 \u2013 59 External links 2001 Census, accessed Nov. 29, 2006 geo.",
+            "labels": [
+                "42 \u2013 59 External links 2001 Census, accessed Nov. 29, 2006 geo."
+            ]
+        },
+        {
+            "input": "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard, et al.",
+            "labels": [
+                "It was discovered by a team of astronomers at the University of Hawaii headed by Scott S. Sheppard, et al."
+            ]
+        },
+        {
+            "input": "Nocturnes is an orchestral composition in three movements by the French composer Claude Debussy.",
+            "labels": [
+                "Nocturnes is the three-movement orchestral composition if French composer Claude Debussy."
+            ]
+        },
+        {
+            "input": "The Alexandrian Life of Aeschylus indicates that the playwright took the first prize at the City Dionysia thirteen times.",
+            "labels": [
+                "The Alexandrian life of Aeschylus indicates that the playwright won the fir st prize in the City of Dionysia thirteen times."
+            ]
+        },
+        {
+            "input": "Calvinism gained some popularity in Scandinavia, especially Sweden, but was rejected in favor of Lutheranism after the synod of Uppsala in 1593.",
+            "labels": [
+                "Calvinism gained popularity in Scandinavia, particularly Sweden, but rejected in favor of Lutheranism after the synod of Uppsala in 1593."
+            ]
+        },
+        {
+            "input": "He was holidaying in Germany the following summer when World War I broke out.",
+            "labels": [
+                "He was having a summer vacation in Germany when the World War I broke out."
+            ]
+        },
+        {
+            "input": "In order to accomplish their objective, surveyors use elements of geometry, engineering, trigonometry, mathematics, physics, and law.",
+            "labels": [
+                "Surveyors use elements of geometry, engineering, trigonometry, mathematics, physics, and law in their profession."
+            ]
+        },
+        {
+            "input": "Given their low metabolic rate and the low density of prey at such depths, Vampire Squid must use innovative predator avoidance tactics in order to conserve energy.",
+            "labels": [
+                "Vampire Squid must use innovative predator avoidance tactics in order to conserve energy because of their low metabolic rate and the low density of prey at such depths."
+            ]
+        },
+        {
+            "input": "In the 1950s Camus devoted his efforts to human rights.",
+            "labels": [
+                "Camus fought for human rights in the 1950s."
+            ]
+        },
+        {
+            "input": "Iron Maiden, released on April 14, 1980, is the debut album by heavy metal band Iron Maiden.",
+            "labels": [
+                "Heavy metal band Iron Maiden debuted their self-titled album on April 14th, 1980."
+            ]
+        },
+        {
+            "input": "The Vezina Trophy is awarded annually to the National Hockey League's goaltender who is \"adjudged to be the best at this position\".",
+            "labels": [
+                "The Vezina Trophy is awarded to the National Hockey League's best goaltender for that season."
+            ]
+        },
+        {
+            "input": "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard in 2000, and given the temporary designation.",
+            "labels": [
+                "Discovered in 2000 by a team of University of Hawaii astronomers led by Scott S. Sheppard, it was given the temporary designation."
+            ]
+        },
+        {
+            "input": "Hydra appears to be spectrally neutral like Charon and Nix, though Pluto is reddish.",
+            "labels": [
+                "Hydra appears to look neutral like Charon and Nix, however Pluto is reddish in color."
+            ]
+        },
+        {
+            "input": "Key factors in an RTOS are therefore a minimal interrupt latency and a minimal thread switching latency.",
+            "labels": [
+                "Key factors in an RTOS are therefore a limited interrupt latency and a low thread switching latency."
+            ]
+        },
+        {
+            "input": "The waxing crescent moon \"represents a young nation on the ascendant\".",
+            "labels": [
+                "The rising crescent moon \"reflects a young nation on the ascendant.\""
+            ]
+        },
+        {
+            "input": "The ALU is a fundamental building block of the central processing unit (CPU) of a computer, and even the simplest microprocessors contain one for purposes such as maintaining timers.",
+            "labels": [
+                "The ALU is the basic building block of the computer's central processing unit (CPU) and even the simplest processors contain one for purposes such as the maintenance of timers."
+            ]
+        },
+        {
+            "input": "Probably in the ninth century, the village became part of the territory of the monastery of Reichenau.",
+            "labels": [
+                "Probably in the ninth century, the village became part of the territory of the Reichenau temple."
+            ]
+        },
+        {
+            "input": "At the 2008 Cannes Film Festival, Alain Siritzky announced that a worldwide search was underway for a new Emmanuelle to star in a new series of films.",
+            "labels": [
+                "Alain Siritzky announced a search for a new Emmanuelle to star in a new series at the 2008 Cannes Film Festival."
+            ]
+        },
+        {
+            "input": "Hardy also cites \"burn out\" and the need for time off as reasons for leaving WWE.",
+            "labels": [
+                "\"Burn out\" and needing time off are reasons Hardy left the WWE."
+            ]
+        },
+        {
+            "input": "Q is the seventeenth letter of the basic modern Latin alphabet.",
+            "labels": [
+                "The seventeenth letter of the Latin alphabet is Q."
+            ]
+        },
+        {
+            "input": "Among the casualties were two fishers who were reported missing.",
+            "labels": [
+                "Two fishers reported missing were also killed."
+            ]
+        },
+        {
+            "input": "This book by itself is out of print having been published along with nine short stories in the collection The Worthing Saga (1990).",
+            "labels": [
+                "This book alone is out of print. It was published with nine short stories in the collection The Worthing Saga. This collection was published in 1990."
+            ]
+        },
+        {
+            "input": "The 1977 Atlantic hurricane season officially began on June 1, 1977, and lasted until November 30, 1977.",
+            "labels": [
+                "The 1977 Atlantic hurricane season began on June 1, 1977. The season lasted until November 30, 1977."
+            ]
+        },
+        {
+            "input": "Due to the Cold War, subsequent trials never took place.",
+            "labels": [
+                "Subsequent trials never took place because of the Cold War."
+            ]
+        },
+        {
+            "input": "Dundee has two universities \u2014 the University of Abertay Dundee and the University of Dundee.",
+            "labels": [
+                "Dundee has two universities. These two universities are the University of Abertay Dundee and the University of Dundee."
+            ]
+        },
+        {
+            "input": "John Paul Stevens (born April 20, 1920) is the senior Associate Justice of the Supreme Court of the United States.",
+            "labels": [
+                "John Paul Stevens is the senior Associate Justice of the Supreme Court of the United States. He was born on April 20, 1920."
+            ]
+        },
+        {
+            "input": "For a period, platforms at both the old and new stations operated, before the original station finally closed and was demolished.",
+            "labels": [
+                "The old and new stations operated for some time, then the original station was closed and demolished."
+            ]
+        },
+        {
+            "input": "Adjacent counties are Marin (to the south), Mendocino (to the north), Lake (northeast), Napa (to the east), and Solano and Contra Costa (to the southeast).",
+            "labels": [
+                "countries next to it are Marin, Mendocino, Lake, Napa, Solano, and Contra Costa."
+            ]
+        },
+        {
+            "input": "A Georgian inscription around the drum attests his name.",
+            "labels": [
+                "A writing around the drum confirms his name."
+            ]
+        },
+        {
+            "input": "They would later return to the revived series in the 2008 Christmas Special \"The Next Doctor\", introducing two new variants of the race; the Cyber-Shades and the Cyber-King.",
+            "labels": [
+                "They would return to the new series in the 2008 Special \"The Next Doctor\". There were two new variants; Cyber-Shades and the Cyber-King."
+            ]
+        },
+        {
+            "input": "Jameson's autobiography, How to Make Love Like a Porn Star: A Cautionary Tale was published August 17, 2004.",
+            "labels": [
+                "Jameson's autobiography was published on August 17, 2004"
+            ]
+        },
+        {
+            "input": "It is particularly famous for the cultivation of kiwifruit.",
+            "labels": [
+                "It is famous for the cultivation of kiwi fruit."
+            ]
+        },
+        {
+            "input": "Singles competition (2002 \u2013 2003) After years in the tag team division, Hardy took on The Undertaker in a ladder match for the Undisputed Championship.",
+            "labels": [
+                "After years in the tag team division, Hardy took on The Undertaker in a ladder match for the Undisputed Championship."
+            ]
+        },
+        {
+            "input": "Many of the churches work together for town-wide projects under the banner of \"Churches Together in Stevenage\".",
+            "labels": [
+                "Many of the churches assist each other on town-wide projects under the banner of \"Churches Together in Stevenage\"."
+            ]
+        },
+        {
+            "input": "Word processing templates enable the ability to bypass the initial setup and configuration time necessary to create standardized documents such as a resume.",
+            "labels": [
+                "Word processing templates allow people to bypass the initial setup and configuration time necessary to create standardized documents such as a resume."
+            ]
+        },
+        {
+            "input": "Rollins retired in 1962 and opted to become a coach.",
+            "labels": [
+                "Rollins retired in 1962 and become a coach."
+            ]
+        },
+        {
+            "input": "History Landsberg prison, which is in the town's western outskirts, was completed in 1910.",
+            "labels": [
+                "Landsberg prison is in the west of the town. It was completed in 1910."
+            ]
+        },
+        {
+            "input": "A hunting dog refers to any dog who assists humans in hunting.",
+            "labels": [
+                "A hunting dog is a dog who helps humans in hunting."
+            ]
+        },
+        {
+            "input": "The Empire of Nicaea succeeded in capturing Constantinople and the rest of the Latin Empire, thus re-establishing the Byzantine Empire.",
+            "labels": [
+                "The Empire of Nicaea captured Constantinople and Latin Empire. By doing so it re-establishing the Byzantine Empire."
+            ]
+        },
+        {
+            "input": "This led scientists to re-examine the old photos again, and the satellite was finally found in the images.",
+            "labels": [
+                "This led scientists to re-examine the old photos, and the satellite was found in the pictures."
+            ]
+        },
+        {
+            "input": "Marcel Junod (1904 - 1961), a physician from Geneva, was another famous delegate during the Second World War.",
+            "labels": [
+                "Marcel Junod was a physician from Geneva. He was a famous delegate during the Second World War."
+            ]
+        },
+        {
+            "input": "Whisenhunt's career as a player included 4 years (1985 - 88) as a tight end with the Atlanta Falcons, who drafted him in the twelfth round, and then spells with the Washington Redskins and New York Jets.",
+            "labels": [
+                "Whisenhunt's career as a player included 4 years (1985 - 88) as a tight end with the Atlanta Falcons.  Then there were short term stints with the Washington Redskins and New York Jets."
+            ]
+        },
+        {
+            "input": "In return, Romania ceded three southern districts of Bessarabia to Russia and acquired Dobruja.",
+            "labels": [
+                "Romania ceded three southern districts of Bessarabia to Russia and acquired Dobruja."
+            ]
+        },
+        {
+            "input": "In March 2001, the World Wrestling Federation purchased World Championship Wrestling.",
+            "labels": [
+                "In March 2001, the World Wrestling Federation bought World Championship Wrestling."
+            ]
+        },
+        {
+            "input": "The West Coast blues is a type of blues music characterized by jazz and jump blues influences, strong piano-dominated sounds and jazzy guitar solos, which originated from Texas blues players relocated to California in the 1940s.",
+            "labels": [
+                "The West Coast blues is characterized by jazz and jump blues influences, strong piano-dominated sounds and jazzy guitar solos. It originated from Texas blues players who relocated to California in the 1940s."
+            ]
+        },
+        {
+            "input": "Subsequent visits reported seeing the flag flying from places of honor.",
+            "labels": [
+                "Following visits reported seeing the flag flying from places of honor."
+            ]
+        },
+        {
+            "input": "Agriculture Locals grow seasonal crops such as Maize (makai) and Wheat (kanak).",
+            "labels": [
+                "Locals grow seasonal crops such as Maize and Wheat."
+            ]
+        },
+        {
+            "input": "In 2004, Roy was selected as the greatest goaltender in NHL history by a panel of 41 writers, coupled with a simultaneous fan poll.",
+            "labels": [
+                "Roy was selected as the greatest goaltender in NHL history in 2004."
+            ]
+        },
+        {
+            "input": "Frances was later absorbed by an extratropical cyclone on November 21.",
+            "labels": [
+                "Frances was later drawn in by an extratropical cyclone on November 21."
+            ]
+        },
+        {
+            "input": "Tracking northwestward, the depression moved ashore near Fort Walton Beach early on September 22, and shortly thereafter it dissipated over southeastern Alabama.",
+            "labels": [
+                "Traveling northwestward, the depression moved ashore near Fort Walton Beach early on September 22. Shortly after it dissipated over southeastern Alabama."
+            ]
+        },
+        {
+            "input": "Anthony McGill is the principal clarinetist for the Metropolitan Opera.",
+            "labels": [
+                "Anthony McGill is the lead clarinetist for the Metropolitan Opera."
+            ]
+        },
+        {
+            "input": "The author (s) and publisher (s) of the Document do not by this License give permission to use their names for publicity for or to assert or imply endorsement of any Modified Version.",
+            "labels": [
+                "The author and publisher of the Licence  don't allow the use of their names for publicity and for endorsement of any Modified Version."
+            ]
+        },
+        {
+            "input": "The British Rail Class 91 is a class of 140 mph (225 km / h), 4.54MW / 6,300 hp electric locomotives ordered as a component of the East Coast Main Line modernisation and electrification programme of the late 1980s.",
+            "labels": [
+                "The British Rail 91 is a class of 140 mph, 4.54MW / 6,300 hp electric train ordered as for the East Coast Main Line in late 1980s."
+            ]
+        },
+        {
+            "input": "The premiere received a 2.79 rating, making it the highest rated show on cable in its time slot.",
+            "labels": [
+                "The premiere received a 2.79 rating. Which made it the highest rated show on cable in its time slot."
+            ]
+        },
+        {
+            "input": "There are claims that thousands of people were impaled at a single time.",
+            "labels": [
+                "Some say that thousands of people were killed."
+            ]
+        },
+        {
+            "input": "The name \"hornet\" is used for this and related species primarily because of their habit of making aerial nests (similar to the true hornets) rather than subterranean nests.",
+            "labels": [
+                "The \"hornet\" name is used mainly for this and related species because they make nests in the air like hornets instead of underground."
+            ]
+        },
+        {
+            "input": "In 1589, salt began to be made in Sunderland.",
+            "labels": [
+                "Sunderland salt was made in 1589."
+            ]
+        },
+        {
+            "input": "Some trails are designated as nature trails, and are used by people learning about the natural world.",
+            "labels": [
+                "Some trails are nature trails, used be people learning about nature."
+            ]
+        },
+        {
+            "input": "In August 2007, Hager was reassigned to Florida Championship Wrestling, where he began a feud with TJ Wilson.",
+            "labels": [
+                "in 2007, Hager went back to Florida Championship Wrestling, and had a fight with TJ Wilson."
+            ]
+        },
+        {
+            "input": "These rock formations are characteristically composed of sandstone with layers of quartz.",
+            "labels": [
+                "These rock formations are composed of sandstone with layers of quartz."
+            ]
+        },
+        {
+            "input": "Notably absent from the city are fortifications and military structures.",
+            "labels": [
+                "Notably gone from the city are fortifications and military structures."
+            ]
+        },
+        {
+            "input": "San Francisco Bay is located in the U. S. state of California, surrounded by a contiguous region known as the San Francisco Bay Area, dominated by the large cities San Francisco, Oakland and San Jose.",
+            "labels": [
+                "San Francisco Bay is located in the U. S. state of California.  It is surrounded by a contiguous region known as the San Francisco Bay Area, dominated by the large cities San Francisco, Oakland and San Jose."
+            ]
+        },
+        {
+            "input": "Adrastea was discovered by David C. Jewitt and G. Edward Danielson in Voyager 2 probe photographs taken on July 8, 1979, and received the designation.",
+            "labels": [
+                "Adrastea was found by David C. Jewitt and G. Edward Danielson in Voyager 2 probe photographs taken on July 8, 1979"
+            ]
+        },
+        {
+            "input": "Picasa Web Albums was first leaked on June 6, 2006.",
+            "labels": [
+                "Picasa Web Albums was first seen on June 6, 2006."
+            ]
+        },
+        {
+            "input": "It is probably a primitive body composed of carbonates.",
+            "labels": [
+                "It is probably a simple body made of carbonates."
+            ]
+        },
+        {
+            "input": "Either way, Artemis was born first and then assisted with the birth of Apollo.",
+            "labels": [
+                "Artemis was born first and then helped with the birth of Apollo."
+            ]
+        },
+        {
+            "input": "The park has become a traditional location for mass demonstrations.",
+            "labels": [
+                "The park is now often used for demonstrations."
+            ]
+        },
+        {
+            "input": "Breaking Dawn is the fourth and final novel in the Twilight series by Stephenie Meyer.",
+            "labels": [
+                "Breaking Dawn is the fourth and final book in the Twilight series by Stephenie Meyer."
+            ]
+        },
+        {
+            "input": "The main town is Abingdon, other places include Faringdon and Wantage.",
+            "labels": [
+                "The main town is Abingdon.  Other towns include Faringdon and Wantage."
+            ]
+        },
+        {
+            "input": "The municipality has about 5700 inhabitants.",
+            "labels": [
+                "The municipality has about 5700 people."
+            ]
+        },
+        {
+            "input": "42 \u2013 59 External links 2001 Census, accessed Nov. 29, 2006 geo.",
+            "labels": [
+                "2001 Census, accessed Nov. 29, 2006 geo."
+            ]
+        },
+        {
+            "input": "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard, et al.",
+            "labels": [
+                "It was found by a team of astronomers from the University of Hawaii led by Scott S. Sheppard."
+            ]
+        },
+        {
+            "input": "Nocturnes is an orchestral composition in three movements by the French composer Claude Debussy.",
+            "labels": [
+                "Nocturnes is an orchestral composition in three parts by the French composer Claude Debussy."
+            ]
+        },
+        {
+            "input": "The Alexandrian Life of Aeschylus indicates that the playwright took the first prize at the City Dionysia thirteen times.",
+            "labels": [
+                "The Alexandrian Life of Aeschylus shows that the playwright took the first prize at the City Dionysia thirteen times."
+            ]
+        },
+        {
+            "input": "Calvinism gained some popularity in Scandinavia, especially Sweden, but was rejected in favor of Lutheranism after the synod of Uppsala in 1593.",
+            "labels": [
+                "Calvinism gained some popularity in Scandinavia, but was rejected in favor of Lutheranism after the synod of Uppsala in 1593."
+            ]
+        },
+        {
+            "input": "He was holidaying in Germany the following summer when World War I broke out.",
+            "labels": [
+                "He was on vacation in Germany the following summer when World War I broke out."
+            ]
+        },
+        {
+            "input": "In order to accomplish their objective, surveyors use elements of geometry, engineering, trigonometry, mathematics, physics, and law.",
+            "labels": [
+                "In order complete the objective surveyors use elements of geometry, engineering, trigonometry, mathematics, physics, and law."
+            ]
+        },
+        {
+            "input": "Given their low metabolic rate and the low density of prey at such depths, Vampire Squid must use innovative predator avoidance tactics in order to conserve energy.",
+            "labels": [
+                "Vampire Squid must use innovative predator avoidance tactics in order to conserve energy due to lack of prey."
+            ]
+        },
+        {
+            "input": "In the 1950s Camus devoted his efforts to human rights.",
+            "labels": [
+                "Camus devoted his efforts to human rights."
+            ]
+        },
+        {
+            "input": "Iron Maiden, released on April 14, 1980, is the debut album by heavy metal band Iron Maiden.",
+            "labels": [
+                "Iron Maiden, released on April 14, 1980, is the first album by heavy metal band Iron Maiden."
+            ]
+        },
+        {
+            "input": "The Vezina Trophy is awarded annually to the National Hockey League's goaltender who is \"adjudged to be the best at this position\".",
+            "labels": [
+                "The Vezina Trophy is awarded annually to the National Hockey League's goaltender who performs the best in the position."
+            ]
+        },
+        {
+            "input": "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard in 2000, and given the temporary designation.",
+            "labels": [
+                "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard in 2000."
+            ]
+        },
+        {
+            "input": "Hydra appears to be spectrally neutral like Charon and Nix, though Pluto is reddish.",
+            "labels": [
+                "Hydra appears to be spectrally neutral like Charon and Nix."
+            ]
+        },
+        {
+            "input": "Key factors in an RTOS are therefore a minimal interrupt latency and a minimal thread switching latency.",
+            "labels": [
+                "So key factors in an RTOS are a small interrupt and thread switching latency."
+            ]
+        },
+        {
+            "input": "The waxing crescent moon \"represents a young nation on the ascendant\".",
+            "labels": [
+                "The waxing crescent moon \"speaks for a young nation on the rise\"."
+            ]
+        },
+        {
+            "input": "The ALU is a fundamental building block of the central processing unit (CPU) of a computer, and even the simplest microprocessors contain one for purposes such as maintaining timers.",
+            "labels": [
+                "The ALU is a basic part of the CPU. Even the most simple microprocessor has one for reasons like maintaining timers."
+            ]
+        },
+        {
+            "input": "Probably in the ninth century, the village became part of the territory of the monastery of Reichenau.",
+            "labels": [
+                "it's thought would become part of the monestery of Reichenau in the 9th century."
+            ]
+        },
+        {
+            "input": "At the 2008 Cannes Film Festival, Alain Siritzky announced that a worldwide search was underway for a new Emmanuelle to star in a new series of films.",
+            "labels": [
+                "At the 2008 Cannes Film Festival, Alain Siritzky announced that he was looking for a new Emmanuelle to star in a new series of movies."
+            ]
+        },
+        {
+            "input": "Hardy also cites \"burn out\" and the need for time off as reasons for leaving WWE.",
+            "labels": [
+                "Hardy is quoted as saying \"burn out\" is a reason for taking time off from WWE."
+            ]
+        },
+        {
+            "input": "Q is the seventeenth letter of the basic modern Latin alphabet.",
+            "labels": [
+                "Q is the seventeenth letter in the modern Latin alphabet."
+            ]
+        },
+        {
+            "input": "Among the casualties were two fishers who were reported missing.",
+            "labels": [
+                "Among the casualties were two fishermen who were reported missing."
+            ]
+        },
+        {
+            "input": "This book by itself is out of print having been published along with nine short stories in the collection The Worthing Saga (1990).",
+            "labels": [
+                "This book by itself is out of print.  It had been published in 1990 as a collection of nine short stories called The Worthing Saga."
+            ]
+        },
+        {
+            "input": "The 1977 Atlantic hurricane season officially began on June 1, 1977, and lasted until November 30, 1977.",
+            "labels": [
+                "The 1977 Atlantic hurricane season officially lasted from June 1 to November 30, 1977."
+            ]
+        },
+        {
+            "input": "Due to the Cold War, subsequent trials never took place.",
+            "labels": [
+                "Following trials didn't happen because of the Cold War."
+            ]
+        },
+        {
+            "input": "Dundee has two universities \u2014 the University of Abertay Dundee and the University of Dundee.",
+            "labels": [
+                "The University of Abertay Dundee and the University of Dundee are the two Dundee universities."
+            ]
+        },
+        {
+            "input": "John Paul Stevens (born April 20, 1920) is the senior Associate Justice of the Supreme Court of the United States.",
+            "labels": [
+                "John Paul Stevens is the senior Associate Justice of the Supreme Court of the United States."
+            ]
+        },
+        {
+            "input": "For a period, platforms at both the old and new stations operated, before the original station finally closed and was demolished.",
+            "labels": [
+                "Platforms at both the old and new stations operated until the original station finally closed."
+            ]
+        },
+        {
+            "input": "However, all of the storms that have impacted Arizona have formed in the latter parts of the Pacific hurricane season, and only storm remnants have affected the state before August.",
+            "labels": [
+                "All of the storms that have impacted Arizona have formed towards the end of Pacific hurricane season.  Only storm remnants have affected the state before August."
+            ]
+        },
+        {
+            "input": "The two Byzantine outbreaks during the 8th and 9th centuries were unusual in that the use of images was the main issue in the dispute, rather than a by-product of wider concerns.",
+            "labels": [
+                "The two Byzantine outbreaks during the 8th and 9th centuries were strange in that the use of images was the main issue in the fight."
+            ]
+        },
+        {
+            "input": "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard in 2003, receiving the temporary designation.",
+            "labels": [
+                "It was discovered by a team of astronomers from the University of Hawaii led by Scott S. Sheppard in 2003."
+            ]
+        },
+        {
+            "input": "The French word bourgeois evolved from the Old French word burgeis, meaning \"an inhabitant of a town\" (cf.",
+            "labels": [
+                "The French word bourgeois came from the Old French word burgeis, meaning \"an inhabitant of a town\"."
+            ]
+        },
+        {
+            "input": "The Book of Nehemiah is a book of the Hebrew Bible, historically regarded as a continuation of the Book of Ezra, and is sometimes called the second book of Ezra.",
+            "labels": [
+                "The Book of Nehemiah is a book of the Hebrew Bible.  It is regarded as a continuation of the Book of Ezra, often called the second book of Ezra."
+            ]
+        },
+        {
+            "input": "The Erotian surface gravity varies greatly, since Eros is not a sphere but an elongated peanut-shaped (or potato- or shoe-shaped) object.",
+            "labels": [
+                "The Erotian surface gravity varies because Eros is not a sphere.  Eros is an elongated peanut-shaped object."
+            ]
+        },
+        {
+            "input": "Definition Overview The key idea behind a Reed \u2013 Solomon code is that the data encoded is first visualized as a polynomial.",
+            "labels": [
+                "The key idea behind a Reed \u2013 Solomon code is that the data encoded is first visualized as a polynomial."
+            ]
+        },
+        {
+            "input": "The WWF consisted of Stone Cold Steve Austin, Kurt Angle, Chris Jericho, Kane, and the Undertaker, who all squared off against the team of DDP, Booker T, Rhyno, and the Dudley Boys.",
+            "labels": [
+                "The WWF consisted of Stone Cold Steve Austin, Kurt Angle, Chris Jericho, Kane, and the Undertaker.  They have wrestled against the team of DDP, Booker T, Rhyno, and the Dudley Boys."
+            ]
+        },
+        {
+            "input": "Memory locations can also be renamed, although it is not commonly done to the extent practised in register renaming.",
+            "labels": [
+                "Memory locations can also be renamed, although it is not often done in register renaming."
+            ]
+        },
+        {
+            "input": "Disputes between European and Chinese miners flared into brawls at Daylesford and Castlemaine.",
+            "labels": [
+                "Disputes between European and Chinese miners flared into fights at Daylesford and Castlemaine."
+            ]
+        },
+        {
+            "input": "Tourism is concentrated in the mountains, particularly around the towns of Davos / Arosa, Laax and St. Moritz / Pontresina.",
+            "labels": [
+                "Tourism is mostly in the mountains, around the towns of Davos / Arosa, Laax and St. Moritz / Pontresina."
+            ]
+        },
+        {
+            "input": "It was discovered on February 27, 1995.",
+            "labels": [
+                "It was found on February 27, 1995."
+            ]
+        },
+        {
+            "input": "They were introduced to Europe in 1846 by Robert Fortune, collector for the London Horticultural Society, and shortly thereafter into North America.",
+            "labels": [
+                "They were introduced to Europe in 1846 by Robert Fortune, collector for the London Horticultural Society.  Then they were introduced to North America."
+            ]
+        },
+        {
+            "input": "He began this form of ministry in 1947 and continued until recently.",
+            "labels": [
+                "He began this form of ministry in 1947 and only stopped recently."
+            ]
+        },
+        {
+            "input": "Anne Frank was deported on the last train from Westerbork.",
+            "labels": [
+                "Anne Frank was deported on the train from Westerbork."
+            ]
+        },
+        {
+            "input": "Upper body Sleeveless shirt Tank top, wife beater, singlet A sleeveless garment similar to a T-shirt.",
+            "labels": [
+                "Sleeveless shirt Tank top, wife beater, singlet A sleeveless clothes similar to a T-shirt."
+            ]
+        },
+        {
+            "input": "The moon is very elongated, with its short axis 0.5 \u00b1 0.1 times the long axis.",
+            "labels": [
+                "The moon is oval, with its short axis 0.5 \u00b1 0.1 times the long axis."
+            ]
+        },
+        {
+            "input": "They claimed to be playing an April Fool's joke, but most people who saw the signs were unfamiliar with the phrase.",
+            "labels": [
+                "They said it was an April Fool's joke, but most people who saw the signs didn't know the phrase."
+            ]
+        },
+        {
+            "input": "A parallel to tributaries is the distributary, a river that branches off of and flows away from the main stream.",
+            "labels": [
+                "Unlike tributaries, the distributary is a river that branches off of and flows away from the main stream."
+            ]
+        },
+        {
+            "input": "The inner eyewall dissipated as a 23 mile (37 km) outer eyewall became dominant, and concurrently the overall organization of the hurricane improved.",
+            "labels": [
+                "The inner eyewall disappeared, but a 23 mile outer eyewall became dominant, and at the same time the hurricane's structure improved."
+            ]
+        },
+        {
+            "input": "The White Sox play in the American League's Central Division.",
+            "labels": [
+                "The White Sox are in the American League's Central Division."
+            ]
+        },
+        {
+            "input": "When Damocles was discovered, in 1991 by Robert H. McNaught, it was found to be on an orbit completely different from all others known.",
+            "labels": [
+                "Damocles was discovered, in 1991 by Robert H. McNaught.  it was found to be on an orbit different from all others."
+            ]
+        },
+        {
+            "input": "The Blake River Megacaldera Complex is considered a supervolcano due to its great size and its multiple dikes and vents.",
+            "labels": [
+                "The Blake River Megacaldera Complex is considered a supervolcano because of its size, and number of dikes and vents."
+            ]
+        },
+        {
+            "input": "Six species live in the greater Caribbean region, including the Queen Conch, and the West Indian Fighting Conch, Strombus pugilis.",
+            "labels": [
+                "The Queen Conce and the West Indian Fighting Conch are two of six species that live in the greater Caribbean region."
+            ]
+        },
+        {
+            "input": "With its completion in 1992, uninterrupted water transport was made possible between the North Sea and the Black Sea.",
+            "labels": [
+                "Uniterrupted water transport was made possible between the North Sea and the Black Sea in 1992."
+            ]
+        },
+        {
+            "input": "World temperatures could rise by between 1.1 and 6.4 \u00b0 C (2.0 and 11.5 \u00b0 F) during the 21st century (table 3) and that: Sea levels will probably rise by 18 to 59 cm (7.08 to 23.22 in) [table 3].",
+            "labels": [
+                "World temperatures could rise between 1.1 and 6.4\u00b0 C during the 21st century. Sea levels will probably rise by 18 to 59 cm."
+            ]
+        },
+        {
+            "input": "In reality Angle announced that he would be having neck surgery in May and would be out of action until August.",
+            "labels": [
+                "Angle announced that he would be having neck surgery in May and wouldn't return until August."
+            ]
+        },
+        {
+            "input": "These flies are clothed in black or pale (white or golden) hairs, and are themselves either black or metallic green or blue.",
+            "labels": [
+                "These flies have black or pale (white or golden) hairs. Their bodies are either black or metallic green or blue."
+            ]
+        },
+        {
+            "input": "Packaged instant soups come in several varieties: A packet of dry soup stock (like the ramen image below).",
+            "labels": [
+                "Packaged instant soups come in several varieties including packets of dry soup stock like ramen."
+            ]
+        },
+        {
+            "input": "Since 1980 the senior pastor has been John Piper.",
+            "labels": [
+                "John Piper has been the senior pastor since 1980."
+            ]
+        },
+        {
+            "input": "It aims to be fast and lightweight, while still being visually appealing and easy to use.",
+            "labels": [
+                "It aims to be fast, lightweight, visually appealing and easy to use."
+            ]
+        },
+        {
+            "input": "The subsequent campaigns were more or less successful, and the Imperial Exarchate was established in Ravenna to oversee Italy, though actually imperial influence was often limited.",
+            "labels": [
+                "The subsequent campaigns were successful. The Imperial Exarchate was created in Ravenna to oversee Italy."
+            ]
+        },
+        {
+            "input": "September 13 - Astronomers from the European Southern Observatory (ESO) announce images that appear to show a planet orbiting a brown dwarf about 230 light years away.",
+            "labels": [
+                "On September 13, astronomers from the European Southern Observatory (ESO) showed images of a planet orbiting a brown dwarf about 230 light years away."
+            ]
+        },
+        {
+            "input": "In 1919, all of the major pro-independence factions formed the Provisional Government in Shanghai.",
+            "labels": [
+                "In 1919, the major pro-independence factions created the Provisional Government in Shanghai."
+            ]
+        },
+        {
+            "input": "This has the advantage of evenly distributed spatial resolution without singularities (i. e. the poles) at the expense of somewhat greater numerical difficulty.",
+            "labels": [
+                "This has the advantage of evenly shared poles at the expense of greater numerical difficulty."
+            ]
+        },
+        {
+            "input": "One winter night, she was left alone while her son and his wife went to a basketball game.",
+            "labels": [
+                "One night, she was left alone. Her son and his wife went to a basketball game."
+            ]
+        },
+        {
+            "input": "Since then, the medal has been awarded 1,356 times to 1,353 individual recipients.",
+            "labels": [
+                "The medal has been awarded 1,356 times to 1,353 different people."
+            ]
+        },
+        {
+            "input": "Justification is seen by Protestants as being the theological fault line that divided Roman Catholic from Protestant during the ReformationFor example, Kurt Aland, A History of Christianity, vol.",
+            "labels": [
+                "Protestants see justification as the religious issue that split the Roman Catholic from them during the Reformation."
+            ]
+        },
+        {
+            "input": "The tornado destroyed 20 homes, left 30 others severely damaged, injured one person, and caused power outages for about 300 people.",
+            "labels": [
+                "The tornado destroyed 20 homes, left 30 others severely damaged, injured one person, and power was down for 300 people."
+            ]
+        },
+        {
+            "input": "Ban became actively involved in issues relating to inter-Korean relationships.",
+            "labels": [
+                "Ban became involved in issues about inter-Korean relationships."
+            ]
+        },
+        {
+            "input": "Ensuring that the food supply is free of contamination.",
+            "labels": [
+                "Ensure that the food supply is free of contamination."
+            ]
+        },
+        {
+            "input": "The series returned from hiatus on February 7, 2007 and was aired at 10: 00 pm.",
+            "labels": [
+                "The series returned from break on February 7, 2007 and was aired at 10: 00 pm."
+            ]
+        },
+        {
+            "input": "The hot metal straightener slid easily through the hair, causing less damage and dryness than previously-used techniques.",
+            "labels": [
+                "The hot metal straightener slid easily through the hair, causing little damage and dryness."
+            ]
+        },
+        {
+            "input": "Partnerships Since 1990 the district has a partnership with the district Main-Kinzig in Hessen, Germany.",
+            "labels": [
+                "Since 1990 the district has a partnership with the district Main-Kinzig in Hessen, Germany."
+            ]
+        },
+        {
+            "input": "Its articles are now carried by press release archives like World News, scoop.",
+            "labels": [
+                "Its articles are now carried by press release archives like World News."
+            ]
+        },
+        {
+            "input": "Geography The Caucasus Mountains are generally perceived to be a dividing line between Asia and Europe, and territories in Caucasia are alternately considered to be in one or both continents.",
+            "labels": [
+                "The Caucasus Mountains are generally perceived to be a dividing line between Asia and Europe.  Territories in Caucasia are alternately considered to be in one or both continents."
+            ]
+        },
+        {
+            "input": "Description Anchovies are small green fish with blue reflections due to a silver longitudinal stripe that runs from the base of the caudal fin.",
+            "labels": [
+                "Anchovies are small green fish with reflections. This is due to the silver stripe that runs along the length of their caudal fin"
+            ]
+        },
+        {
+            "input": "Other users and bots may edit pages in your user space, though by convention your user page will usually not be edited by others.",
+            "labels": [
+                "Other users and bots may edit your user space, but they usually will not."
+            ]
+        },
+        {
+            "input": "Diacritical marks and non-English letters are ignored, while numerical entries such as \"1812, War of\" are alphabetised as if the number had been written out (\"Eighteen-twelve, War of\").",
+            "labels": [
+                "accent marks and non-English letter are ignored, but number such as \"1812, War of\" are sorted by letter as if written out in word form."
+            ]
+        },
+        {
+            "input": "Luis Su\u00e1rez Miramontes (born May 2, 1935) is a Spanish former footballer and manager.",
+            "labels": [
+                "Luis Su\u00e1rez Miramontes was born May 2, 1935. She used to be a footballer and manager."
+            ]
+        },
+        {
+            "input": "Coupled with the aggressive expansion and expanded menu came the outsourcing of baked goods.",
+            "labels": [
+                "Together with the expansion and bigger menu, baked goods were brought from other places."
+            ]
+        },
+        {
+            "input": "These benefits are in some ways similar to those realized by owners of infrastructural capital which yields more goods, e. g. a factory which produces automobiles just as an apple tree produces apples.",
+            "labels": [
+                "These benefits are similar to those of owners of infrastructural capital which makes more goods, like a factory that makes cars or as an apple tree that makes apples."
+            ]
+        },
+        {
+            "input": "Greenland first entertained the idea of a flag of its own in 1973 when five Greenlanders proposed a green, white and blue flag.",
+            "labels": [
+                "Greenland first wanted to make it's flag in 1973 when five Greenlanders offered a green, white and blue flag."
+            ]
+        },
+        {
+            "input": "They can also be used as a general test tube substitute particularly when a larger volume is desired.",
+            "labels": [
+                "They can also be used as a test tube if a larger size is needed."
+            ]
+        },
+        {
+            "input": "Grosse Ile Township is a civil township of Wayne County in the U. S. state of Michigan.",
+            "labels": [
+                "Grosse Ile is a civil township of Wayne County in Michigan."
+            ]
+        },
+        {
+            "input": "In respective singles matches, John Cena defeated Sabu in an Extreme lumberjack match, which featured superstars from the Raw and ECW brands at ringside.",
+            "labels": [
+                "John Cena beat Sabu in an Extreme lumberjack singles match. It featured superstars from Raw and ECW at ringside."
+            ]
+        },
+        {
+            "input": "Tiko United FC is a Cameroonian football club based in Tiko.",
+            "labels": [
+                "Tiko United FC is a Cameroonian football club."
+            ]
+        },
+        {
+            "input": "In 1998, she contributed back-up vocals for the Refugee Camp's \"It's Too Late\", a Carroll King cover.",
+            "labels": [
+                "in 1998, she gave back-up vocals for Refugee Camps \"It's Too Late\", a Carroll King cover."
+            ]
+        },
+        {
+            "input": "Tube sound (or valve sound) is the characteristic sound associated with a vacuum tube-based audio amplifier.",
+            "labels": [
+                "Tube sound is the characteristic sound associated with a vacuum tube-based audio amplifier."
+            ]
+        },
+        {
+            "input": "Great Seal of the United States Francis Hopkinson provided assistance to the second committee that designed the Great Seal of the United States.",
+            "labels": [
+                "Francis Hopkinson helped the second committee that designed the Great Seal of the United States."
+            ]
+        },
+        {
+            "input": "He was responsible there for music, the organ, directing chants and choir, etc.",
+            "labels": [
+                "He was in charge of the music, the organ, directing chants and choir."
+            ]
+        },
+        {
+            "input": "The Renault Vel Satis is an executive car produced by the French manufacturer Renault.",
+            "labels": [
+                "The Renault Vel Satis is an executive car made by the French manufacturer Renault."
+            ]
+        },
+        {
+            "input": "Neptune is the eighth and outermost-known planet from the Sun in the Solar System.",
+            "labels": [
+                "Neptune is the eighth and furthest planet from the Sun in the Solar System."
+            ]
+        },
+        {
+            "input": "Riluzole does not reverse the damage already done to motor neurons, and patients taking the drug must be monitored for liver damage and other possible side effects.",
+            "labels": [
+                "Riluzole doesn't undo damage already done to motor neurons.  Patients taking the drug must be monitored for liver damage and other possible side effects."
+            ]
+        },
+        {
+            "input": "Hurwicz was inducted into the American Academy of Arts and Sciences in 1965.",
+            "labels": [
+                "Hurwicz was entered into the American Academy of Arts and Sciences in 1965."
+            ]
+        },
+        {
+            "input": "In 1997 Ignacio Ramonet, editor of Le Monde Diplomatique, renewed the debate around the Tobin tax with an editorial titled \"Disarming the markets\".",
+            "labels": [
+                "In 1997 Ignacio Ramonet, editor of Le Monde Diplomatique, started the debate again around the Tobin tax with an article titled \"Disarming the markets\"."
+            ]
+        },
+        {
+            "input": "Description Pack rats are prevalent in the deserts and highlands of western United States and northern Mexico.",
+            "labels": [
+                "Pack rats are common in northern Mexico, deserts, and highlands in Western United States."
+            ]
+        },
+        {
+            "input": "The Parlement law courts of ancien r\u00e9gime France are established.",
+            "labels": [
+                "Parlement law courts were started in France."
+            ]
+        },
+        {
+            "input": "Wilbur repays Charlotte by bringing home with him the sac of eggs (her \"magnum opus\") she had laid at the fair before dying.",
+            "labels": [
+                "Wilbur brings the eggs sac that Charlotte laid at the fair before dying home to repay her."
+            ]
+        },
+        {
+            "input": "She aided Theseus in overcoming the Minotaur and later became the bride of the god Dionysus.",
+            "labels": [
+                "She helped Theseus beat the Minotaur. She later became Dionysus's bride."
+            ]
+        },
+        {
+            "input": "Nessler An early alternative method for curling hair that was suitable for use on people was invented in 1905 by German hairdresser Charles Nessler (1872 \u2013 1951).",
+            "labels": [
+                "An early alternative method for curling peoples hair was invented in 1905 by German hairdresser Charles Nessler."
+            ]
+        },
+        {
+            "input": "In 1972, arsonists set the bunker on fire.",
+            "labels": [
+                "Arsonists set the bunker on fire in 1972."
+            ]
+        },
+        {
+            "input": "After she has finished her wrestling career, James plans to own a farm and be an equine trainer.",
+            "labels": [
+                "After she has finished her wrestling career, James plans to own a farm and be a horse trainer."
+            ]
+        },
+        {
+            "input": "The new government in 1816 created the districts Steinfurt and Tecklenburg.",
+            "labels": [
+                "The new government in 1816 made the districts Steinfurt and Tecklenburg."
+            ]
+        },
+        {
+            "input": "Add an appropriate copyright notice for your modifications adjacent to the other copyright notices.",
+            "labels": [
+                "Add a copyright notice for changes next to other copyright notices."
+            ]
+        },
+        {
+            "input": "Above the boxes, La Scala has always had a gallery where the less wealthy can watch the performances.",
+            "labels": [
+                "La Scala has a gallery above the boxes where the less wealthy can watch performances."
+            ]
+        },
+        {
+            "input": "It is situated 44 miles (71 km) northeast of Pittsburgh, along the east bank of the Allegheny River.",
+            "labels": [
+                "It is 44 miles northeast of Pittsburgh. located on the east bank of the Allegheny River"
+            ]
+        },
+        {
+            "input": "Initially elastic sweatbands were issued to each street crime unit member, based on the chosen color of the day: beginning the use of the color of the day recognition system.",
+            "labels": [
+                "Elastic sweatbands were first given to all street crime unit members, based on a daily color recognition system. This began the use of that system."
+            ]
+        },
+        {
+            "input": "Solar thermal power plants can generally be built in a few years because solar plants are built almost entirely with modular, readily available materials.",
+            "labels": [
+                "Solar power plants can be built quicker because they are built with modular materials."
+            ]
+        },
+        {
+            "input": "Daniel Waters also gained recognition for his screenplay, which won a 1990 Edgar Award.",
+            "labels": [
+                "Daniel Waters won a 1990 Edgar Award for his screenplay."
+            ]
+        },
+        {
+            "input": "The Official Municipality Key, formerly also known as the Official Municipality Characteristic Number or Municipality Code Number, is a number sequence for the identification of politically independent municipalities or unincorporated areas.",
+            "labels": [
+                "The city key, formerly known as the Characteristic Number is a number for locating politically independent municipalities or unincorporated areas."
+            ]
+        },
+        {
+            "input": "At least 537 deaths were blamed on Hanna, primarily in Haiti.",
+            "labels": [
+                "At least 537 deaths were caused by Hanna in Haiti."
+            ]
+        },
+        {
+            "input": "The term most commonly refers to higher plants, but epiphytic bacteria, fungi (epiphytic fungi), algae, lichens, mosses, and ferns exist as well.",
+            "labels": [
+                "This usually refers to higher planty but bacteria, fungi, algae, lichens, mosses, and ferns also exist."
+            ]
+        },
+        {
+            "input": "In 2005, Stallone also inducted wrestling icon Hulk Hogan, who appeared in Rocky III as a wrestler named Thunderlips, into the WWE Hall of Fame; Stallone was also the person who offered Hogan the cameo in Rocky III.",
+            "labels": [
+                "In 2005, Stallone put Hulk Hokan into the WWE Hall of Fame. He also offered Hogan a cameo in Rocky III, he appeared as a wrestler named Thunderlips."
+            ]
+        },
+        {
+            "input": "Even if a contribution violates the precise wording of a rule, it might still be a good contribution.",
+            "labels": [
+                "even if an addition does against the exact wording of a rule, it might still be a good one."
+            ]
+        },
+        {
+            "input": "They must try to find a way home by using plotholes to teleport between dimensional realms.",
+            "labels": [
+                "They must try to get home using plotholes to teleport."
+            ]
+        },
+        {
+            "input": "When Bonham Carter was just five, her mother had a serious nervous breakdown, from which it took her three years to recover.",
+            "labels": [
+                "Bonham Carters mother had a three year long nervous breakdown when she was five."
+            ]
+        },
+        {
+            "input": "All members of this genus were once considered part of the same species, Calomyscus bailwardi, but they are now referred to as separate species due to major differences in chromosome number, skull measurements, and other features.",
+            "labels": [
+                "All members of this group were once part of the Calomyscus bailwardi, but now they are considered seperate due to the difference in chromosomes, skull measurements, and other features."
+            ]
+        },
+        {
+            "input": "Neodymium is a chemical element with the symbol Nd and atomic number 60.",
+            "labels": [
+                "Neodymium is atomic number 60 with a symbol of Nd."
+            ]
+        },
+        {
+            "input": "More formally, vorticity can be related to the amount of \"circulation\" or \"rotation\" (or more strictly, the local angular rate of rotation) in a fluid.",
+            "labels": [
+                "vorticity is the the local angular rate of rotation in a fluid."
+            ]
+        },
+        {
+            "input": "Fluctuations of this line horizon describe all matter, so every elementary particle can be described by a mode of oscillation of a very small segment or loop of string.",
+            "labels": [
+                "Fluctuations of this line horizon describe all matter.  Every elementary particle can be described by a mode of oscillation of a very small piece or loop of string."
+            ]
+        },
+        {
+            "input": "In biology and demography, fecundity is the potential reproductive capacity of an organism or population, measured by the number of gametes (eggs), seed set or asexual propagules.",
+            "labels": [
+                "Fecundity is the potential reproductive capacity of an organism or population, measured by the number of gametes (eggs), seed set or asexual propagules."
+            ]
+        },
+        {
+            "input": "Stone Cold then dragged a referee into the ring, but in a swerve, kicked Kurt Angle in the face, hit him with a Stunner, and placed Booker T on top of Kurt Angle and told the referee to count.",
+            "labels": [
+                "Stone Cold then dragged a referee into the ring, but in a swerve, kicked Kurt Angle in the face.  He then hit him with a Stunner, and put Booker T on top of Kurt Angle and told the referee to count."
+            ]
+        },
+        {
+            "input": "In February 1942, he was hospitalized, later claiming that this was due to a nervous breakdown connected with the ethnic cleansing in Belarus, especially the genocide of the Jews.",
+            "labels": [
+                "In February 1942, he was hospitalized.  He claims he had a nervous breakdown connected with the ethnic cleansing in Belarus, especially the genocide of the Jews."
+            ]
+        },
+        {
+            "input": "Woodland may support an understory of shrubs and herbaceous plants including grasses.",
+            "labels": [
+                "Forests may support an understory of shrubs and herbaceous plants."
+            ]
+        },
+        {
+            "input": "It has a black bill, crimson eyes, and a call reminiscent of a dog's bark.",
+            "labels": [
+                "It has a black bill, red eyes, and a call like that of a dog's bark."
+            ]
+        },
+        {
+            "input": "What the Spaniards then called \"chocolatl\" was said to be a beverage consisting of a chocolate base flavored with vanilla and other spices that was served cold.",
+            "labels": [
+                "What the Spaniards then called \"chocolatl\" was a beverage consisting of a chocolate base flavored with vanilla and other spices.  The drink was served cold."
+            ]
+        },
+        {
+            "input": "Some of the animals weighed as much as 700 kg (1,500 lb) or possibly larger.",
+            "labels": [
+                "Some of the animals weighed as much as 700 kg (1,500 lb) or more."
+            ]
+        },
+        {
+            "input": "These exist, conjoined with starch, in the endosperms of some grass-related grains, notably wheat, rye, and barley.",
+            "labels": [
+                "According to the Sun, Heyman wrote the brand's scripts and gave them to writers for possible changes, and then to Vince McMahon for final approval."
+            ]
+        },
+        {
+            "input": "Eraldo Pecci (born 12 April 1955) is an Italian former footballer.",
+            "labels": [
+                "Eraldo Pecci is an Italian who used to play football."
+            ]
+        },
+        {
+            "input": "The bells of L\u00fcdinghausen allegedly chimed by themselves, whenever Liudger entered the town.",
+            "labels": [
+                "It is believed that the bells of L\u00fcdinghausen ringed by themselves, when Liudger entered the town."
+            ]
+        },
+        {
+            "input": "A Feast for Crows is the fourth of seven planned novels in A Song of Ice and Fire, an epic fantasy series by American author George R. R. Martin.",
+            "labels": [
+                "A Feast for Crows is a novel in A Song of Ice and Fire fantasy series by George R. R. Martin."
+            ]
+        }
+    ],
+    "test": [
+        {
+            "input": "However, the BZ\u00d6 differs a bit in comparison to the Freedom Party, as is in favor of a referendum about the Lisbon Treaty but against an EU-Withdrawal.",
+            "labels": [
+                "The BZ\u00d6 is in favor of a referendum about the Lisbon Treaty but against an EU-Withdrawal."
+            ]
+        },
+        {
+            "input": "Many species had vanished by the end of the nineteenth century, with European settlement.",
+            "labels": [
+                "Many species disappeared by the end of the nineteenth century, with European settlement."
+            ]
+        },
+        {
+            "input": "In 1987 Wexler was inducted into the Rock and Roll Hall of Fame.",
+            "labels": [
+                "Wexler was inducted into the Rock and Roll Hall of Fame in 1987."
+            ]
+        },
+        {
+            "input": "In its pure form, dextromethorphan occurs as a white powder.",
+            "labels": [
+                "In its pure form, dextromethorphan looks like a white powder."
+            ]
+        },
+        {
+            "input": "Admission to Tsinghua is extremely competitive.",
+            "labels": [
+                "It is extremely competitive to get in to Tsinghua."
+            ]
+        },
+        {
+            "input": "Today NRC is organised as an independent, private foundation.",
+            "labels": [
+                "Today, NRC is managed as an independent and private company."
+            ]
+        },
+        {
+            "input": "It is situated at the coast of the Baltic Sea, where it encloses the city of Stralsund.",
+            "labels": [
+                "It happened at the coast of the Baltic Sea, where it surrounded the city of Stralsund."
+            ]
+        },
+        {
+            "input": "He was also named 1982 \"Sportsman of the Year\" by Sports Illustrated.",
+            "labels": [
+                "He also received the title of 1982 \"Sportsman of the Year\" by the magazine Sports Illustrated."
+            ]
+        },
+        {
+            "input": "Fives is a British sport believed to derive from the same origins as many racquet sports.",
+            "labels": [
+                "Fives is a British sport believed to have come from the same place as many racquet sports."
+            ]
+        },
+        {
+            "input": "For example, King Bhumibol was born on Monday, so on his birthday throughout Thailand will be decorated with yellow color.",
+            "labels": [
+                "For example, King Bhumibol was born on Monday, so on his birthday places throughout Thailand will be decorated with yellow color."
+            ]
+        },
+        {
+            "input": "Both names became defunct in 2007 when they were merged into The National Museum of Scotland.",
+            "labels": [
+                "Both names stopped existing in 2007, when they were merged into The National Museum of Scotland."
+            ]
+        },
+        {
+            "input": "Nevertheless, Tagore emulated numerous styles, including craftwork from northern New Ireland, Haida carvings from the west coast of Canada (British Columbia), and woodcuts by Max Pechstein.",
+            "labels": [
+                "Tagore copied numerous styles including crafts from North New Ireland, Haida carvings from west Canada's coast (British Columbia) and woodcuts from Max Pechstein."
+            ]
+        },
+        {
+            "input": "On October 14, 1960, Presidential candidate John F. Kennedy proposed the concept of what became the Peace Corps on the steps of Michigan Union.",
+            "labels": [
+                "On October 14, 1960, Presidential candidate John F. Kennedy made the idea of the Peace Corps on Michigan Union steps."
+            ]
+        },
+        {
+            "input": "She performed for President Reagan in 1988's Great Performances at the White House series, which aired on the Public Broadcasting Service.",
+            "labels": [
+                "She performed for President Reagan in 1988's Great Performances at the White House tv shows on the Public Broadcasting Service."
+            ]
+        },
+        {
+            "input": "Perry Saturn (with Terri) defeated Eddie Guerrero (with Chyna) to win the WWF European Championship (8:10) Saturn pinned Guerrero after a Diving elbow drop.",
+            "labels": [
+                "Perry Saturn (with Terri) beat Eddie Guerrero (with Chyna) to win the WWF European Championship (8:10) Saturn took down Guerrero after a Diving elbow drop."
+            ]
+        },
+        {
+            "input": "She remained in the United States until 1927 when she and her husband returned to France.",
+            "labels": [
+                "She stayed in the United States until 1927 until she moved to France with her husband."
+            ]
+        },
+        {
+            "input": "Despina was discovered in late July, 1989 from the images taken by the Voyager 2 probe.",
+            "labels": [
+                "Despina was discovered in late July, 1989."
+            ]
+        },
+        {
+            "input": "The first Italian Grand Prix motor racing championship took place on 4 September 1921 at Brescia.",
+            "labels": [
+                "The first Italian Grand Prix motor racing championship was at Brescia on September 4th, 1921."
+            ]
+        },
+        {
+            "input": "He also completed two collections of short stories entitled The Ribbajack & Other Curious Yarns and Seven Strange and Ghostly Tales.",
+            "labels": [
+                "He also wrote two books of short stories; they were called The Ribbajack & Other Curious Yarns and Seven Strange and Ghostly Tales."
+            ]
+        },
+        {
+            "input": "At the Voyager 2 images Ophelia appears as an elongated object, the major axis pointing towards Uranus.",
+            "labels": [
+                "A Voyager 2 picture was an object called Ophelia pointing toward Uranus."
+            ]
+        },
+        {
+            "input": "The British decided to eliminate him and take the land by force.",
+            "labels": [
+                "He was killed by the British and his land was taken."
+            ]
+        },
+        {
+            "input": "Some towns on the Eyre Highway in the south-east corner of Western Australia, between the South Australian border almost as far as Caiguna, do not follow official Western Australian time.",
+            "labels": [
+                "Towns between Western Australia up to Caiguna don't follow Western Australian time."
+            ]
+        },
+        {
+            "input": "In architectural decoration Small pieces of colored and iridescent shell have been used to create mosaics and inlays, which have been used to decorate walls, furniture and boxes.",
+            "labels": [
+                "Mosaics and inlays are made with small pieces of colored shells."
+            ]
+        },
+        {
+            "input": "The other incorporated cities on the Palos Verdes Peninsula include Rancho Palos Verdes, Rolling Hills Estates and Rolling Hills.",
+            "labels": [
+                "The other cities on the Palos Verdes Peninsula are Ranch Palos Verdes, Rolling Hills Estates and Rolling Hills."
+            ]
+        },
+        {
+            "input": "Fearing that Drek will destroy the galaxy, Clank asks Ratchet to help him find the famous superhero Captain Qwark, in an effort to stop Drek.",
+            "labels": [
+                "Clank was afraid that Drek would destroy the galaxy, so he asked Ratchet to help him find the famous superhero Captain Qwark."
+            ]
+        },
+        {
+            "input": "It is not actually a true louse.",
+            "labels": [
+                "It is not really a louse."
+            ]
+        },
+        {
+            "input": "He advocates applying a user-centered design process in product development cycles and also works towards popularizing interaction design as a mainstream discipline.",
+            "labels": [
+                "He says to use a user-centered design process. He also tries to get more people to use interaction design."
+            ]
+        },
+        {
+            "input": "It is theoretically possible that the other editors who may have reported you, and the administrator who blocked you, are part of a conspiracy against someone half a world away they've never met in person.",
+            "labels": [
+                "It is possible that the editors who may have reported you, and the administrator who blocked you, are part of a conspiracy against someone they've never met."
+            ]
+        },
+        {
+            "input": "Working Group I: Assesses scientific aspects of the climate system and climate change.",
+            "labels": [
+                "Working Group 1 rates scientific features of the climate system and climate change."
+            ]
+        },
+        {
+            "input": "The island chain forms part of the Hebrides, separated from the Scottish mainland and from the Inner Hebrides by the stormy waters of the Minch, the Little Minch and the Sea of the Hebrides.",
+            "labels": [
+                "The island chain forms part of the Hebrides.  It is separate from the Scottish mainland and the Inner Hebrides by theh Minch, the Little Minch, and the Sea of the Hebrides."
+            ]
+        },
+        {
+            "input": "Orton and his wife welcomed Alanna Marie Orton on July 12, 2008.",
+            "labels": [
+                "Orton and his wife welcomed Alanna Marie on July 12, 2008."
+            ]
+        },
+        {
+            "input": "Formal minor planet designations are number-name combinations overseen by the Minor Planet Center, a branch of the IAU.",
+            "labels": [
+                "Formal minor planet designations are number-name combinations overseen by the Minor Planet Center."
+            ]
+        },
+        {
+            "input": "By early on September 30, wind shear began to dramatically increase and a weakening trend began.",
+            "labels": [
+                "Early September 30, wind shear began to dramatically increase and a weakening trend began."
+            ]
+        },
+        {
+            "input": "Each entry has a datum (a nugget of data) which is a copy of the datum in some backing store.",
+            "labels": [
+                "Each entry has a datum which is a copy of the datum in some backing store."
+            ]
+        },
+        {
+            "input": "As a result, although many mosques will not enforce violations, both men and women when attending a mosque must adhere to these guidelines.",
+            "labels": [
+                "Although many mosques don't enforce violations, both men and women attending a mosque must adhere to these guidelines."
+            ]
+        },
+        {
+            "input": "Mariel of Redwall is a fantasy novel by Brian Jacques, published in 1991.",
+            "labels": [
+                "Brian Jacques published the fantasy novel Mariel of Redwall in 1991."
+            ]
+        },
+        {
+            "input": "Ryan Prosser (born 10 July, 1988) is a professional rugby union player for Bristol Rugby in the Guinness Premiership.",
+            "labels": [
+                "Ryan Prosser is a professional rugby player for Bristol Rugby in the Guinness Premiership."
+            ]
+        },
+        {
+            "input": "Like previous assessment reports, it consists of four reports, three of them from its working groups.",
+            "labels": [
+                "The assessment consists of four reports, three of them from working group."
+            ]
+        },
+        {
+            "input": "Their granddaughter H\u00e9l\u00e8ne Langevin-Joliot is a professor of nuclear physics at the University of Paris, and their grandson Pierre Joliot, who was named after Pierre Curie, is a noted biochemist.",
+            "labels": [
+                "Their granddaughter Helene is a professor of nuclear physics at the University of Paris, and their grandson Pierre is a biochemist."
+            ]
+        },
+        {
+            "input": "This stamp remained the standard letter stamp for the remainder of Victoria's reign, and vast quantities were printed.",
+            "labels": [
+                "The stamp was used by Victoria until she was no longer the ruler, and many copies were printed."
+            ]
+        },
+        {
+            "input": "The International Fight League was an American mixed martial arts (MMA) promotion billed as the world's first MMA league.",
+            "labels": [
+                "The International Fight League was known as the first American mixed martial arts (MMA) group."
+            ]
+        },
+        {
+            "input": "Giardia lamblia (synonymous with Lamblia intestinalis and Giardia duodenalis) is a flagellated protozoan parasite that colonises and reproduces in the small intestine, causing giardiasis.",
+            "labels": [
+                "Giardia lamblia is a parasite with whip-like appendages that lives and reproduces in the small intestine, causing giardiasis."
+            ]
+        },
+        {
+            "input": "Aside from this, Cameron has often worked in Christian-themed productions, among them the post-Rapture films Left Behind: The Movie, Left Behind II: Tribulation Force, and Left Behind: World at War, in which he plays Cameron \"Buck\" Williams.",
+            "labels": [
+                "Cameron has worked in Christian-themed productions, including Left Behind: The Movie, Left Behind II: Tribulation Force, and Left Behind: World at War, where he plays the character Cameron \"Buck\" Williams."
+            ]
+        },
+        {
+            "input": "This was the area east of the mouth of the Vistula River, later sometimes called \"Prussia proper\".",
+            "labels": [
+                "The area east of the mouth of the Vistula River was sometimes called \"Prussia proper\"."
+            ]
+        },
+        {
+            "input": "After graduation he returned to Yerevan to teach at the local Conservatory and later he was appointed artistic director of the Armenian Philarmonic Orchestra.",
+            "labels": [
+                "After he graduated he went back to Yerevan.  In Yerevan he taught at the local Conservatory.  Later he became artistic director of the Armenian Philharmonic Orchestra."
+            ]
+        },
+        {
+            "input": "The story of Christmas is based on the biblical accounts given in the Gospel of Matthew, namely - and the Gospel of Luke, specifically -.",
+            "labels": [
+                "The Christmas story is based on the biblical stories in the Gospels of Matthew and Luke."
+            ]
+        },
+        {
+            "input": "Weelkes was later to find himself in trouble with the Chichester Cathedral authorities for his heavy drinking and immoderate behaviour.",
+            "labels": [
+                "Later Weelkes found himself in trouble with the Chichester Cathedral authorities, due to his heavy drinking and improper behaviour."
+            ]
+        },
+        {
+            "input": "So far the 'celebrity' episodes have included Vic Reeves, Nancy Sorrell, Gaby Roslin, Scott Mills, Mark Chapman, Simon Gregson, Sue Cleaver, Carol Thatcher, Paul O'Grady and Lee Ryan.",
+            "labels": [
+                "Vic Reeves, Nancy Sorrell, Gaby Roslin, Scott Mills, Mark Chapman, Simon Gregson, Sue Cleaver, Carol Thatcher, Paul O'Grady and Lee Ryan have appeared in 'celebrity' episodes."
+            ]
+        },
+        {
+            "input": "It was discovered by Stephen P. Synnott in images from the Voyager 1 space probe taken on March 5, 1979 while orbiting around Jupiter.",
+            "labels": [
+                "It was found by Stephen P. Synnott in images taken by the Voyager 1 space probe.They were taken on March 5, 1979 near Jupiter."
+            ]
+        },
+        {
+            "input": "Gomaespuma was a Spanish radio show, hosted by Juan Luis Cano and Guillermo Fesser.",
+            "labels": [
+                "\"Gomaespuma\" was a Spanish radio show.  The hosts were Juan Luis Cano and Guillermo Fesser."
+            ]
+        },
+        {
+            "input": "On 16 June 2009, the official release date of The Resistance was announced on the band's website.",
+            "labels": [
+                "On 16/06/2009 the release date of the album \"The Resistance\" was announced on the band's website."
+            ]
+        },
+        {
+            "input": "He is also a member of another Jungiery boyband 183 Club.",
+            "labels": [
+                "He is also a member of the Jungiery boyband named 183 Club."
+            ]
+        },
+        {
+            "input": "The Apostolic Tradition, attributed to the theologian Hippolytus, attests the singing of Hallel psalms with Alleluia as the refrain in early Christian agape feasts.",
+            "labels": [
+                "The Apostolic Tradition was created by the religion expert Hippolytus. It shows the singing of Hallel psalms with Alleluia as the refrain in early Christian feasts."
+            ]
+        },
+        {
+            "input": "In return, Rollo swore fealty to Charles, converted to Christianity, and undertook to defend the northern region of France against the incursions of other Viking groups.",
+            "labels": [
+                "In return, Rollo swore loyalty to Charles and changed his religion to Christianity. He vowed to defend the northern region of France against other Viking groups."
+            ]
+        },
+        {
+            "input": "It is derived from Voice of America (VoA) Special English.",
+            "labels": [
+                "It is created from Voice of America (VoA) Special English."
+            ]
+        },
+        {
+            "input": "Disney received a full-size Oscar statuette and seven miniature ones, presented to him by 10-year-old child actress Shirley Temple.",
+            "labels": [
+                "10-year-old child actress Shirley Temple presented Disney with one full size and 7 miniature Oscar statuettes."
+            ]
+        },
+        {
+            "input": "It was the first asteroid to be discovered by a spacecraft.",
+            "labels": [
+                "It was the first asteroid to be found be a spacecraft."
+            ]
+        },
+        {
+            "input": "Hinterrhein is an administrative district in the canton of Graub\u00fcnden, Switzerland.",
+            "labels": [
+                "Hinterrhein is a business district in Graubunden, Switzerland."
+            ]
+        },
+        {
+            "input": "It continues as the Bohemian Switzerland in the Czech Republic.",
+            "labels": [
+                "It remains the Bohemian Switzerland in the Czech Republic."
+            ]
+        },
+        {
+            "input": "This leads to consumer confusion when 220 (1,048,576) bytes is referenced as 1 MB (megabyte) instead of 1 MiB.",
+            "labels": [
+                "Customer confusion entails when 220 (1,048,576) bytes is referred to as 1 MB instead of 1 MiB."
+            ]
+        },
+        {
+            "input": "The incident has been the subject of numerous reports as to ethics in scholarship.",
+            "labels": [
+                "The incident was the subject of many reports as to ethics in scholarship."
+            ]
+        },
+        {
+            "input": "They are castrated so that the animal may be more docile or may put on weight more quickly.",
+            "labels": [
+                "The animals are castrated to be more docile or put on weight quicker."
+            ]
+        },
+        {
+            "input": "Seventh sons have strong \"knacks\" (specific magical abilities), and seventh sons of seventh sons are both extraordinarily rare and powerful.",
+            "labels": [
+                "Seventh sons have magical abilities, and seventh sons of seventh sons are extraordinarily rare and powerful."
+            ]
+        }
+    ]
+}
