@@ -12,13 +12,23 @@ metric_rouge = load("rouge")
 metric_bertscore = load("bertscore")
 metric_sari = load("sari")
 
+# Get dataset from arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("--dataset", required=True)
+parser.add_argument("--model", required=True)
+args = parser.parse_args()
+print(f"Using dataset: {args.dataset}, model: {args.model}")
+
 def wandb_hp_space(trial):
     return {
         "method": "random",
         "metric": {"name": "objective", "goal": "minimize"},
         "parameters": {
-            "learning_rate": {"distribution": "uniform", "min": 1e-6, "max": 1e-4},
-            "per_device_train_batch_size": {"values": [2, 4, 8]},
+            "learning_rate": {"distribution": "uniform", 
+                              "min": 1e-5 if args.model=='flant5' else 1e-6, 
+                              "max": 1e-3 if args.model=='flant5' else 1e-4},
+            "gradient_accumulation_steps": {"values": [4, 8, 16]},
+            # "per_device_train_batch_size": {"values": [2, 4, 8]},
             "num_train_epochs": {"values": [5, 10]}
         },
     }
@@ -72,13 +82,6 @@ def compute_metrics(eval_pred):
     result["gen_len"]    = np.mean(prediction_lens)
     
     return {k: round(v, 4) for k, v in result.items()}
-
-# Get dataset from arguments
-parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", required=True)
-parser.add_argument("--model", required=True)
-args = parser.parse_args()
-print(f"Using dataset: {args.dataset}, model: {args.model}")
 
 DATASET_NAME    = args.dataset 
 dataset         = load_dataset('json', data_files=f'data/{DATASET_NAME}.json', field='train')
@@ -137,12 +140,12 @@ dataset['test']  = dataset['test'].remove_columns(["input"])
 # Write out the arguments
 MODEL_OUT_NAME = f"{MODEL_NAME}_{DATASET_NAME}"
 
-args = Seq2SeqTrainingArguments(
+train_args = Seq2SeqTrainingArguments(
     f"models/{MODEL_OUT_NAME}",
     evaluation_strategy = "epoch",
     learning_rate=2e-5,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
+    per_device_train_batch_size=1,
+    per_device_eval_batch_size=1,
     weight_decay=0.01,
     save_total_limit=3,
     num_train_epochs=2,
@@ -157,7 +160,7 @@ data_collator = DataCollatorForSeq2Seq(tokenizer)
 # Create the Trainer and train
 trainer = Seq2SeqTrainer(
     model = None, # model
-    args=args,
+    args=train_args,
     model_init=model_init,
     train_dataset=dataset['train'],
     eval_dataset=dataset['test'],
