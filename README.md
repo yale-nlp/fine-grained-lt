@@ -30,3 +30,6 @@ For example,
 ```
 CUDA_VISIBLE_DEVICES=7 WANDB_PROJECT=asset_flant5 nohup python train.py --dataset asset --lr 5e-4 --epochs 10 --batch_size 8 --gradient_accumulation_steps 8 --model flant5_base --weight_decay 0.05 >> nohup_asset_flant5_train.out
 ```
+
+These are some notes on each of the parameters: 
+* `dataset`: One of `asset`, `cochrane`
