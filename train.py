@@ -50,15 +50,18 @@ def compute_metrics(eval_pred):
 
 # Get dataset from arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", required=True)
-parser.add_argument("--lr", required=True)
-parser.add_argument("--epochs", required=True)
-parser.add_argument("--batch_size", required=True)
-parser.add_argument("--checkpoint", default=None, required=False)
-parser.add_argument("--model", required=True)
-parser.add_argument("--predict_only", required=False, default=False, type=bool)
+parser.add_argument("--dataset",            required=True)
+parser.add_argument("--model",              required=True)
+parser.add_argument("--predict_only",       required=False, type=bool,  default=False)
+parser.add_argument("--lr",                 required=False, type=float, default=1e-5)
+parser.add_argument("--epochs",             required=False, type=int,   default=5)
+parser.add_argument("--batch_size",         required=False, type=int,   default=1)
+parser.add_argument("--checkpoint",         required=False, type=str,   default=None)
+parser.add_argument("--weight_decay",       required=False, type=float, default=0.01)
+parser.add_argument("--gradient_accumulation_steps", required=False, type=int, default=1)
 args = parser.parse_args()
-print(f"Using dataset: {args.dataset}, Args: {args.lr} (lr), {args.epochs} (epochs), {args.batch_size} (batch_size), {args.checkpoint} (checkpoint)")
+print(f"Using dataset: {args.dataset}, Args: {args.lr} (lr), {args.epochs} (epochs), {args.batch_size} (batch_size)")
+print(f"{args.gradient_accumulation_steps} (gradient_accumulation_steps), {args.weight_decay} (weight_decay), {args.checkpoint} (checkpoint)")
 
 DATASET_NAME    = args.dataset 
 dataset         = load_dataset('json', data_files=f'data/{DATASET_NAME}.json', field='train')
@@ -71,10 +74,15 @@ if args.model == 'bart':
                                                         if args.checkpoint == None else args.checkpoint)
     tokenizer = BartTokenizer.from_pretrained("facebook/bart-large")
 elif args.model == 'flant5':
-    MODEL_NAME = 'FLANT5'
+    MODEL_NAME = 'FLANT5_LARGE'
     model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large" \
                                                   if args.checkpoint == None else args.checkpoint)
     tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+elif args.model == 'flant5_base':
+    MODEL_NAME = 'FLANT5_BASE'
+    model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base" \
+                                                  if args.checkpoint == None else args.checkpoint)
+    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base")
 else:
     assert False
     
@@ -96,10 +104,14 @@ def preprocess_function(examples):
                                  'labels':        list of lists with findings IDs}
     """
     # Tokenize the Findings (the input)
-    input_str = list(map(lambda s: f"Simplify: {s}", examples["input"])) if args.model == 'flant5' else examples["input"]
-    model_inputs = tokenizer(input_str, max_length=512, padding=True, truncation=True)
+    # input_str = list(map(lambda s: f"Simplify: {s}", examples["input"])) if args.model == 'flant5' else examples["input"]
+    input_str = examples["input"]
+    model_inputs = tokenizer(input_str, max_length=768, padding=True, truncation=True)
     # Tokenize the Impressions (the output)
-    labels = tokenizer([lst[0] for lst in examples["labels"]], max_length=512, padding=True, truncation=True)
+    labels = tokenizer([lst[0] for lst in examples["labels"]], 
+                       max_length=768, 
+                       padding=True, 
+                       truncation=True)
     # Set the label as the token ids (i.e. the vocab IDs) of the findings
     model_inputs["labels"] = labels["input_ids"]
     return model_inputs
@@ -121,18 +133,38 @@ except:
 # Write out the arguments
 MODEL_OUT_NAME = f"{MODEL_NAME}_{DATASET_NAME}"
 
+EFFECTIVE_BATCH = int(args.batch_size)*int(args.gradient_accumulation_steps)
+
 training_args = Seq2SeqTrainingArguments(
     f"models/{MODEL_OUT_NAME}",
-    evaluation_strategy = "epoch",
-    learning_rate=float(args.lr),
-    per_device_train_batch_size=int(args.batch_size),
-    per_device_eval_batch_size=16,
-    weight_decay=0.01,
-    save_total_limit=3,
+    
+    # Training parameters
     num_train_epochs=int(args.epochs),
+    learning_rate=float(args.lr),
+    warmup_steps=1000,
+    per_device_train_batch_size=int(args.batch_size),
+    gradient_accumulation_steps=int(args.gradient_accumulation_steps),
+    weight_decay=float(args.weight_decay),
+    fp16=False,
+    
+    # Evaluation parameters
+    evaluation_strategy="epoch",
+    per_device_eval_batch_size=int(args.batch_size),
     predict_with_generate=True,
-    fp16=True,
-    include_inputs_for_metrics=True
+    generation_max_length=100,
+    include_inputs_for_metrics=True,
+    
+    # Logging parameters
+    logging_strategy="steps",
+    logging_steps=1,
+    run_name=f"{args.dataset}_{MODEL_NAME}_{EFFECTIVE_BATCH}_{args.lr}",
+    report_to="wandb",
+    
+    # Saving parameters
+    save_strategy="epoch",
+    load_best_model_at_end=True,
+    # save_steps = 100 if 'radiology' in args.dataset else 1000,
+    # save_total_limit=3,
 )
 
 data_collator = DataCollatorForSeq2Seq(tokenizer)

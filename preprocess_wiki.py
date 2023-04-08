@@ -116,11 +116,27 @@ if os.path.exists(f"misc/test_{input_dict['name']}_lst.pkl") and os.path.exists(
         train_wiki_input_lst = pickle.load(input_file)
     with open(f"misc/test_{input_dict['name']}_lst.pkl", "rb") as input_file:
         test_wiki_input_lst  = pickle.load(input_file)
+
 else:
     if args.dataset in ['radiology_indiv', 'radiology_full']:
         # Add descriptions to entities from Wikipedia/Medline
         train_wiki_input_lst = list(map(lambda s, v: replace_entities(s, bio=bio_flag, entities=v), train_input_lst, train_vocab_lst))
         test_wiki_input_lst  = list(map(lambda s, v: replace_entities(s, bio=bio_flag, entities=v), test_input_lst,  test_vocab_lst))
+    
+    elif args.dataset == 'cochrane':
+        for idx, item in enumerate(train_input_lst):
+            item_replaced = replace_entities(item, bio=bio_flag)
+            with open(f'data/cochrane/train_{idx}.pkl', 'wb') as handle:
+                pickle.dump(item_replaced, handle, protocol=pickle.HIGHEST_PROTOCOL)
+                
+        for idx, item in enumerate(test_input_lst):
+            item_replaced = replace_entities(item, bio=bio_flag)
+            with open(f'data/cochrane/test_{idx}.pkl', 'wb') as handle:
+                pickle.dump(item_replaced, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        
+        train_wiki_input_lst = [pickle.load(open(f'data/cochrane/train_{idx}.pkl', 'rb')) for idx in range(len(train_input_lst))]
+        test_wiki_input_lst  = [pickle.load(open(f'data/cochrane/test_{idx}.pkl',  'rb')) for idx in range(len(test_input_lst))]
+    
     else:
         # Add descriptions to entities from Wikipedia/Medline
         train_wiki_input_lst = list(map(lambda s: replace_entities(s, bio=bio_flag), train_input_lst))
@@ -143,18 +159,18 @@ input_lst_some  = (train_some_filter, test_some_filter, 'some')
 
 for train_idx, test_idx, filter_type in [input_lst_all, input_lst_some]:
     train_label_lst_ = [[lst[i] for i in train_idx] for lst in train_label_lst]
-    train_input_lst_ = [train_input_lst[i] for i in train_idx]
+    train_input_lst_ = [train_wiki_input_lst[i][0] for i in train_idx]
     test_label_lst_  = [[lst[i] for i in test_idx]  for lst in test_label_lst]
-    test_input_lst_  = [test_input_lst[i] for i in test_idx]
+    test_input_lst_  = [test_wiki_input_lst[i][0]  for i in test_idx]
     
     # Write individual json for each row, first using one reference per input (for training)
     train_json, test_json = [], []
-    for lst in train_label_lst:
+    for lst in train_label_lst_:
         train_json.extend([{'input': a, 'labels': [b]} for \
-                            (a, b) in zip(train_input_lst, lst)])
-    for lst in test_label_lst:
+                            (a, b) in zip(train_input_lst_, lst)])
+    for lst in test_label_lst_:
         test_json.extend([{'input': a, 'labels': [b]} for \
-                            (a, b) in zip(test_input_lst, lst)])
+                            (a, b) in zip(test_input_lst_, lst)])
     output_json_indiv = {'train': train_json, 'test': test_json}
 
     # Output the file
@@ -162,9 +178,9 @@ for train_idx, test_idx, filter_type in [input_lst_all, input_lst_some]:
 
     # Then multiple references per input (for evaluation)
     train_json = [{'input': a, 'labels': b} for \
-                (a, b) in zip(train_input_lst, zip(*train_label_lst))]
+                (a, b) in zip(train_input_lst_, zip(*train_label_lst_))]
     test_json = [{'input': a, 'labels': b} for \
-                (a, b) in zip(test_input_lst, zip(*test_label_lst))]
+                (a, b) in zip(test_input_lst_,  zip(*test_label_lst_))]
     output_json_mult = {'train': train_json, 'test': test_json}
 
     # Output the file

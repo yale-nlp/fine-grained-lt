@@ -1,0 +1,9 @@
+Using custom data configuration default-e4c3ac9eb5cb1c4c
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-e4c3ac9eb5cb1c4c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: output/asset_flant5.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28.78it/s]
+Using custom data configuration default-646ad19b7931721b
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-646ad19b7931721b/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 39.32it/s]
+{'rouge1': 0.3893, 'rouge2': 0.2418, 'rougeL': 0.3641, 'rougeLsum': 0.3638, 'bert_score': 0.8669, 'sari': 25.8263}

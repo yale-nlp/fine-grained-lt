@@ -1,0 +1,9 @@
+Using custom data configuration default-497bb1e729e272ea
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-497bb1e729e272ea/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_bart.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 432.94it/s]
+Using custom data configuration default-6008f3d38acc97fb
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-6008f3d38acc97fb/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 503.82it/s]
+{'rouge1': 0.0875, 'rouge2': 0.0328, 'rougeL': 0.0724, 'rougeLsum': 0.0725, 'bert_score': 0.8305, 'sari': 30.9879}

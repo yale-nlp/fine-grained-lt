@@ -1,0 +1,9 @@
+Using custom data configuration default-4adb766b878611a0
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-4adb766b878611a0/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: turkcorpus_context_all
+Using prediction text file: output/turkcorpus_context_all_flant5.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 144.95it/s]
+Using custom data configuration default-13e32d7d208c5601
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-13e32d7d208c5601/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 140.30it/s]
+{'rouge1': 0.6036, 'rouge2': 0.5011, 'rougeL': 0.5894, 'rougeLsum': 0.5882, 'bert_score': 0.8893, 'sari': 34.9096}
