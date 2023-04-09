@@ -25,10 +25,10 @@
  Lungs/Airways/Pleura: Numerous sub-4 mm nodu
  Signs of large airway disease include mild bronchiectasis and areas
  Mild coronary artery calcifications.
- Lungs/Airways/Pleura : Interval resolution of right lower 
+ Lungs/Airways/Pleura : Interval resolution of right lower
  Upper lobe emphysema is a paraseptal
  Mild secretions within the trachea.
- Mediastinum/Lymph nodes: Interval resolution of thoracic 
+ Mediastinum/Lymph nodes: Interval resolution of thoracic
  The right fourth anterolateral rib fracture was again noted.
  There is mild bibasilar atelectasis.
  Upper Abdomen: Mild hepatic steatosis.
@@ -45,7 +45,7 @@
  Small pneumomediastinum.
  Small amount of subcutaneous emphysema along the right lateral chest
  There is interval stability of a dominant left lower lobe soft tissue mass measuring 5.8
- An unchanged left upper lobe paravertebral soft tissue mass measures 8.8 
+ An unchanged left upper lobe paravertebral soft tissue mass measures 8.8
  Postradiation changes are seen in the left upper lobe.
  Interval increased pleural effusions with stable pleural nodularity and
  Mediastinum/Lymph nodes: There are stably enlarged cardiop
@@ -79,7 +79,7 @@
  Postsurgical changes of the right breast and axilla.
  Lungs/Airways/Pleura: Right middle lobe and ling
  Biapical pleuroparenchymal scarring is seen.
- Simplify: Lungs/Airways/Pleura: Scattered 
+ Simplify: Lungs/Airways/Pleura: Scattered
  Calcifications throughout the hilar and mediastinal distributions.
  Routine age-related degenerative changes throughout the thoracic spine.
  Lungs/Airways/Pleura: There is persistent occlusion of
@@ -98,9 +98,9 @@
  Cardiomegaly is a condition in which the heart and arteries are enlarged.
  Degenerative changes are seen in the visualized spine.
  The left breast has a scar.
- Lungs/Airways/Pleura : Mild centrilobular 
+ Lungs/Airways/Pleura : Mild centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
- A 1.1 cm right lower lobe pulmonary nodule in series 3 image 
+ A 1.1 cm right lower lobe pulmonary nodule in series 3 image
  Enlarged heterogeneous thyroid.
  Severe atherosclerotic calcifications of the coronary arteries
  Calcifications of the mitral annulus and aortic valve.
@@ -128,7 +128,7 @@
  Other additional scattered pulmonary nodules in the bilateral lungs are unchanged, representative examples include
  Mediastinal nodes: No significant change in mediastinal nodes, representative
  Mild coronary artery calcifications.
- No significant change in stable sclerotic osseous metastases involving 
+ No significant change in stable sclerotic osseous metastases involving
  A large hiatal hernia is noted.
  Sclerotic metastasis in T2 vertebral body is unchanged.
  Lungs/Airways/Pleura : Stable size of the right upper
@@ -143,13 +143,13 @@
  The gastric conduit is a narrow tube that carries food and fluids from the stomach
  Coronary artery calcifications.
  The right kidney is nonobstructing.
- Cholelithiasis is a disease in which the bile is 
+ Cholelithiasis is a disease in which the bile is
  Post distal pancreaticectomy, the bowels are resected.
  The ribs are shattered.
  Lungs/Airways/Pleura : Multiple stable pulmonary nodules
  The right thyroid lobe mass measuring approximately 3 cm is stable in size.
  There are mild coronary calcifications.
- Diffuse interlobular septal thickening, and alveolar groundglass 
+ Diffuse interlobular septal thickening, and alveolar groundglass
  Mosaic attenuation with lobular shaped lucencies could be secondary
  Mediastinum/Lymph nodes: There is an enlarged lower paratrache
  Additionally, there is an enlarged right infrahilar node, measuring
@@ -165,7 +165,7 @@
  Stable superior segment left lower lobe 5 mm solid nodule (4:139
  Upper Abdomen: Prior cholecystectomy.
  There is upper lobe predominant paraseptal and centrilobular em
- Nodular soft tissue densities in the thymic bed, likely representing 
+ Nodular soft tissue densities in the thymic bed, likely representing
  Lungs/Airways/Pleura: Multiple scattered bilateral pulmonary nodules
  The right rib fracture was healed.
  New mild groundglass opacities in the left upper lobe (5:131,
@@ -178,17 +178,17 @@
  The mediastinal lymph nodes are stable and prominent.
  Mild coronary and aortic calcifications are again noted.
  The patient is status post left lower lobe wedge resection.
- Upper lobe predominant centrilobular emphysema and 
+ Upper lobe predominant centrilobular emphysema and
  Stable 1.3 cm paratracheal lymph node (series 4, image 218)
  Small hiatal hernia is a hernia in the stomach.
  Small amount of pericardial fluid posteriorly.
  The lesion was 2.1 cm in diameter.
- Lungs/Airways/Pleura : Secretions in the right upper 
+ Lungs/Airways/Pleura : Secretions in the right upper
  Diffuse mild bronchial wall thickening and mild bronchiect
  Mild biapical scarring.
  Mild interlobular septal thickening, improved from prior exam.
  Improve groundglass opacities and consolidations.
- Improving consolidation and groundglass opacities at the right lung base and left lower 
+ Improving consolidation and groundglass opacities at the right lung base and left lower
  Clusters of micronodules in the left upper and lower lobes (5
  Small right pleural effusion, similar to prior exam.
  Left pleural effusion has resolved.
@@ -197,7 +197,7 @@
  Cardiomegaly with predominantly left atrial and left ventricular enlargement.
  Calcified left ventricular apex infarct.
  Cardiovascular disease.
- There is a spiculated mass centered in the right hilum measuring approximately 
+ There is a spiculated mass centered in the right hilum measuring approximately
  Postobstructive pneumonia is a condition characterized by the extension of soft tissue/
  Upper lobe predominant centrilobular emphysema.
  However, there are right paratracheal lymph nodes measuring up to 1.2 cm and
@@ -209,7 +209,7 @@
  Moderate atherosclerotic calcifications of the coronary arteries and
  Osseous structures and Soft Tissues: Healed median sterno
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : The 5 mm left lower 
+ Lungs/Airways/Pleura : The 5 mm left lower
  Routine age-related degenerative changes throughout the thoracic spine.
  Simplify: New 5 mm soft tissue attenuation nodule in the
  Mild diffuse bronchial wall thickening and foci of distal muco
@@ -224,7 +224,7 @@
  Osteotomy in the left humeral head.
  Mild bronchiectasis.
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : Mild centrilobular 
+ Lungs/Airways/Pleura : Mild centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Other smaller pulmonary nodules including a 9 mm groundglass nodule in
  Atherosclerosis is a calcification of the coronary arteries and a
@@ -260,7 +260,7 @@
  The main pulmonary artery is mildly dilated (32 mm).
  Lungs/Airways/Pleura : Signs of large airway disease
  Linear scarring or atelectasis along the fissures and in
- Scattered pulmonary nodules measuring up to 4 mm in the right lower 
+ Scattered pulmonary nodules measuring up to 4 mm in the right lower
  Routine age-related degenerative changes throughout the thoracic spine.
  Mild dependent atelectasis.
  Few scattered cysts are seen in the right lung lower lobe.
@@ -277,7 +277,7 @@
  The ascending aorta measures 45 mm.
  Mild aortic valve calcifications.
  Lungs/Airways/Pleura: Elongated nodule along the
- Mediastinal nodes: Prevascular mediastinal node measuring up to 
+ Mediastinal nodes: Prevascular mediastinal node measuring up to
  Simplify: Osseous structures and Soft Tissues: Benign-
  Routine age-related degenerative changes throughout the thoracic spine.
  Mild diffuse bronchial wall thickening with foci of mucoid
@@ -323,7 +323,7 @@
  Multiple old left rib fracture deformities are present.
  Lungs/Airways/Pleura: Bibasilar subseg
  Central height loss of the T4 and T5 vertebral bodies appear chronic.
- Lungs/Airways/Pleura: There are scattered sub-6 mm 
+ Lungs/Airways/Pleura: There are scattered sub-6 mm
  Mild multilobar lower lobes with predominant bronchiectas
  Upper lobe predominant centrilobular and paraseptal emphys
  Biapical, right greater than left, scarring.
@@ -341,11 +341,11 @@
  Routine age-related degenerative changes throughout the thoracic spine.
  There is stable volume loss of the left lung, with extensive fibrotic changes in the left
  However, there is interval worsening in left basilar consolidative opacities.
- The right lower lobe nodule is 5 mm, and the left upper 
+ The right lower lobe nodule is 5 mm, and the left upper
  Dependent mucous secretions are present in the superior and mid trachea.
  Scattered sub-5 mm lung nodules are stable, for example a 5
  8 mm groundglass nodule in the right upper lobe also remains stable (
- The finding on radiograph corresponds to a 4.8 x 4.6 x 
+ The finding on radiograph corresponds to a 4.8 x 4.6 x
  4 mm left upper lobe pulmonary nodule in series 4 image 253
  Mediastinum/Lymph nodes: Right lower paratracheal lymph nodes
  Upper paratracheal adenopathy measuring up to 1.1 cm short axis
@@ -435,10 +435,10 @@
  Scattered patchy airspace opacities are noted, most prominently in the
  Small bilateral pleural effusions are present.
  There is new airspace consolidation at the medial aspect of the right upper lobe.
- Multiple new right upper lobe nodules are also noted, measuring up to 3 
+ Multiple new right upper lobe nodules are also noted, measuring up to 3
  Left lower lobe atelectasis has increased, with interval increase in left
  The heart size is stably enlarged.
- Chest: There is pulmonary interlobular septal thickening at the upper 
+ Chest: There is pulmonary interlobular septal thickening at the upper
  Dependent and subsegmental atelectasis noted in the ling
  A 6 mm groundglass left upper lobe nodule is unchanged (image 20,
  Other scattered sub-4 mm pulmonary nodules are also unchanged.
@@ -450,13 +450,13 @@
  Mild subpleural reticulation is seen anteriorly in the left upper lob
  The lungs are swollen.
  A new small left pleural effusion is present.
- Lungs/Airways/Pleura : Moderate centrilobular 
+ Lungs/Airways/Pleura : Moderate centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Linear scarring or atelectasis in the lung bases.
  Mediastinum/Lymph nodes: Increase in size of multiple right axill
- Increasing right hilar adenopathy measuring up to 1.7 cm short 
+ Increasing right hilar adenopathy measuring up to 1.7 cm short
  Increased subcarinal lymph nodes measuring up to 1.6 and meter short axi
- Increasing periaortic adenopathy measuring up to 1.3 cm short 
+ Increasing periaortic adenopathy measuring up to 1.3 cm short
  Routine age-related degenerative changes throughout the thoracic spine.
  Lungs/Airways/Pleura: Near-complete resolution of the previous left
  Bilateral lower lobe predominant subpleural fine reticulations, associated with mild
@@ -466,7 +466,7 @@
  The mediastinum/Lymph nodes are unchanged.
  There is biatrial enlargement.
  Post CABG, status is 'Failed'.
- Lungs/Airways/Pleura : Mild paraseptal 
+ Lungs/Airways/Pleura : Mild paraseptal
  Diffuse bronchial wall thickening is a sign of large airway
  Mediastinum/Lymph nodes: Retrocrural adenopathy entering up
  Postsurgical changes consistent with previous left nephrectomy.
@@ -479,11 +479,11 @@
  1.8 cm groundglass nodule in the left upper lobe in series 3 image
  Simplify: Osseous structures and Soft Tissues: Lytic bon
  Status post left lower lobe wedge resection.
- Basilar predominant reticulations, and groundglass opacities, compatible with 
- Mediastinum/Lymph nodes: Right interlobar and subcarinal 
+ Basilar predominant reticulations, and groundglass opacities, compatible with
+ Mediastinum/Lymph nodes: Right interlobar and subcarinal
  There is a small hiatal hernia.
  Calcification of the posterior mitral annulus is noted.
- Lungs/Airways/Pleura : Mild centrilobular 
+ Lungs/Airways/Pleura : Mild centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Linear scarring or atelectasis in the lung bases.
  Mediastinum/Lymph nodes: Calcified lymph nodes in the right
@@ -509,18 +509,18 @@
  Moderate atherosclerotic calcifications of the coronary arteries and
  The mixed lytic and sclerotic bony lesion involving the right fifth
  Lungs/Airways/Pleura : Right upper lobe 3.5
- Right lower lobe spiculated nodule 2.6 x 1.6 
+ Right lower lobe spiculated nodule 2.6 x 1.6
  Mild diffuse esophageal wall thickening which can be seen in the
  Small hiatus hernia Heart and Vessels: Heart is normal in size
  Mild aortic calcifications.
  Scattered lucent lesions in the spine (for example C7, T3
- Lungs/Airways/Pleura : There is bibasilar 
+ Lungs/Airways/Pleura : There is bibasilar
  There is three-vessel coronary artery disease.
- Lungs/Airways/Pleura: There are new sub-4 mm 
+ Lungs/Airways/Pleura: There are new sub-4 mm
  The right upper lung is the location of small airways disease.
  Three-vessel coronary artery calcification is a condition.
  There is diffuse osseous metastatic disease with pathologic rib fractures.
- Lungs/Airways/Pleura: There is a stable sub-3 
+ Lungs/Airways/Pleura: There is a stable sub-3
  Upper Abdomen: There is a small hiatal hernia.
  The sclerotic lesions are stable in the T1 and T10 vertebra
  Scattered sub-4 mm lung nodules remain stable, for example in the left
@@ -530,15 +530,15 @@
  There are mild atherosclerotic calcifications of the coronary arteries
  Upper Abdomen: Prior cholecystectomy with dilatation of
  Bilateral shoulder arthroplasties are performed on the left shoulder.
- Lungs/Airways/Pleura : The right middle and bilateral lower 
- In the aerated upper lobes, there are multiple cavitary 
+ Lungs/Airways/Pleura : The right middle and bilateral lower
+ In the aerated upper lobes, there are multiple cavitary
  Small bilateral pneumothoraces with chest tubes in place.
  Routine age-related degenerative changes throughout the thoracic spine.
  Symptoms of subcutaneous emphysema in the chest wall.
- Lungs/Airways/Pleura: There is a new sub-3 
+ Lungs/Airways/Pleura: There is a new sub-3
  Ongoing evolution of postradiation changes in the right upper and middle lobes with
  The patient is status post bilateral breast implants. The patient is status post bilateral mastectomy, tiny
- Dependent peripheral groundglass opacities in the lower lobes may represent 
+ Dependent peripheral groundglass opacities in the lower lobes may represent
  Extensive coronary artery calcifications are present.
  The aortic calcifications are seen.
  A small hiatal hernia is noted.
@@ -616,7 +616,7 @@
  Lungs/Airways/Pleura: Status post left upper lobectomy.
  Diffuse bronchial wall thickening.
  Scattered foci of mucoid impaction (for example in the right middle
- Scattered sub-4 mm nodules noted, stable since at least 2018. No 
+ Scattered sub-4 mm nodules noted, stable since at least 2018. No
  Mild diffuse esophageal wall thickening.
  Coronary artery calcifications.
  Stable 5 mm right upper lobe groundglass nodule (4159).
@@ -625,7 +625,7 @@
  Mild diffuse esophageal wall thickening which can be seen in the
  Small hiatus hernia is a hernia that is caused by
  Lipomatous hypertrophy of the interatrial septum.
- Pulmonary hypertension is a condition in which the main pulmonary artery is 
+ Pulmonary hypertension is a condition in which the main pulmonary artery is
  Mild aortic calcifications.
  Small pericardial fluid.
  Mediastinum/Lymph nodes: There is bilateral hilar and media
@@ -668,12 +668,12 @@
  Lungs/Airways/Pleura : 4 mm left upper lob
  Nodular thyroid with subcentimeter thyroid nodules.
  Mild atherosclerotic calcifications of the coronary arteries and
- Cholelithiasis is a disease in which the bile is 
+ Cholelithiasis is a disease in which the bile is
  Routine age-related degenerative changes throughout the thoracic spine.
  Nodular thyroid with subcentimeter thyroid nodules.
  Severe atherosclerotic calcifications of the coronary arteries
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : Unchanged appearance to right 
+ Lungs/Airways/Pleura : Unchanged appearance to right
  Right upper lobe 1.3 cm irregular shaped nodule adjacent to right major fi
  Mediastinum/Lymph nodes: Stable 2.2 cm lower right paratrac
  Mild left atrial predominant cardiomegaly.
@@ -707,7 +707,7 @@
  Upper Abdomen: Periportal adenopathy is again noted, better evaluated
  Chronic fibrotic interstitial lung disease marked by subpleural reticulations,
  The left lower lobe has a groundglass opacity of 357.
- Scattered pulmonary nodules are noted (for example 3 mm left upper 
+ Scattered pulmonary nodules are noted (for example 3 mm left upper
  Patulous esophagus with small hiatus hernia.
  Post CABG, status is 'Failed'.
  Severe coronary artery calcifications.
@@ -770,7 +770,7 @@
  Calcifications of the coronary artery, aortic and aor
  Osseous structures and Soft Tissues: Expansion of fluid from the
  Lungs/Airways/Pleura: Stable postsurgical changes consistent with prior
- Scattered pulmonary nodules measuring up to 5 mm in the right middle 
+ Scattered pulmonary nodules measuring up to 5 mm in the right middle
  Osseous structures and Soft Tissues: Healed median sterno
  Routine age-related degenerative changes throughout the thoracic spine.
  Mild emphysema.
@@ -799,7 +799,7 @@
  The aortic arch is a curved arch of the aorta
  The sternum is a soft tissue. The sternum is a soft tissue
  Small amount of expected postoperative subcutaneous emphysema.
- The primary lesion in the right upper lobe is unchanged measuring 5.3 x 
+ The primary lesion in the right upper lobe is unchanged measuring 5.3 x
  Scattered nodules at the apices bilaterally measuring up to 5 mm
  Lungs/Airways/Pleura: There is a large left ple
  Severe coronary calcifications are seen.
@@ -807,7 +807,7 @@
  Status post cholecystectomy.
  Cirrhotic morphology of the liver.
  Lungs/Airways/Pleura : Stable nodular ple
- Lungs/Airways/Pleura : Moderate centrilobular 
+ Lungs/Airways/Pleura : Moderate centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Biapical scarring is a type of scarring that occurs on the b
  Scattered pulmonary nodules including a 3 mm right upper lobe
@@ -848,7 +848,7 @@
  Enlarging 8 mm subpleural nodule in the left upper lob
  A stable hypodense nodule is noted at the right cardiophrenic angle.
  The sternum is a soft tissue.
- The biapical nodularity is seen on the right, measuring 1.9 
+ The biapical nodularity is seen on the right, measuring 1.9
  Upper lobe predominant advanced paraseptal and centrilobular emphy
  Mucous secretions in the right mainstem bronchus.
  Small pericardial effusion.
@@ -901,7 +901,7 @@
  Scattered foci of mucoid impaction are noted (for example right lower
  Lungs/Airways/Pleura : Large amount of mucous secret
  Left lower lobe 3 mm nodule.
- Interlobular septal thickening and increased reticulations in the right middle 
+ Interlobular septal thickening and increased reticulations in the right middle
  Increased subpleural reticulations are also noted in the left lower lobe
  Scattered clusters of micronodular densities, probably related to small
  Mediastinum/Lymph nodes: Subcarinal node measures 1.2 cm
@@ -931,7 +931,7 @@
  There is a small hiatal hernia.
  The aortic valve is calcified.
  Upper Abdomen: Status post cholecystectomy.
- There are multilevel subchondral lucencies in multiple endplates of the 
+ There are multilevel subchondral lucencies in multiple endplates of the
  Posterior segment right lower lobe 12 mm subpleural nodule
  Evolving post-radiation changes in the right lung.
  Significant interval decrease/near resolution of groundglass opacities noted on the July 20
@@ -943,7 +943,7 @@
  Diffuse bronchial wall thickening is a sign of airway disease
  Moderate atherosclerotic calcifications of the coronary arteries and
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : Endobronchial 3 
+ Lungs/Airways/Pleura : Endobronchial 3
  Right lower lobe subpleural 4 mm nodule (424).
  Left lower lobe 5 mm groundglass opacity (4237).
  Left lower lobe 3 mm micronodule (436).
@@ -968,7 +968,7 @@
  Osseous structures and Soft Tissues: Healed median sterno
  Routine age-related degenerative changes throughout the thoracic spine.
  Biapical scarring is a type of scarring that occurs on the b
- Focal bronchiectasis and scarring associated to the right upper 
+ Focal bronchiectasis and scarring associated to the right upper
  Basal and peripheral predominant subpleural reticulations, mild subpleural cystic
  The interlobular septum is thickened.
  Small bilateral pleural effusions.
@@ -986,13 +986,13 @@
  Severe three-vessel coronary artery calcifications are present.
  Chronic deformity of the superior sternal body.
  L2 compression deformity is stable from prior.
- Status post left pneumonectomy with near complete expected replacement of the pneumonectomy space with 
+ Status post left pneumonectomy with near complete expected replacement of the pneumonectomy space with
  A small amount of residual air within the pleural space could represent resolving pneu
  Right apical paraseptal emphysema is noted
  The right apical paramediastinal density is a scar. The right
  Right atrium is enlarged.
  Trace pericardial fluid.
- The main pulmonary artery is dilated. Pulmonary hypertension is 
+ The main pulmonary artery is dilated. Pulmonary hypertension is
  A right hilar node noted stably measures 13 mm.
  Noted old bilateral rib fracture deformities.
  Colonic diverticulosis is a condition in which the diverticulum
@@ -1030,7 +1030,7 @@
  A small pericardial effusion is unchanged.
  Linear right lower lobe airspace opacity likely represents subseg
  A 3 mm subpleural nodule in the right middle lobe is unchanged
- Bones and soft tissue: Again noted are old left lateral 5th-7th 
+ Bones and soft tissue: Again noted are old left lateral 5th-7th
  Compressive atelectasis in the left lower lobe due to the large
  Moderate atherosclerotic calcifications of the coronary arteries and
  Large hiatal hernia which contains the majority of the stomach.
@@ -1059,12 +1059,12 @@
  The mass effect on the mainstem bronchi is greater on the left, from adjacent
  Mediastinal lymph nodes are unchanged enlarged.
  The esophagus is curved.
- Heart and Vessels:Segmental and subsegmental right lower 
+ Heart and Vessels:Segmental and subsegmental right lower
  The patient is asymptomatic.
  There are mild coronary calcifications.
  The thoracic spine, sternum, and bilateral ribs are all involved
  Lungs/Airways/Pleura : Platelike atelectas
- Mild centrilobular emphysematous changes with an upper 
+ Mild centrilobular emphysematous changes with an upper
  Diffuse bronchial wall thickening is a sign of large airway
  Using a needle, insert the needle into the pericardium.
  Mild atherosclerotic calcifications of the coronary arteries and
@@ -1072,7 +1072,7 @@
  Nodular thyroid with subcentimeter thyroid nodules.
  Moderate atherosclerotic calcifications of the coronary arteries and
  Routine age-related degenerative changes throughout the thoracic spine.
- Severe aortic valve calcification with diffuse thickening of the 
+ Severe aortic valve calcification with diffuse thickening of the
  Extensive coronary artery calcifications are present.
  There is bibasilar consolidations and reticular markings.
  Scarring/atelectasis is also seen in the right medial upper lob
@@ -1097,7 +1097,7 @@
  Lungs/Airways/Pleura : Stable subpleural nodu
  Nodules along the fissures are unchanged and likely represent intrapulmonary lymph nodes
  The irregular nodule in the right upper lobe has slightly increased, previously 1.1
- Additional scattered sub-5 mm lung nodules are stable, for example a 5 
+ Additional scattered sub-5 mm lung nodules are stable, for example a 5
  The lungs are swollen.
  Scattered pulmonary nodules measuring up to 4 mm in series 4 image 24
  Routine age-related degenerative changes throughout the thoracic spine.
@@ -1111,7 +1111,7 @@
  Nodular thyroid with stable thyroid nodules.
  Moderate atherosclerotic calcifications of the coronary arteries and
  Routine age-related degenerative changes throughout the thoracic spine.
- There are unchanged moderate pleural effusions, greater on the right, with adjacent 
+ There are unchanged moderate pleural effusions, greater on the right, with adjacent
  Ill-defined bilateral upper lobe mosaicism is compatible with small airway disease
  There is biatrial enlargement.
  Small unchanged pericardial effusion.
@@ -1122,7 +1122,7 @@
  Scattered sub-4 mm lung nodules are stable, for example in the left
  Mild emphysema and mild diffuse bronchial wall thick
  Lungs/Airways/Pleura : Right lower lobe 3.1
- Mild diffuse bronchial wall thickening and lower lobes predominant 
+ Mild diffuse bronchial wall thickening and lower lobes predominant
  Upper lobe predominant centrilobular and paraseptal emphys
  Mild diffuse esophageal wall thickening which can be seen in the
  Large hiatus hernia is a hernia that is located in
@@ -1173,7 +1173,7 @@
  Post CABG, status is 'Failed'.
  Scattered sub-5 mm lung nodules are stable, for example in the right
  The nodule is in the right lateral chest wall.
- Lungs/Airways/Pleura: A posterior right lower lobe 
+ Lungs/Airways/Pleura: A posterior right lower lobe
  Curvilinear band of atelectasis in the medial segment of middle
  Small hiatal hernia with diffuse thickening of the distal e
  Mild coronary and aortic calcifications including valvular leaf
@@ -1199,7 +1199,7 @@
  Cardiovascular disease.
  Stable sclerosis of the left 10th rib.
  Lungs/Airways/Pleura: Mosaic attenuation throughout
- Scattered pulmonary nodules measuring up to 4 mm in the left upper 
+ Scattered pulmonary nodules measuring up to 4 mm in the left upper
  Main pulmonary artery measures up to 3.2 cm which is mildly enlarged.
  Routine age-related degenerative changes throughout the thoracic spine.
  Mild diffuse bronchial wall thickening is consistent with airways disease.
@@ -1219,7 +1219,7 @@
  Mild coronary artery calcifications.
  The main pulmonary artery measures 30 mm.
  Lungs/Airways/Pleura: Stable scattered lung nodules measuring
- Stable prominent mediastinal lymph nodes, for example upright paratracheal 
+ Stable prominent mediastinal lymph nodes, for example upright paratracheal
  Mild coronary calcifications.
  Lungs/Airways/Pleura : Anterior left upper lob
  The central left upper lobe component now measures 2.2 x 1.3 cm, previously
@@ -1275,13 +1275,13 @@
  Mild bronchial wall thickening is noted.
  Mild subtle groundglass opacities in the left lower lobe are nonspecific
  There is a small hiatal hernia.
- Lungs/Airways/Pleura: There is a 2-3 mm 
+ Lungs/Airways/Pleura: There is a 2-3 mm
  The axillary node is enlarged.
  Upper Abdomen: Status post cholecystectomy.
  Routine age-related degenerative changes throughout the thoracic spine.
  Mediastinum/Lymph nodes: Left supraclavicular adenopathy
  The periortic soft tissue measuring up to 1.6 cm short axis in image
- There are scattered tree-in-bud nodular opacities in the left 
+ There are scattered tree-in-bud nodular opacities in the left
  The fluid collection is 10 x 2 cm transversely x 7 cm cranio
  Inferiorly, there appears to be nonorganized edema along the chest
  Mild hyperdensity along the cutaneous surface of the reconstructed right chest could
@@ -1304,7 +1304,7 @@
  The fluid is flowing along the left paracolic gutter.
  Apparent right gluteal hematoma with peripheral calcification extends along the
  Lungs/Airways/Pleura: Bibasilar atelecta
- Partially visualized cervical spine reveals presumably degenerative changes, including endplate 
+ Partially visualized cervical spine reveals presumably degenerative changes, including endplate
  Mediastinum/Lymph nodes: The cystic lesion at the level of
  Routine age-related degenerative changes throughout the thoracic spine.
  Lungs/Airways/Pleura: Status post right lower lobectomy.
@@ -1340,7 +1340,7 @@
  Nodular densities in the thymic bed, likely representing thy
  Scattered sub-5 mm lung nodules are stable, for example in the right
  Extensive coronary artery calcifications are present.
- The focal wedge-shaped opacities in the posterior aspect of the bilateral upper 
+ The focal wedge-shaped opacities in the posterior aspect of the bilateral upper
  Focal areas of thickening along the right fissure also unchanged (e.g
  Mucosal and/or luminal hyperdensity is seen in the fourth portion
  The patient is again status post left radical nephrectomy, renal but partially
@@ -1358,7 +1358,7 @@
  Small pericardial effusion.
  Lungs/Airways/Pleura : Nodularities along the bilateral
  Additionally numerous bilateral scattered lung nodules, representative examples include 5.5 mm right a
- Fine nodularities and ill-defined groundglass opacities along the 
+ Fine nodularities and ill-defined groundglass opacities along the
  Mediastinum/Lymph nodes: Diffuse mediastinal and bilateral
  Mosaicism in the bilateral lower lobes with lobular shaped luc
  Curvilinear and linear bands of atelectasis in the lingul
@@ -1384,13 +1384,13 @@
  Small hiatal hernia is a hernia in the stomach.
  There are mild atherosclerotic calcifications of the coronary arteries
  Postsurgical changes of the right breast are noted.
- Lungs/Airways/Pleura : Moderate centrilobular 
+ Lungs/Airways/Pleura : Moderate centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Scattered pulmonary nodules including a 5 mm groundglass nodule
  Mild atherosclerotic calcifications of the coronary arteries and
  Upper Abdomen: Status post cholecystectomy.
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : Moderate centrilobular 
+ Lungs/Airways/Pleura : Moderate centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Linear scarring or atelectasis in the lingula and left
  Severe atherosclerotic calcifications of the coronary arteries
@@ -1407,20 +1407,20 @@
  Mitral annulus and aortic annulus calcifications.
  Osseous structures and Soft Tissues: Post surgical changes of the t
  Lungs/Airways/Pleura: Again seen right upper lobe sub
- Osseous structures and Soft Tissues: Unchanged appearance to widespread 
+ Osseous structures and Soft Tissues: Unchanged appearance to widespread
  Lungs/Airways/Pleura : Elevation the right he
  Mild atherosclerotic calcifications of the coronary arteries and
  Routine age-related degenerative changes throughout the thoracic spine.
  There are secretions within the trachea and mainstem bronchi.
  Follow-up CT in 6-12 weeks, after resolution of symptoms and treatment, is recommended.
  Upper abdomen: Hepatic steatosis.
- Lungs/Airways/Pleura : Interval resolution of groundglass 
- Upper lobe emphysema with bullous changes in the 
+ Lungs/Airways/Pleura : Interval resolution of groundglass
+ Upper lobe emphysema with bullous changes in the
  The trachea is a large sac that contains the air sacs. The air
  Mild bronchial wall thickening and bronchiectasis
  High density material in the right pleural space is likely related to prior pleurodes
  The peripheral right lower lobe is the most common location for groundglass opacity
- Right apical 1.2 cm groundglass nodule (4/68) and 
+ Right apical 1.2 cm groundglass nodule (4/68) and
  Moderate to large sized hiatal hernia.
  Lungs/Airways/Pleura : Interval right upper lobe
  Multiple pulmonary nodules which are unchanged from most recent CT on 3/24/2021
@@ -1429,8 +1429,8 @@
  There is a small hiatal hernia.
  Lungs/Airways/Pleura : Stable scattered lung nodules
  The atelectasis is bibasilar subsegmental and linear
- The central pulmonary artery enlargement to 3.7 cm may be suggestive of 
- Moderate coronary calcifications and aortic calcifications including 
+ The central pulmonary artery enlargement to 3.7 cm may be suggestive of
+ Moderate coronary calcifications and aortic calcifications including
  Bilateral gynecomastia again noted.
  Left worse than right bilateral peribronchial groundglass and consolidative opacities
  Small left pleural effusion.
@@ -1452,7 +1452,7 @@
  The right lower lobe posterior costal pleural calcification is nonspecific.
  Stable mild dilatation of descending aorta at 4.1 cm.
  Moderate coronary calcifications.
- Lungs/Airways/Pleura: Persistently elevated right 
+ Lungs/Airways/Pleura: Persistently elevated right
  Mild aortic valvular calcifications.
  Moderate coronary calcifications.
  Although the study is not tailored for evaluation of pulmonary arteries; a filling defect
@@ -1467,7 +1467,7 @@
  Small right pleural effusion, decreased from prior exam.
  Mediastinum/Lymph nodes: Mild mediastinal aden
  Prior cervicothoracic fixation.
- Lungs/Airways/Pleura : Mild paraseptal 
+ Lungs/Airways/Pleura : Mild paraseptal
  Diffuse bronchial wall thickening is a sign of large airway
  Mild atherosclerotic calcifications of the coronary arteries and
  Small hiatal hernia is a hernia in the stomach.
@@ -1510,7 +1510,7 @@
  Small hiatus hernia is a hernia that is caused by
  Osseous structures and Soft Tissues: Known left breast malignancy
  Diffuse osseous metastatic disease, similar to prior exam.
- Lungs/Airways/Pleura : Mild centrilobular 
+ Lungs/Airways/Pleura : Mild centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Moderate atherosclerotic calcifications of the coronary arteries and
  Routine age-related degenerative changes throughout the thoracic spine.
@@ -1560,7 +1560,7 @@
  The fractures are remote.
  Lungs/Airways/Pleura : Mild diffuse bronchiec
  Mild secretions within the trachea.
- Lungs/Airways/Pleura : Moderate centrilobular 
+ Lungs/Airways/Pleura : Moderate centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
  Scattered bilateral pulmonary nodules measuring up to 8 mm in the right lower
  Mediastinal adenopathy with central necrosis is unchanged in size compared
@@ -1578,7 +1578,7 @@
  Routine age-related degenerative changes throughout the thoracic spine.
  Lungs/Airways/Pleura : There are multiple new peripheral, lower
  Mild biapical pleural scarring.
- The new linear opacity in the medial right lung apex is 
+ The new linear opacity in the medial right lung apex is
  Simplify: Attention on follow-up is recommended.
  Degenerative changes of the thoracic spine.
  Mild diffuse bronchial wall thickening, probably related to airways disease.
@@ -1627,7 +1627,7 @@
  The bones and soft tissue: Old right anterior rib fractures aren't changed.
  Nodularity is unchanged compared to 10/19/2020.
  Left paramediastinal 1.2 cm soft tissue nodule (series 3, image
- Lingular tree-in-bud nodules are seen again. They are likely 
+ Lingular tree-in-bud nodules are seen again. They are likely
  There is a small hiatal hernia.
  Cholelithiasis is a condition that affects the upper abdomen.
  The thoracic spine, sternum, and bilateral ribs are all shown
@@ -1677,12 +1677,12 @@
  Scattered sub-5 mm lung nodules are stable, for example in the right
  The right pleural effusion is small bilateral with adjacent atelectasis.
  Enlarged thyroid gland with multiple nodules is seen.
- The patient is a 62 year old man with multiple old spinal compression fractures and 
+ The patient is a 62 year old man with multiple old spinal compression fractures and
  Associated atelectasis is also decreased.
  However, it appears improved as evidenced by 1.5 cm pleural metastasis anterior
  Mediastinal lymphadenopathy has improved.
  Previously seen lesions in the right anterior ribs are now more scler
- Scattered sub-4 mm lung nodules are stable, for example a 
+ Scattered sub-4 mm lung nodules are stable, for example a
  Mild emphysema is noted.
  Right axillary lymphadenopathy measures up to 1.5 cm, previously 1.9 cm
  The subcarinal node is 1.3 cm. The mediastinal lymphaden
@@ -1698,21 +1698,21 @@
  The bone metastatic disease is similar to the prior study.
  Lungs/Airways/Pleura : Scattered pulmonary nodu
  Simplify: <unk>
- Simplify: Lucent lesion in the right fourth rib in series 5 image 
+ Simplify: Lucent lesion in the right fourth rib in series 5 image
  Intramuscular lipomas in the right shoulder left back, a benign finding.
  Scattered stable micronodules (for example 5:40,55,116
  Mild coronary artery and aortic calcifications.
  Lungs/Airways/Pleura: Scattered pulmonary nodules
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : Mild centrilobular 
+ Lungs/Airways/Pleura : Mild centrilobular
  Diffuse bronchial wall thickening is a sign of large airway
- Patchy groundglass in the lung apices including nodules measuring up to 6 
+ Patchy groundglass in the lung apices including nodules measuring up to 6
  Mediastinum/Lymph nodes: Soft tissue in the right hilum is unchanged
  Nodular thyroid with subcentimeter thyroid nodules.
  Mild atherosclerotic calcifications of the coronary arteries and
  Routine age-related degenerative changes throughout the thoracic spine.
  Lungs/Airways/Pleura : Enlarging 7 mm
- Enlarging 4 mm left apex nodule, previously 2 
+ Enlarging 4 mm left apex nodule, previously 2
  Additional scattered sub-4 mm nodules are unchanged.
  Upper lobe predominant centrilobular emphysema.
  Patulous esophagus.
@@ -1743,12 +1743,12 @@
  Postsurgical changes of bilateral mastectomy and breast implants.
  There are large bilateral pleural effusions, pulmonary edema as well
  Moderate coronary artery calcification burden Upper Abdomen: Findings in the
- Lungs/Airways/Pleura: Interval resolution of the previous left 
+ Lungs/Airways/Pleura: Interval resolution of the previous left
  Image 301 shows a right middle and lower lobes subpleural round-
  The background of upper lobe predominant emphysema and chronic large
  Cardiomegaly is a condition involving the heart and arteries.
  Lungs/Airways/Pleura : Stable postsurgical changes of the
- The left lower lobe pulmonary nodule in series 3 image 342 measured 
+ The left lower lobe pulmonary nodule in series 3 image 342 measured
  Severe atherosclerotic calcifications of the coronary arteries
  Routine age-related degenerative changes throughout the thoracic spine.
  Stable right upper lobe reticulonodular opacities and
@@ -1771,7 +1771,7 @@
  Mild decrease in right hilar node, now 13 mm, previously 15
  The ascending aorta measures 40 mm.
  Aortic and coronary artery calcifications are present.
- Lungs/Airways/Pleura : Stable 7 mm middle 
+ Lungs/Airways/Pleura : Stable 7 mm middle
  Right upper lobe 5.5 mm branching groundglass nodule (4/147
  Lungs/Airways/Pleura : Findings of fibrotic inter
  Air trapping again seen on the expiratory images.
@@ -1793,7 +1793,7 @@
  Post operative changes in the anterior chest wall with no residual soft tissue.
  Lungs/Airways/Pleura : Persistent tree-in
  Linear bands of atelectasis in the right lung are again noted.
- The anterior mediastinal nodule is now 8 mm. It may represent 
+ The anterior mediastinal nodule is now 8 mm. It may represent
  Mild coronary and aortic calcifications.
  Lungs/Airways/Pleura : Secretions in the trache
  Diffuse bronchial wall thickening is related to airways disease.
@@ -1853,8 +1853,8 @@
  Mild atherosclerotic calcifications of the coronary arteries and
  Upper Abdomen: Status post cholecystectomy.
  Routine age-related degenerative changes throughout the thoracic spine.
- Lungs/Airways/Pleura : Postsurgical changes of right upper 
- Persistent attenuation of the segmental bronchi of the middle 
+ Lungs/Airways/Pleura : Postsurgical changes of right upper
+ Persistent attenuation of the segmental bronchi of the middle
  The patient had a mild lung herniation through the right third intercostal space
  Mucous secretions in the proximal trachea.
  Mild coronary and aortic calcifications.
@@ -1899,7 +1899,7 @@
  The patient is a male.
  Lungs/Airways/Pleura: Persistent trace right ple
  Interval resolution of right upper lobe peribronchial groundglass.
- Prominent mediastinal lymph nodes measuring up to 1 cm, for example 
+ Prominent mediastinal lymph nodes measuring up to 1 cm, for example
  Mildly enlarged heterogeneous thyroid gland with scattered calcifications.
  Interval resolution of previously seen mediastinal hematoma with mild residual retrostern
  The patient is post CABG, median sternotomy and mitral annuloplasty.
@@ -1909,7 +1909,7 @@
  Aortic and coronary artery calcifications.
  Osteosarcoma is a disease of the osseous tissues.
  The mediastinum/Lymph nodes are multiple prevascular mediastinal lymph
- Moderate triple vessel coronary artery calcifications and calcification of the 
+ Moderate triple vessel coronary artery calcifications and calcification of the
  Degenerative changes of the thoracic spine.
  Scattered punctate (less than 1 mm) centrilobular microno
  Mild bronchiectasis in the left lower lobe.

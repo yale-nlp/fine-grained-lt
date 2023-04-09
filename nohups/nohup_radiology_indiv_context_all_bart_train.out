@@ -985,7 +985,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 956/958 [07:05<00:00,  2.25it/s][A
 100% 957/958 [07:06<00:00,  2.25it/s][A
 100% 958/958 [07:06<00:00,  2.28it/s][AWarning: Empty candidate sentence detected; setting raw BERTscores to 0.
-                                    
+
                                      [A 10% 12/120 [08:16<05:00,  2.78s/it]
 100% 958/958 [07:39<00:00,  2.28it/s][A
                                      [A 11% 13/120 [08:19<4:14:36, 142.77s/it] 12% 14/120 [08:22<2:57:27, 100.45s/it] 12% 15/120 [08:24<2:04:11, 70.97s/it]  13% 16/120 [08:27<1:27:21, 50.40s/it] 14% 17/120 [08:30<1:01:52, 36.05s/it] 15% 18/120 [08:32<44:13, 26.01s/it]   16% 19/120 [08:35<32:00, 19.02s/it] 17% 20/120 [08:38<23:39, 14.20s/it]                                     17% 20/120 [08:38<23:39, 14.20s/it] 18% 21/120 [08:41<17:47, 10.78s/it] 18% 22/120 [08:44<13:45,  8.42s/it] 19% 23/120 [08:47<10:54,  6.75s/it] 20% 24/120 [08:49<08:53,  5.56s/it]{'eval_loss': 7.410669326782227, 'eval_rouge1': 0.4675, 'eval_rouge2': 0.28, 'eval_rougeL': 0.427, 'eval_rougeLsum': 0.4263, 'eval_bert_score': 0.9154, 'eval_sari': 66.6942, 'eval_gen_len': 15.988, 'eval_runtime': 459.5435, 'eval_samples_per_second': 4.169, 'eval_steps_per_second': 2.085, 'epoch': 0.93}
@@ -1949,7 +1949,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 956/958 [06:24<00:00,  2.42it/s][A
 100% 957/958 [06:24<00:00,  2.30it/s][A
 100% 958/958 [06:24<00:00,  2.34it/s][AWarning: Empty candidate sentence detected; setting raw BERTscores to 0.
-                                    
+
                                      [A 20% 24/120 [15:35<08:53,  5.56s/it]
 100% 958/958 [06:42<00:00,  2.34it/s][A
                                      [A 21% 25/120 [15:37<3:19:57, 126.28s/it] 22% 26/120 [15:40<2:19:45, 89.20s/it]  22% 27/120 [15:43<1:38:01, 63.24s/it] 23% 28/120 [15:45<1:09:05, 45.06s/it] 24% 29/120 [15:48<49:05, 32.37s/it]   25% 30/120 [15:51<35:14, 23.50s/it]                                     25% 30/120 [15:51<35:14, 23.50s/it] 26% 31/120 [15:54<25:40, 17.31s/it] 27% 32/120 [15:56<18:55, 12.91s/it] 28% 33/120 [15:59<14:14,  9.82s/it] 28% 34/120 [16:02<10:59,  7.67s/it] 29% 35/120 [16:04<08:45,  6.19s/it] 30% 36/120 [16:07<07:12,  5.15s/it]{'eval_loss': 4.430395126342773, 'eval_rouge1': 0.5618, 'eval_rouge2': 0.4023, 'eval_rougeL': 0.5296, 'eval_rougeLsum': 0.5292, 'eval_bert_score': 0.9283, 'eval_sari': 71.5771, 'eval_gen_len': 12.9217, 'eval_runtime': 402.5249, 'eval_samples_per_second': 4.76, 'eval_steps_per_second': 2.38, 'epoch': 1.93}
@@ -2913,7 +2913,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 956/958 [06:46<00:00,  2.47it/s][A
 100% 957/958 [06:46<00:00,  2.25it/s][A
 100% 958/958 [06:47<00:00,  2.22it/s][AWarning: Empty candidate sentence detected; setting raw BERTscores to 0.
-                                    
+
                                      [A 30% 36/120 [23:14<07:12,  5.15s/it]
 100% 958/958 [07:04<00:00,  2.22it/s][A
                                      [A 31% 37/120 [23:17<3:03:27, 132.62s/it] 32% 38/120 [23:20<2:08:06, 93.73s/it]  32% 39/120 [23:23<1:29:40, 66.42s/it] 33% 40/120 [23:25<1:03:02, 47.29s/it]                                       33% 40/120 [23:25<1:03:02, 47.29s/it] 34% 41/120 [23:28<44:37, 33.90s/it]   35% 42/120 [23:31<31:52, 24.52s/it] 36% 43/120 [23:33<23:02, 17.95s/it] 37% 44/120 [23:36<16:55, 13.36s/it] 38% 45/120 [23:39<12:41, 10.15s/it] 38% 46/120 [23:41<09:44,  7.90s/it] 39% 47/120 [23:44<07:41,  6.32s/it] 40% 48/120 [23:47<06:15,  5.22s/it]
@@ -3877,7 +3877,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 956/958 [07:24<00:00,  2.27it/s][A
 100% 957/958 [07:24<00:00,  2.26it/s][A
 100% 958/958 [07:24<00:00,  2.39it/s][AWarning: Empty candidate sentence detected; setting raw BERTscores to 0.
-                                    
+
                                      [A 40% 48/120 [31:32<06:15,  5.22s/it]
 100% 958/958 [07:42<00:00,  2.39it/s][A
                                      [A 41% 49/120 [31:35<2:50:26, 144.03s/it] 42% 50/120 [31:37<1:58:36, 101.66s/it]                                        42% 50/120 [31:37<1:58:36, 101.66s/it] 42% 51/120 [31:40<1:22:45, 71.97s/it]  43% 52/120 [31:43<57:59, 51.17s/it]   44% 53/120 [31:45<40:53, 36.62s/it] 45% 54/120 [31:48<29:04, 26.43s/it] 46% 55/120 [31:51<20:54, 19.30s/it] 47% 56/120 [31:53<15:14, 14.30s/it] 48% 57/120 [31:56<11:23, 10.85s/it] 48% 58/120 [31:59<08:48,  8.52s/it] 49% 59/120 [32:02<06:53,  6.78s/it] 50% 60/120 [32:05<05:34,  5.57s/it]                                     50% 60/120 [32:05<05:34,  5.57s/it]
@@ -4842,7 +4842,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 956/958 [06:56<00:00,  2.42it/s][A
 100% 957/958 [06:56<00:00,  2.31it/s][A
 100% 958/958 [06:56<00:00,  2.29it/s][AWarning: Empty candidate sentence detected; setting raw BERTscores to 0.
-                                    
+
                                      [A 50% 60/120 [39:21<05:34,  5.57s/it]
 100% 958/958 [07:13<00:00,  2.29it/s][A
                                      [A 51% 61/120 [39:24<2:13:31, 135.79s/it] 52% 62/120 [39:27<1:32:42, 95.90s/it]  52% 63/120 [39:30<1:04:33, 67.95s/it] 53% 64/120 [39:33<45:08, 48.37s/it]   54% 65/120 [39:35<31:46, 34.66s/it] 55% 66/120 [39:38<22:32, 25.05s/it] 56% 67/120 [39:40<16:11, 18.33s/it] 57% 68/120 [39:43<11:47, 13.61s/it] 57% 69/120 [39:46<08:46, 10.33s/it] 58% 70/120 [39:48<06:42,  8.04s/it]                                     58% 70/120 [39:48<06:42,  8.04s/it] 59% 71/120 [39:51<05:14,  6.43s/it] 60% 72/120 [39:54<04:13,  5.29s/it]
@@ -5805,7 +5805,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 955/958 [06:44<00:01,  2.33it/s][A
 100% 956/958 [06:44<00:00,  2.35it/s][A
 100% 957/958 [06:45<00:00,  2.31it/s][A
-100% 958/958 [06:45<00:00,  2.28it/s][A                                    
+100% 958/958 [06:45<00:00,  2.28it/s][A
                                      [A 60% 72/120 [46:59<04:13,  5.29s/it]
 100% 958/958 [07:02<00:00,  2.28it/s][A
                                      [A 61% 73/120 [47:02<1:43:25, 132.03s/it] 62% 74/120 [47:04<1:11:30, 93.27s/it]  62% 75/120 [47:07<49:35, 66.12s/it]   63% 76/120 [47:10<34:32, 47.11s/it] 64% 77/120 [47:13<24:13, 33.80s/it] 65% 78/120 [47:15<17:08, 24.49s/it] 66% 79/120 [47:18<12:16, 17.96s/it] 67% 80/120 [47:21<08:55, 13.40s/it]                                     67% 80/120 [47:21<08:55, 13.40s/it] 68% 81/120 [47:24<06:39, 10.25s/it] 68% 82/120 [47:27<05:05,  8.03s/it] 69% 83/120 [47:29<03:58,  6.45s/it] 70% 84/120 [47:32<03:10,  5.29s/it]{'eval_loss': 1.3840439319610596, 'eval_rouge1': 0.6737, 'eval_rouge2': 0.53, 'eval_rougeL': 0.6409, 'eval_rougeLsum': 0.6403, 'eval_bert_score': 0.9428, 'eval_sari': 76.3909, 'eval_gen_len': 15.0397, 'eval_runtime': 422.5294, 'eval_samples_per_second': 4.535, 'eval_steps_per_second': 2.267, 'epoch': 5.93}
@@ -6768,7 +6768,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 955/958 [06:47<00:01,  2.46it/s][A
 100% 956/958 [06:47<00:00,  2.60it/s][A
 100% 957/958 [06:48<00:00,  2.63it/s][A
-100% 958/958 [06:48<00:00,  2.59it/s][A                                    
+100% 958/958 [06:48<00:00,  2.59it/s][A
                                      [A 70% 84/120 [54:45<03:10,  5.29s/it]
 100% 958/958 [07:10<00:00,  2.59it/s][A
                                      [A 71% 85/120 [54:48<1:18:28, 134.52s/it] 72% 86/120 [54:51<53:47, 94.92s/it]    72% 87/120 [54:53<36:58, 67.22s/it] 73% 88/120 [54:56<25:30, 47.82s/it] 74% 89/120 [54:58<17:42, 34.27s/it] 75% 90/120 [55:01<12:23, 24.78s/it]                                     75% 90/120 [55:01<12:23, 24.78s/it] 76% 91/120 [55:04<08:46, 18.16s/it] 77% 92/120 [55:06<06:17, 13.48s/it] 78% 93/120 [55:09<04:36, 10.24s/it] 78% 94/120 [55:12<03:27,  7.97s/it] 79% 95/120 [55:14<02:39,  6.37s/it] 80% 96/120 [55:17<02:05,  5.25s/it]
@@ -7731,7 +7731,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 955/958 [06:39<00:01,  2.40it/s][A
 100% 956/958 [06:39<00:00,  2.41it/s][A
 100% 957/958 [06:40<00:00,  2.45it/s][A
-100% 958/958 [06:40<00:00,  2.38it/s][A                                    
+100% 958/958 [06:40<00:00,  2.38it/s][A
                                      [A 80% 96/120 [1:02:17<02:05,  5.25s/it]
 100% 958/958 [06:57<00:00,  2.38it/s][A
                                      [A 81% 97/120 [1:02:20<50:01, 130.50s/it] 82% 98/120 [1:02:22<33:47, 92.15s/it]  82% 99/120 [1:02:25<22:52, 65.35s/it] 83% 100/120 [1:02:28<15:30, 46.55s/it]                                        83% 100/120 [1:02:28<15:30, 46.55s/it] 84% 101/120 [1:02:31<10:34, 33.41s/it] 85% 102/120 [1:02:33<07:16, 24.26s/it] 86% 103/120 [1:02:36<05:02, 17.78s/it] 87% 104/120 [1:02:39<03:32, 13.28s/it] 88% 105/120 [1:02:42<02:31, 10.12s/it] 88% 106/120 [1:02:44<01:50,  7.90s/it] 89% 107/120 [1:02:47<01:22,  6.32s/it] 90% 108/120 [1:02:50<01:02,  5.23s/it]
@@ -8694,7 +8694,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 955/958 [06:32<00:01,  2.45it/s][A
 100% 956/958 [06:33<00:00,  2.53it/s][A
 100% 957/958 [06:33<00:00,  2.63it/s][A
-100% 958/958 [06:33<00:00,  2.56it/s][A                                       
+100% 958/958 [06:33<00:00,  2.56it/s][A
                                      [A 90% 108/120 [1:09:43<01:02,  5.23s/it]
 100% 958/958 [06:50<00:00,  2.56it/s][A
                                      [A 91% 109/120 [1:09:46<23:32, 128.42s/it] 92% 110/120 [1:09:48<15:07, 90.71s/it]                                         92% 110/120 [1:09:48<15:07, 90.71s/it] 92% 111/120 [1:09:51<09:39, 64.33s/it] 93% 112/120 [1:09:54<06:06, 45.85s/it] 94% 113/120 [1:09:56<03:50, 32.91s/it] 95% 114/120 [1:09:59<02:23, 23.85s/it] 96% 115/120 [1:10:02<01:27, 17.53s/it] 97% 116/120 [1:10:05<00:52, 13.10s/it] 98% 117/120 [1:10:08<00:30, 10.00s/it] 98% 118/120 [1:10:10<00:15,  7.82s/it] 99% 119/120 [1:10:13<00:06,  6.32s/it]100% 120/120 [1:10:16<00:00,  5.24s/it]                                       100% 120/120 [1:10:16<00:00,  5.24s/it]
@@ -9659,7 +9659,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 956/958 [06:51<00:00,  2.51it/s][A
 100% 957/958 [06:51<00:00,  2.63it/s][A
 100% 958/958 [06:52<00:00,  2.52it/s][AWarning: Empty candidate sentence detected; setting raw BERTscores to 0.
-                                       
+
                                      [A100% 120/120 [1:17:25<00:00,  5.24s/it]
 100% 958/958 [07:08<00:00,  2.52it/s][A
                                      [A                                       100% 120/120 [1:17:25<00:00,  5.24s/it]100% 120/120 [1:17:25<00:00, 38.71s/it]
@@ -9669,7 +9669,7 @@ wandb: Run `wandb offline` to turn off syncing.
 100% 958/958 [07:03<00:00,  2.26it/s]
 Done
 wandb: Waiting for W&B process to finish, PID 3841286... (success).
-wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: / 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: - 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: \ 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb: | 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb:
 wandb: Run history:
 wandb:                  eval/bert_score ▁▄▅▆▇█████
 wandb:                     eval/gen_len █▁▃▅▅▆▄▅▄▆
@@ -9691,7 +9691,7 @@ wandb:                 train/train_loss ▁
 wandb:              train/train_runtime ▁
 wandb:   train/train_samples_per_second ▁
 wandb:     train/train_steps_per_second ▁
-wandb: 
+wandb:
 wandb: Run summary:
 wandb:                  eval/bert_score 0.9438
 wandb:                     eval/gen_len 15.1754
@@ -9713,9 +9713,8 @@ wandb:                 train/train_loss 2.90643
 wandb:              train/train_runtime 4654.482
 wandb:   train/train_samples_per_second 0.889
 wandb:     train/train_steps_per_second 0.026
-wandb: 
+wandb:
 wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
 wandb: Synced radiology_indiv_context_all_bart_32_7e-5: https://wandb.ai/ljyflores_/radiology_context_bart/runs/2sgvk5t7
 wandb: Find logs at: ./wandb/run-20230404_110405-2sgvk5t7/logs/debug.log
-wandb: 
-
+wandb:
