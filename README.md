@@ -36,7 +36,15 @@ CUDA_VISIBLE_DEVICES=7 WANDB_PROJECT=asset_flant5 nohup python train.py --datase
 ```
 
 These are some notes on each of the parameters: 
-* `dataset`: One of `asset`, `cochrane`, `turkcorpus`, `radiology_indiv`
+* `dataset`: One of `asset`, `asset_context_all`, `cochrane`, `cochrane_context_all`, `turkcorpus`, `turkcorpus_context_all`, `radiology_indiv`, `radiology_indiv_context_all`
 * `model`: One of `bart`, `flant5` (FLAN Large), `flant5_base`
 * `weight_decay`: Similar to dropout (0 is none)
 * `batch_size` and `gradient_accumulation_steps`: Actual batch size is the product of `batch_size` and `gradient_accumulation_steps`, `batch_size` controls how many samples fit on the model, while `gradient_accumulation_steps` is the number of steps taken before backpropagating
+
+### Parameters
+| `model`       | `dataset`                              | `lr` | `num_epochs` | `batch_size` | `gradient_accumulation_steps` | `weight_decay` |
+| ------------- | -------------------------------------- | ---- | ------------ | ------------ | ----------------------------- | -------------- |
+| `flant5_base` | `asset`/`radiology_indiv`/`turkcorpus` | 5e-4 | 10           | 8            | 8                             | 0.05           |
+| `flant5_base` | `cochrane`                             | 5e-4 | 10           | 2            | 32                            | 0.05           |
+| `bart`        | `asset`/`radiology_indiv`/`turkcorpus` | 1e-5 | 10           | 8            | 8                             | 0.01           |
+| `bart`        | `cochrane`                             | 1e-5 | 10           | 2            | 16                            | 0.01           |
