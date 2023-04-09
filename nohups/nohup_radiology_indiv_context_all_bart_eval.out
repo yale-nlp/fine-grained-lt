@@ -1,0 +1,13 @@
+Using custom data configuration default-2b493d0c7f85d1f7
+Using dataset: radiology_indiv_context_all
+Using prediction text file: output/radiology_indiv_context_all_bart.txt
+Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-2b493d0c7f85d1f7/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3844.46it/s]
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 45.80it/s]
+Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-2b493d0c7f85d1f7/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 222.44it/s]
+Using custom data configuration default-08f052743cb01ae8
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-08f052743cb01ae8/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 62.51it/s]
+Warning: Empty candidate sentence detected; setting raw BERTscores to 0.
+{'rouge1': 0.6852, 'rouge2': 0.5446, 'rougeL': 0.6539, 'rougeLsum': 0.6538, 'bert_score': 0.9438, 'sari': 77.4604}

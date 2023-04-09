@@ -1,0 +1,10 @@
+# Files to ignore
+misc/*
+models/*
+wandb/*
+output/archived/*
+nohups/scratch/*
+nohup_*
+!nohup/
+*__pycache__
+*.ipynb
