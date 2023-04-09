@@ -14,6 +14,10 @@ cd simplification-project
 conda create --name simplification python=3.8
 conda activate simplification
 pip install -r requirements.txt
+
+# Set up pre-commit hooks
+pre-commit install
+
 ```
 
 ### Data
@@ -32,4 +36,8 @@ CUDA_VISIBLE_DEVICES=7 WANDB_PROJECT=asset_flant5 nohup python train.py --datase
 ```
 
 These are some notes on each of the parameters: 
-* `dataset`: One of `asset`, `cochrane`
+* `dataset`: One of `asset`, `cochrane`, `turkcorpus`, `radiology_indiv`
+* `model`: One of `bart`, `flant5` (FLAN Large), `flant5_base`
+* `weight_decay`: Similar to dropout (0 is none)
+* `batch_size` and `gradient_accumulation_steps`: Actual batch size is the product of `batch_size` and `gradient_accumulation_steps`, `batch_size` controls how many samples fit on the model, while `gradient_accumulation_steps` is the number of steps taken before backpropagating
+
