@@ -40,4 +40,3 @@ These are some notes on each of the parameters:
 * `model`: One of `bart`, `flant5` (FLAN Large), `flant5_base`
 * `weight_decay`: Similar to dropout (0 is none)
 * `batch_size` and `gradient_accumulation_steps`: Actual batch size is the product of `batch_size` and `gradient_accumulation_steps`, `batch_size` controls how many samples fit on the model, while `gradient_accumulation_steps` is the number of steps taken before backpropagating
-
