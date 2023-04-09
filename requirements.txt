@@ -15,8 +15,11 @@ git+https://github.com/huggingface/transformers
 datasets==2.0.0
 
 # Evaluation
+evaluate
 rouge-score==0.1.2
 bert-score==0.3.13
+sacrebleu
+sacremoses
 
 # Preprocessing
 wikipedia==1.4.0
