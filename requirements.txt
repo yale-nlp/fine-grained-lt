@@ -4,6 +4,7 @@ numpy
 notebook
 matplotlib
 argparse
+wandb
 
 # Pre-commit
 pre-commit
