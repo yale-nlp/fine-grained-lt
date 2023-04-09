@@ -4,5 +4,6 @@ models/*
 wandb/*
 output/archived/*
 nohups/scratch/*
+nohup_*
 *__pycache__
 *.ipynb
