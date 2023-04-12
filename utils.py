@@ -7,6 +7,7 @@ import re
 import nltk.data
 import textstat
 import os
+import openai
 
 sent_tokenizer = nltk.data.load("tokenizers/punkt/english.pickle")
 
@@ -14,41 +15,69 @@ nlp_main = spacy.load("en_core_web_lg")
 nlp_bio = spacy.load("en_ner_bionlp13cg_md")
 
 
-def get_readability_score(text, metric='flesch_reading_ease'):
-    """ get the readability score and grade level of text """
-    if metric == 'flesch_reading_ease':
+def gpt_simplify(
+    text,
+    prompt="simplify this text for a second-grade student:",
+    temperature=0.2,
+    max_length=256,
+):
+    """Use GPT 3.5 API to get the simplified result of a text"""
+    augmented_prompt = prompt + text
+    # Note: copy and paste your own openai secret key for testing, and don't upload it to public github repo.
+    # the api key can also be saved in an environment variable and use os.getenv()
+    openai.api_key = "copy and paste your openai api key here"
+
+    try:
+        output = openai.Completion.create(
+            model="text-davinci-003",
+            prompt=augmented_prompt,
+            temperature=temperature,
+            max_tokens=max_length,
+        )
+
+        return output["choices"][0]["text"]
+
+    except:
+        print("there is an error")
+
+
+def get_readability_score(text, metric="flesch_reading_ease"):
+    """get the readability score and grade level of text"""
+    if metric == "flesch_reading_ease":
         score = textstat.flesch_reading_ease(text)
         if score > 90:
-            grade = '5th grade'
+            grade = "5th grade"
         elif score > 80:
-            grade = '6th grade'
+            grade = "6th grade"
         elif score > 70:
-            grade = '7th grade'
+            grade = "7th grade"
         elif score > 60:
-            grade = '8th & 9th grade'
+            grade = "8th & 9th grade"
         elif score > 50:
-            grade = '10th to 12th grade'
+            grade = "10th to 12th grade"
         elif score > 30:
-            grade = 'college' # Collge student = average 13th to 15th grade
+            grade = "college"  # Collge student = average 13th to 15th grade
         elif score > 10:
-            grade = 'college graduate'
+            grade = "college graduate"
         else:
-            grade = 'professional'
+            grade = "professional"
         return score, grade
-    
-    elif metric == 'flesch_kincaid_grade':
-        score = textstat.flesch_kincaid_grade(text)# Note: this score can be negative like -1
+
+    elif metric == "flesch_kincaid_grade":
+        score = textstat.flesch_kincaid_grade(
+            text
+        )  # Note: this score can be negative like -1
         grade = round(score)
         if grade > 16:
-            grade = 'college graduate' # Collge graduate: >16th grade
+            grade = "college graduate"  # Collge graduate: >16th grade
         elif grade > 12:
-            grade = 'college'
+            grade = "college"
         elif grade <= 4:
-            grade = '4th grade or lower'
-        else: 
+            grade = "4th grade or lower"
+        else:
             grade = f"{grade}th grade"
         return score, grade
-    
+
     # elif metric == 'SMOG': # Note: SMOG formula needs at least three ten-sentence-long samples for valid calculation
     #     score = textstat.smog_index(text)
     #     grade = round(score)
@@ -59,43 +88,40 @@ def get_readability_score(text, metric='flesch_reading_ease'):
     #     else:
     #         grade = f"{grade}th grade"
     #     return score, grade
-    
-    elif metric == 'dale_chall':
+
+    elif metric == "dale_chall":
         score = textstat.dale_chall_readability_score(text)
         if score >= 10:
-            grade = 'college graduate'
+            grade = "college graduate"
         elif score >= 9:
-            grade = 'college' # Collge student = average 13th to 15th grade
+            grade = "college"  # Collge student = average 13th to 15th grade
         elif score >= 8:
-            grade = '11th to 12th grade'
+            grade = "11th to 12th grade"
         elif score >= 7:
-            grade = '9th to 10th grade'
+            grade = "9th to 10th grade"
         elif score >= 6:
-            grade = '7th to 8th grade'
+            grade = "7th to 8th grade"
         elif score >= 5:
-            grade = '5th to 6th grade'
+            grade = "5th to 6th grade"
         else:
-            grade = '4th grade or lower'
+            grade = "4th grade or lower"
         return score, grade
-    
-    elif metric == 'gunning_fog':
+
+    elif metric == "gunning_fog":
         score = textstat.gunning_fog(text)
         grade = round(score)
         if grade > 16:
-            grade = 'college graduate'
+            grade = "college graduate"
         elif grade > 12:
-            grade = 'college'
+            grade = "college"
         elif grade <= 4:
-            grade = '4th grade or lower'
-        else: 
+            grade = "4th grade or lower"
+        else:
             grade = f"{grade}th grade"
         return score, grade
 
     else:
         raise ValueError(f"Unknown metric {metric}")
-    
-
-
 
 
 def remove_html_tags(text):
