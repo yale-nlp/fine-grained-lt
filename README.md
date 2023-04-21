@@ -22,7 +22,7 @@ pre-commit install
 We also create a new environment specifically for the <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric, using the following steps:
 ```
 # Create environment and install requirements
-conda create --name questeval python=3.9
+conda create --name questeval python=3.8
 conda activate questeval
 pip3 install torch torchvision torchaudio ipykernel jupyter ipywidgets
 
