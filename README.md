@@ -17,7 +17,19 @@ pip install -r requirements.txt
 
 # Set up pre-commit hooks
 pre-commit install
+```
 
+We also create a new environment specifically for the <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric, using the following steps:
+```
+conda create --name questeval python=3.9
+conda activate questeval
+
+git clone https://github.com/ThomasScialom/QuestEval.git
+cd QuestEval
+
+conda install pytorch cudatoolkit=10.1 -c pytorch
+conda install pip
+pip install -e .
 ```
 
 ### Data
