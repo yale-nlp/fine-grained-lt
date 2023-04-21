@@ -9,9 +9,10 @@ import os
 os.environ["OPENAI_API_KEY"] = "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"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+
 # DATASET_NAME = "turkcorpus"
-DATASET_NAME = "radiology_indiv"
-# DATASET_NAME = "cochrane"
+# DATASET_NAME = "radiology_indiv"
+DATASET_NAME = "cochrane"
 # DATASET_NAME = "asset"
 dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
