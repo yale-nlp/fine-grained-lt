@@ -24,7 +24,7 @@ We also create a new environment specifically for the <a href="https://github.co
 # Create environment and install requirements
 conda create --name questeval python=3.9
 conda activate questeval
-pip install torch torchvision torchaudio ipykernel jupyter ipywidgets
+pip3 install torch torchvision torchaudio ipykernel jupyter ipywidgets
 
 # Clone QuestEval and install
 git clone https://github.com/ThomasScialom/QuestEval.git
