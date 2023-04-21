@@ -1,0 +1,42 @@
+Using custom data configuration default-06084af75ccc14fc
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 260.95it/s]
+Traceback (most recent call last):
+  File "gpt.py", line 18, in <module>
+    response = openai.ChatCompletion.create(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 620, in _interpret_response
+    self._interpret_response_line(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 683, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.RateLimitError: That model is currently overloaded with other requests. You can retry your request, or contact us through our help center at help.openai.com if the error persists. (Please include the request ID aaf6ee8430babf82f9e344003c43a360 in your message.)
+Using custom data configuration default-06084af75ccc14fc
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 356.84it/s]
+turkcorpus Done
+Using custom data configuration default-3f91e594c1b18797
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3f91e594c1b18797/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18.58it/s]
+asset Done
+Using custom data configuration default-e55755119d653c8e
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-e55755119d653c8e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 323.46it/s]
+Traceback (most recent call last):
+  File "gpt.py", line 21, in <module>
+    response = openai.ChatCompletion.create(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 620, in _interpret_response
+    self._interpret_response_line(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 683, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.RateLimitError: That model is currently overloaded with other requests. You can retry your request, or contact us through our help center at help.openai.com if the error persists. (Please include the request ID e14fe36eb5f8418f14a25aa04657aa6d in your message.)
