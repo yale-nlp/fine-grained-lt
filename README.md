@@ -29,6 +29,7 @@ cd QuestEval
 
 conda install pytorch cudatoolkit=10.1 -c pytorch
 conda install pip
+pip install ipykernel jupyter ipywidgets
 pip install -e .
 ```
 
