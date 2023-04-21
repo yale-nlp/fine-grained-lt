@@ -33,7 +33,35 @@ pip install -e .
 ```
 
 ### Data
-Describe data format here
+
+Each dataset is stored using `json` files – each with two versions: `<dataset>.json` and `<dataset>_multiple.json`. 
+* `<dataset>.json` is used for training
+  * one example input is mapped to exactly one training label – so if there are 10 labels written for one input, the `<dataset>.json` will have 10 examples for this input
+* `<dataset>_multiple.json` is used for evaluation
+  *  one example input is mapped to all the training labels written for it – so if there are 10 labels written for one input, the `<dataset>_multiple.json` will still only have 1 example for it
+
+```
+{
+  "train": [
+             {"input": <str>,
+             "labels": [<str>, <str>, ..., <str>]},
+             {"input": <str>,
+             "labels": [<str>, <str>, ..., <str>]},
+             ...,
+             {"input": <str>,
+             "labels": [<str>, <str>, ..., <str>]},
+            ],
+  "test":  [
+             {"input": <str>,
+             "labels": [<str>, <str>, ..., <str>]},
+             {"input": <str>,
+             "labels": [<str>, <str>, ..., <str>]},
+             ...,
+             {"input": <str>,
+             "labels": [<str>, <str>, ..., <str>]},
+            ],
+}
+```
 
 ### Weights and Biases
 Before training, be sure to log in to <a href="https://wandb.ai/">wandb</a> (weights and biases), which helps us log experiments and keep track of their performance. To do this, set up a (free) account with wandb, then copy the API key! Back in the terminal, we can log in as follows:
