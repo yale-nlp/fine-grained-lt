@@ -21,15 +21,14 @@ pre-commit install
 
 We also create a new environment specifically for the <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric, using the following steps:
 ```
+# Create environment and install requirements
 conda create --name questeval python=3.9
 conda activate questeval
+pip install torch torchvision torchaudio ipykernel jupyter ipywidgets
 
+# Clone QuestEval and install
 git clone https://github.com/ThomasScialom/QuestEval.git
 cd QuestEval
-
-conda install pytorch cudatoolkit=10.1 -c pytorch
-conda install pip
-pip install ipykernel jupyter ipywidgets
 pip install -e .
 ```
 
