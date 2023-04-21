@@ -1,6 +1,7 @@
 # simplification-project
 
 Welcome to the simplification project repository! 
+
 We aim to explore ways to train language models to simplify radiology reports to make them more accessible to laypeople.
 
 ### Set-up
@@ -22,14 +23,18 @@ pre-commit install
 We also create a new environment specifically for the <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric, using the following steps:
 ```
 # Create environment and install requirements
-conda create --name questeval python=3.8
+conda create --name questeval python=3.9
 conda activate questeval
-pip3 install torch torchvision torchaudio ipykernel jupyter ipywidgets
+pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu113
 
 # Clone QuestEval and install
 git clone https://github.com/ThomasScialom/QuestEval.git
 cd QuestEval
 pip install -e .
+
+# Temporary fixes for package issues
+pip uninstall spacy
+pip install spacy gmpy2
 ```
 
 ### Data
@@ -111,10 +116,14 @@ CUDA_VISIBLE_DEVICES=7 nohup python eval.py --dataset asset_context_all --preds_
 
 #### Metrics
 To evaluate the model's performance, we use the following metrics:
-* BERT-Score
-* SARI
-* ROUGE
-* Flesch Reading Ease
-* Flesch Kincaid Grade
-* Dale Chall
-* Gunning Fog
+* Quality: How well do our outputs resemble the human written labels?
+  * SARI
+  * ROUGE
+* Faithfulness: Are our outputs logical?
+  * BERT-Score
+  * QuestEval
+* Simplicity: Are our outputs easy to read?
+  * Flesch Reading Ease
+  * Flesch Kincaid Grade
+  * Dale Chall
+  * Gunning Fog
