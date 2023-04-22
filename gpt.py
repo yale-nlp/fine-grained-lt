@@ -18,7 +18,9 @@ dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
 # test_output = []
-for text in dataset["input"]:
+for text in dataset["input"][
+    442:
+]:  # It stops at 112,(idx 111) start from idx 112. Stop again at 442, start from idx 442
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
