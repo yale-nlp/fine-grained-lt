@@ -1,0 +1,1 @@
+A unique DNA sequence of a replicon at which DNA REPLICATION is initiated and proceeds bidirectionally or unidirectionally. It contains the sites where the first separation of the complementary strands occurs, a primer RNA is synthesized, and the switch from primer RNA to DNA synthesis takes place. (Rieger et al., Glossary of Genetics: Classical and Molecular, 5th ed)

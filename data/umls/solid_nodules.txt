@@ -1,0 +1,1 @@
+Fully opaque attenuation through which no normally arborizing structures are visible.

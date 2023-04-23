@@ -1,0 +1,1 @@
+<p>A connection between two regional parts.</p><p><i>Examples:</i> the connection between ascending aorta and the aortic arc, connection between descending colon and sigmoid.</p><p><i>UsageConstraints:</i>See connection and adjacency for the assignment of player and scoper.</p>

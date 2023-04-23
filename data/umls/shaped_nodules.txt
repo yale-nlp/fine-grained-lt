@@ -1,0 +1,1 @@
+A description about the radiologic shape of a nodule.

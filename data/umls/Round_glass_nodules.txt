@@ -1,0 +1,1 @@
+Nodule shape conforming to a roughly spherical shape, independent of spiculations.

@@ -1,0 +1,1 @@
+The amount of mineral per square centimeter of BONE. This is the definition used in clinical practice. Actual bone density would be expressed in grams per milliliter. It is most frequently measured by X-RAY ABSORPTIOMETRY or TOMOGRAPHY, X RAY COMPUTED. Bone density is an important predictor for OSTEOPOROSIS.

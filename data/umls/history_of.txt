@@ -1,0 +1,1 @@
+A collection of information about a person's health. It may include information about allergies, illnesses and surgeries, and dates and results of physical exams, tests, screenings, and immunizations. It may also include information about medicines taken and about diet and exercise.

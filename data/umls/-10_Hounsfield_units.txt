@@ -1,0 +1,1 @@
+Term given to the dimensions of the quantifier of x-ray attenuation, CT number.

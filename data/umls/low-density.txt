@@ -1,0 +1,1 @@
+A card containing 384 wells that can be loaded with cDNA probe sets and cDNA reverse transcribed from samples of interest. The card is designed to be placed into a thermocycler to perform quantitative reverse transcriptase-based PCR (QRT-PCR) analysis.

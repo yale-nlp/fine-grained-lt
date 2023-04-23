@@ -1,0 +1,1 @@
+The apparent volume occupied by an exogenous compound after it is administered to an organism. This value assumes that the compound is uniformly distributed in the body of the organism at the concentration found in its plasma or another tissue.

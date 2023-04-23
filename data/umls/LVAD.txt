@@ -1,0 +1,1 @@
+A mechanical pump which also includes a control system and an energy supply. It receives blood from the left ventricle and delivers it to the aorta, thus helping the heart to pump sufficient blood to the body.
