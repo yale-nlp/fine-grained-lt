@@ -1,1 +1,0 @@
-The lowest layer of a structure.

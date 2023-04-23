@@ -1,1 +1,0 @@
-The process of generating an image from the raw data, or set of unprocessed measurements, made by an imaging system. (from AmershamHealth Medcyclopaedia)

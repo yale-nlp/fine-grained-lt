@@ -1,1 +1,0 @@
-The extent of a 2-dimensional surface enclosed within a boundary.

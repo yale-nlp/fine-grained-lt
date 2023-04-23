@@ -1,1 +1,0 @@
-Adjustment for the effect of tissue thicknesses through which gamma's travel from an activity concentration origin to the scanner's detectors. The count rates of a detector are adjusted to values as if there were no attenuation along the gamma's path. This makes possible accurate quantitation in image analysis.

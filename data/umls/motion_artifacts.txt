@@ -1,1 +1,0 @@
-Any visible result of a procedure which is caused by the procedure itself and not by the entity being analyzed. Common examples include histological structures introduced by tissue processing, radiographic images of structures that are not naturally present in living tissue, and products of chemical reactions that occur during analysis.

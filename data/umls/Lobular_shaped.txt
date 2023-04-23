@@ -1,1 +1,0 @@
-A solid or hollow three-dimensional object bounded by a closed surface such that every point on the surface is equidistant from the center.

@@ -1,1 +1,0 @@
-A subjective rating of the visibility of a lesion in a medical image, ranging from not visible to obvious.

@@ -1,1 +1,0 @@
-Line through and perpendicular to an object's long axis. This line may intersect the long axis anywhere within the object.

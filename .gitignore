@@ -1,4 +1,8 @@
 # Files to ignore
+data/medline/*
+data/umls/*
+data/wikipedia/*
+data/mesh/*
 misc/*
 models/*
 wandb/*

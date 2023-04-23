@@ -1,1 +1,0 @@
-Highly repeated sequences, 6K-8K base pairs in length, which contain RNA polymerase II promoters. They also have an open reading frame that is related to the reverse transcriptase of retroviruses but they do not contain LTRs (long terminal repeats). Copies of the LINE 1 (L1) family form about 15% of the human genome. The jockey elements of Drosophila are LINEs.

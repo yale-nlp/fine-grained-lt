@@ -1,1 +1,0 @@
-<p><b>Description:</b>There was (or is to be) no change to the item. This is primarily used when this element has not changed, but other attributes in the instance have changed.</p>

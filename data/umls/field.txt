@@ -1,1 +1,0 @@
-An area of database record, or graphical user interface form, into which a particular item of data is entered.

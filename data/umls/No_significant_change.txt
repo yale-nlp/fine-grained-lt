@@ -1,1 +1,0 @@
-<p>The current result has increased from the previous result for a quantitative observation (the change is significant as defined in the respective test procedure).</p>

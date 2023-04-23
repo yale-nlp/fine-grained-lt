@@ -1,1 +1,0 @@
-Annotation used to indicate the size or magnitude of something that was determined by comparison to a standard.

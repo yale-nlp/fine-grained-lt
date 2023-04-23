@@ -1,1 +1,0 @@
-The length of a straight line that extends from one edge of a tumor or other object, through its center and to the opposite edge. It is usually used to measure the size of round or spherical shapes.

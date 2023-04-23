@@ -1,1 +1,0 @@
-<p>The measurement of the specified component / analyte, organism or clinical sign above the limit of detection of the performed test or procedure.</p>

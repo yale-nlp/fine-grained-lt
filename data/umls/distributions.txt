@@ -1,1 +1,0 @@
-The placement, arrangement of instance of entities within a space.

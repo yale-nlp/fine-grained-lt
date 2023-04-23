@@ -1,1 +1,0 @@
-The intercalated cell is an epithelial cell of the renal collecting tubule that is specialized for H+ and HCO3 transport. These cells exist in two types, [alpha] and [beta]. The [alpha] cell secretes H+ into the lumen by an apical H+ ATPase and a basolateral Cl:HCO3. The [beta] cell secretes HCO3- into the lumen by an apical Cl:HCO3 and a basolateral H+ ATPase.

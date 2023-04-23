@@ -1,1 +1,0 @@
-Describes a mathematical measure of difference between groups. The difference is said to be statistically significant if it is greater than what might be expected to happen by chance alone.

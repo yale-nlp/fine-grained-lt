@@ -1,1 +1,0 @@
-The immediate defensive reaction (by vertebrate tissue) to infection or injury caused by chemical or physical agents. The process is characterized by local vasodilation, extravasation of plasma into intercellular spaces and accumulation of white blood cells and macrophages. [GO_REF:0000022, GOC:mtg_15nov05, ISBN:0198506732]

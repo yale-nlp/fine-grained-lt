@@ -1,1 +1,0 @@
-The production of an image obtained by cameras that detect the radioactive emissions of an injected radionuclide as it has distributed differentially throughout tissues in the body. The image obtained from a moving detector is called a scan, while the image obtained from a stationary camera device is called a scintiphotograph.
