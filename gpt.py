@@ -6,7 +6,7 @@ from datasets import Dataset, DatasetDict, load_metric, load_dataset
 import argparse
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = " "
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
@@ -18,7 +18,7 @@ dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
 # test_output = []
-for text in dataset["input"][1:]:
+for text in dataset["input"]:
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
