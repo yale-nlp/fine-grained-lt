@@ -8,23 +8,29 @@ wandb
 
 # Pre-commit
 pre-commit
-isort==4.3.5
+isort # ==4.3.5
 
 # Training
 torch==1.13.1
 git+https://github.com/huggingface/transformers
-datasets==2.0.0
+datasets # ==2.0.0
 
 # Evaluation
-evaluate
-rouge-score==0.1.2
-bert-score==0.3.13
+evaluate==0.3.0
+rouge-score # ==0.1.2
+bert-score # ==0.3.13
 sacrebleu
 sacremoses
+textstat
+# questeval
 
 # Preprocessing
-wikipedia==1.4.0
-spacy==3.4.4
-scispacy==0.5.1
+wikipedia # ==1.4.0
+spacy # ==3.4.4
+scispacy
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_scibert-0.5.1.tar.gz
 https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.4.1/en_core_web_lg-3.4.1-py3-none-any.whl
 https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_ner_bionlp13cg_md-0.5.1.tar.gz
+
+# LLMs
+openai

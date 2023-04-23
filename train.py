@@ -86,6 +86,7 @@ parser.add_argument("--epochs", required=False, type=int, default=5)
 parser.add_argument("--batch_size", required=False, type=int, default=1)
 parser.add_argument("--checkpoint", required=False, type=str, default=None)
 parser.add_argument("--weight_decay", required=False, type=float, default=0.01)
+parser.add_argument("--warmup_steps", required=False, type=int, default=1000)
 parser.add_argument(
     "--gradient_accumulation_steps", required=False, type=int, default=1
 )
@@ -183,7 +184,7 @@ training_args = Seq2SeqTrainingArguments(
     # Training parameters
     num_train_epochs=int(args.epochs),
     learning_rate=float(args.lr),
-    warmup_steps=1000,
+    warmup_steps=int(args.warmup_steps),
     per_device_train_batch_size=int(args.batch_size),
     gradient_accumulation_steps=int(args.gradient_accumulation_steps),
     weight_decay=float(args.weight_decay),

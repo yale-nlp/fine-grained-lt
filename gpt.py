@@ -5,6 +5,7 @@ import nltk
 from datasets import Dataset, DatasetDict, load_metric, load_dataset
 import argparse
 import os
+import re
 
 os.environ["OPENAI_API_KEY"] = " "
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -37,6 +38,11 @@ for text in dataset["input"]:
     )
 
     simplified_sen = response["choices"][0]["message"]["content"]
+
+    # Remove newlines, replace multiple spaces with one
+    simplified_sen = simplified_sen.replace("\n", " ")
+    simplified_sen = re.sub(" +", " ", simplified_sen)
+
     # test_output.append(simplified_sen)
     # open file in write mode
     with open(f"output/{DATASET_NAME}_gpt4_basic_128.txt", "a") as fp:

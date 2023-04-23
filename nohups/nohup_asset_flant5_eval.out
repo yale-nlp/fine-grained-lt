@@ -1,0 +1,19 @@
+Using custom data configuration default-c4ecba9a40cb623a
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-c4ecba9a40cb623a/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: output/asset_flant5_base.txt
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 167.87it/s]
+Using custom data configuration default-0557dc8dac2ea5a9
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-0557dc8dac2ea5a9/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 280.84it/s]
+{'rouge1': 0.9197, 'rouge2': 0.8427, 'rougeL': 0.9107, 'rougeLsum': 0.9107, 'bert_score': 0.9513, 'sari': 50.7106, 'flesch_reading_ease_counts': Counter({'8th & 9th grade': 82, '10th to 12th grade': 65, 'college': 63, '7th grade': 51, '6th grade': 42, '5th grade': 35, 'college graduate': 19, 'professional': 2}), 'flesch_reading_ease_score': 63.5278}
+
+True
+cuda
+Using dataset: asset
+Using prediction text file: output/asset_flant5_base.txt
+{'questeval_ref': 0.7476812582551262, 'questeval_ref_std': 0.12860993674371116, 'questeval_no_ref': 0.7013304685166202, 'questeval_no_ref_std': 0.14464291314659572}

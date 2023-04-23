@@ -1,0 +1,20 @@
+Using custom data configuration default-b4088db718ca8391
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-b4088db718ca8391/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: radiology_indiv_context_some
+Using prediction text file: output/radiology_indiv_context_some_bart.txt
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 14.87it/s]
+Using custom data configuration default-8919ccebd961878c
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-8919ccebd961878c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 30.06it/s]
+Warning: Empty candidate sentence detected; setting raw BERTscores to 0.
+{'rouge1': 0.7615, 'rouge2': 0.6441, 'rougeL': 0.7332, 'rougeLsum': 0.7337, 'bert_score': 0.9557, 'sari': 82.0845, 'flesch_reading_ease_counts': Counter({'5th grade': 962, '6th grade': 558, '7th grade': 166, '8th & 9th grade': 140, '10th to 12th grade': 62, 'college': 28}), 'flesch_reading_ease_score': 88.4159}
+
+True
+cuda
+Using dataset: radiology_indiv
+Using prediction text file: output/radiology_indiv_context_some_bart.txt
+{'questeval_ref': 0.5365530167137577, 'questeval_ref_std': 0.2183792820320659, 'questeval_no_ref': 0.26938015371607515, 'questeval_no_ref_std': 0.06841221989425789}

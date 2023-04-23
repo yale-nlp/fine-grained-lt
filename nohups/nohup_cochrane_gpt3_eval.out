@@ -1,0 +1,23 @@
+/data/lily/lyf6/Simplification-Project/QuestEval/questeval/questeval_metric.py:107: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+True
+cuda
+Using dataset: cochrane
+Using prediction text file: output/cochrane_gpt3.txt
+Traceback (most recent call last):
+  File "/data/lily/lyf6/Simplification-Project/eval_questeval.py", line 56, in <module>
+    print(compute_metrics(sources, preds, labels))
+  File "/data/lily/lyf6/Simplification-Project/eval_questeval.py", line 21, in compute_metrics
+    score = questeval.corpus_questeval(
+  File "/data/lily/lyf6/Simplification-Project/QuestEval/questeval/questeval_metric.py", line 190, in corpus_questeval
+    assert len(list_references) == len(hypothesis)
+AssertionError
+/data/lily/lyf6/Simplification-Project/QuestEval/questeval/questeval_metric.py:107: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+/home/lily/lyf6/miniconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+True
+cuda
+Using dataset: cochrane
+Using prediction text file: output/cochrane_gpt3_modified.txt
+{'questeval_ref': 0.5202905932335499, 'questeval_ref_std': 0.07281085303865034, 'questeval_no_ref': 0.5122091733423823, 'questeval_no_ref_std': 0.07865694845631095}
