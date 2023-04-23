@@ -10,6 +10,8 @@ from transformers import (
 )
 from evaluate import load
 import argparse
+from utils import get_readability_score
+from collections import Counter
 
 metric_rouge = load("rouge")
 metric_bertscore = load("bertscore")
@@ -41,12 +43,26 @@ def compute_metrics(sources, predictions, labels):
         )
         result_bert.append(result_bert_temp["f1"])
 
+    READABILITY_METRICS = ["flesch_reading_ease"]
+    readability_dict = {}
+    for metric in READABILITY_METRICS:
+        result_readability = list(
+            map(lambda s: get_readability_score(s, metric=metric), predictions)
+        )
+        readability_dict[f"{metric}_counts"] = Counter(
+            list(map(lambda item: item[1], result_readability))
+        )
+        readability_dict[f"{metric}_score"] = np.mean(
+            list(map(lambda item: item[0], result_readability))
+        )
+
     # Extract results
     result = result_rouge
     result["bert_score"] = np.mean(result_bert)
     result["sari"] = result_sari["sari"]
+    result.update(readability_dict)
 
-    return {k: round(v, 4) for k, v in result.items()}
+    return {k: round(v, 4) if "counts" not in k else v for k, v in result.items()}
 
 
 # Get dataset from arguments
