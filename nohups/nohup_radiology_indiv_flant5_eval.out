@@ -1,0 +1,33 @@
+Using custom data configuration default-828962dd1e9daaba
+Using dataset: radiology_indiv
+Using prediction text file: output/radiology_indiv_flant5_base.txt
+Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-828962dd1e9daaba/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
+
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3423.92it/s]
+
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 402.56it/s]
+Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-828962dd1e9daaba/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 181.03it/s]
+Using custom data configuration default-02d0d9b66c27ad27
+Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-02d0d9b66c27ad27/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
+
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 5336.26it/s]
+
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 423.75it/s]
+Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-02d0d9b66c27ad27/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 164.97it/s]
+{'rouge1': 0.8862, 'rouge2': 0.8141, 'rougeL': 0.8748, 'rougeLsum': 0.8746, 'bert_score': 0.9796, 'sari': 90.5223, 'flesch_reading_ease_counts': Counter({'5th grade': 883, '6th grade': 523, '7th grade': 213, '8th & 9th grade': 130, '10th to 12th grade': 108, 'college': 58, 'college graduate': 1}), 'flesch_reading_ease_score': 86.506}
+
+True
+cuda
+Using dataset: radiology_indiv
+Using prediction text file: output/radiology_indiv_flant5_base.txt
+{'questeval_ref': 0.5942034144754829, 'questeval_ref_std': 0.2233628641640451, 'questeval_no_ref': 0.26923357627221506, 'questeval_no_ref_std': 0.06470856565308244}

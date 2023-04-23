@@ -1,0 +1,19 @@
+Using custom data configuration default-286b55770133f83c
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-286b55770133f83c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: turkcorpus
+Using prediction text file: output/turkcorpus_bart.txt
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 217.61it/s]
+Using custom data configuration default-dd709c9a1ff0f891
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-dd709c9a1ff0f891/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 355.51it/s]
+{'rouge1': 0.9164, 'rouge2': 0.8512, 'rougeL': 0.9112, 'rougeLsum': 0.9113, 'bert_score': 0.9455, 'sari': 45.4683, 'flesch_reading_ease_counts': Counter({'college': 84, '10th to 12th grade': 74, '8th & 9th grade': 69, '7th grade': 59, '6th grade': 36, '5th grade': 17, 'college graduate': 16, 'professional': 4}), 'flesch_reading_ease_score': 59.8517}
+
+True
+cuda
+Using dataset: turkcorpus
+Using prediction text file: output/turkcorpus_bart.txt
+{'questeval_ref': 0.678664234627838, 'questeval_ref_std': 0.1395384307735358, 'questeval_no_ref': 0.6377016973654234, 'questeval_no_ref_std': 0.14950542188369137}

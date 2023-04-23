@@ -1,0 +1,9 @@
+/data/lily/lyf6/Simplification-Project/QuestEval/questeval/questeval_metric.py:107: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+/home/lily/lyf6/miniconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+True
+cuda
+Using dataset: turkcorpus
+Using prediction text file: output/turkcorpus_gpt3.txt
+{'questeval_ref': 0.6651479097171394, 'questeval_ref_std': 0.11877853452020355, 'questeval_no_ref': 0.6134761191111363, 'questeval_no_ref_std': 0.12641673380587057}

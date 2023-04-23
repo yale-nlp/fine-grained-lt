@@ -8,7 +8,5 @@ models/*
 wandb/*
 output/archived/*
 nohups/scratch/*
-nohup_*
-!nohup/nohup_*
 *__pycache__
 *.ipynb

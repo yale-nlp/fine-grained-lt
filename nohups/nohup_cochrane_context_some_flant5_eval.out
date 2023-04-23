@@ -1,0 +1,33 @@
+Using custom data configuration default-9de64061dfdd6f31
+Using dataset: cochrane_context_some
+Using prediction text file: output/cochrane_context_some_flant5_base.txt
+Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-9de64061dfdd6f31/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
+
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3358.13it/s]
+
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 35.86it/s]
+Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-9de64061dfdd6f31/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 153.88it/s]
+Using custom data configuration default-d8982e3b25b67a5d
+Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-d8982e3b25b67a5d/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
+
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 4462.03it/s]
+
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
+Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 34.63it/s]
+Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-d8982e3b25b67a5d/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 194.60it/s]
+{'rouge1': 0.2925, 'rouge2': 0.1015, 'rougeL': 0.1885, 'rougeLsum': 0.1887, 'bert_score': 0.8487, 'sari': 36.3156, 'flesch_reading_ease_counts': Counter({'college': 202, '10th to 12th grade': 128, '8th & 9th grade': 64, 'college graduate': 53, '7th grade': 21, 'professional': 6, '6th grade': 6}), 'flesch_reading_ease_score': 47.4027}
+
+True
+cuda
+Using dataset: cochrane
+Using prediction text file: output/cochrane_context_some_flant5_base.txt
+{'questeval_ref': 0.48629803392739585, 'questeval_ref_std': 0.09464110005878391, 'questeval_no_ref': 0.47611918788701835, 'questeval_no_ref_std': 0.10284106477604898}

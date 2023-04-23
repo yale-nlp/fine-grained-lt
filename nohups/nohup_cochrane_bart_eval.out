@@ -1,0 +1,19 @@
+Using custom data configuration default-47b6999d2195e6eb
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-47b6999d2195e6eb/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_bart.txt
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 527.65it/s]
+Using custom data configuration default-111bc7946c5cb32c
+Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-111bc7946c5cb32c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 651.69it/s]
+{'rouge1': 0.3181, 'rouge2': 0.1199, 'rougeL': 0.1935, 'rougeLsum': 0.1936, 'bert_score': 0.857, 'sari': 36.1678, 'flesch_reading_ease_counts': Counter({'college': 253, '10th to 12th grade': 113, 'college graduate': 65, '8th & 9th grade': 30, 'professional': 12, '7th grade': 5, '5th grade': 2}), 'flesch_reading_ease_score': 42.2389}
+
+True
+cuda
+Using dataset: cochrane
+Using prediction text file: output/cochrane_bart.txt
+{'questeval_ref': 0.5216255188060492, 'questeval_ref_std': 0.07306102453011759, 'questeval_no_ref': 0.5184171101849734, 'questeval_no_ref_std': 0.07562029358042649}
