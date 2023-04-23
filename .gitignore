@@ -9,6 +9,6 @@ wandb/*
 output/archived/*
 nohups/scratch/*
 nohup_*
-!nohup/
+!nohup/nohup_*
 *__pycache__
 *.ipynb
