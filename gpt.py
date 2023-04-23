@@ -18,11 +18,9 @@ dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
 # test_output = []
-for text in dataset["input"][
-    442:
-]:  # It stops at 112,(idx 111) start from idx 112. Stop again at 442, start from idx 442
+for text in dataset["input"][1:]:
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {
                 "role": "system",
@@ -30,7 +28,8 @@ for text in dataset["input"][
             },
             {
                 "role": "user",
-                "content": f"Simplify this text for a fourth grade or lower student to understand: {text}",
+                "content": f"Simplify this text: {text}",
+                # "content": f"Simplify this text for a fourth grade or lower student to understand: {text}",
             },
         ],
         temperature=0,
@@ -40,7 +39,7 @@ for text in dataset["input"][
     simplified_sen = response["choices"][0]["message"]["content"]
     # test_output.append(simplified_sen)
     # open file in write mode
-    with open(f"output/{DATASET_NAME}_gpt3_turbo_128.txt", "a") as fp:
+    with open(f"output/{DATASET_NAME}_gpt4_basic_128.txt", "a") as fp:
         # for item in test_output:
         fp.write("%s\n" % simplified_sen)
 
