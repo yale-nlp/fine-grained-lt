@@ -1,0 +1,1 @@
+an itinerant Australian laborer who carries his personal belongings in a bundle as he travels around in search of work

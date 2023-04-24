@@ -1,10 +1,35 @@
-Your CPU supports instructions that this binary was not compiled to use: SSE3 SSE4.1 SSE4.2 AVX AVX2
-For maximum performance, you can install NMSLIB from sources
-pip install --no-binary :all: nmslib
-/home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator TfidfTransformer from version 0.20.3 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-/home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/sklearn/base.py:318: UserWarning: Trying to unpickle estimator TfidfVectorizer from version 0.20.3 when using version 1.2.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
-https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
-  warnings.warn(
-Using dataset: radiology_indiv
+Using dataset: asset
+/home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/wikipedia/wikipedia.py:389: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("lxml"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 389 of the file /home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/wikipedia/wikipedia.py. To get rid of this warning, pass the additional argument 'features="lxml"' to the BeautifulSoup constructor.
+
+  lis = BeautifulSoup(html).find_all('li')
+Using dataset: turkcorpus
+Traceback (most recent call last):
+  File "/data/lily/lyf6/Simplification-Project/preprocess_wiki.py", line 65, in <module>
+    item_replaced = add_context(item, ner_model, kb, linker)
+  File "/data/lily/lyf6/Simplification-Project/utils.py", line 163, in add_context
+    entity_dict[str(e)] = search_history(clean_term(str(e)), "wordnet_wikipedia")
+  File "/data/lily/lyf6/Simplification-Project/utils.py", line 129, in search_history
+    with open(f"{REFERENCE_PATHS[kb]}/{term}.txt") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/wordnet_wikipedia/d.c.txt'
+/home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/wikipedia/wikipedia.py:389: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("lxml"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 389 of the file /home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/wikipedia/wikipedia.py. To get rid of this warning, pass the additional argument 'features="lxml"' to the BeautifulSoup constructor.
+
+  lis = BeautifulSoup(html).find_all('li')
+Using dataset: turkcorpus
+Traceback (most recent call last):
+  File "/data/lily/lyf6/Simplification-Project/preprocess_wiki.py", line 65, in <module>
+    item_replaced = add_context(item, ner_model, kb, linker)
+  File "/data/lily/lyf6/Simplification-Project/utils.py", line 163, in add_context
+    entity_dict[str(e)] = search_history(clean_term(str(e)), "wordnet_wikipedia")
+  File "/data/lily/lyf6/Simplification-Project/utils.py", line 129, in search_history
+    with open(f"{REFERENCE_PATHS[kb]}/{term}.txt") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/wordnet_wikipedia/mi.txt'
+/home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/wikipedia/wikipedia.py:389: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("lxml"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 389 of the file /home/lily/lyf6/miniconda3/envs/simplification/lib/python3.9/site-packages/wikipedia/wikipedia.py. To get rid of this warning, pass the additional argument 'features="lxml"' to the BeautifulSoup constructor.
+
+  lis = BeautifulSoup(html).find_all('li')
+Using dataset: turkcorpus

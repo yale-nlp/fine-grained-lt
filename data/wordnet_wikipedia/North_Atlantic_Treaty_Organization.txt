@@ -1,0 +1,1 @@
+an international organization created in 1949 by the North Atlantic Treaty for purposes of collective security

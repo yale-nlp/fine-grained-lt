@@ -1,0 +1,17 @@
+Direct Stream Digital (DSD) is a trademark used by Sony and Philips for their system for digitally encoding audio signals for the Super Audio CD (SACD).
+DSD uses delta-sigma modulation a form of pulse-density modulation encoding, a technique to represent audio signals in digital format, a sequence of single-bit values at a sampling rate of 2.8224 MHz (64 times the CD audio sampling rate of 44.1 kHz, but only at
+
+
+
+
+
+
+              1
+              32768
+
+
+
+
+
+    {\displaystyle {\tfrac {1}{32768}}}
+   of its 16-bit resolution). Noise shaping of the 64-times oversampled signal reduces noise and distortion caused by the quantization of the audio signal to a single bit.
