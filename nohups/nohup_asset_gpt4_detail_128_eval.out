@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "eval.py", line 14, in <module>
+    from utils import get_readability_score
+  File "/data/lily/hh638/Health/simplification-project/utils.py", line 18, in <module>
+    sent_tokenizer = nltk.data.load("tokenizers/punkt/english.pickle")
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/nltk/data.py", line 750, in load
+    opened_resource = _open(resource_url)
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/nltk/data.py", line 876, in _open
+    return find(path_, path + [""]).open()
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/nltk/data.py", line 583, in find
+    raise LookupError(resource_not_found)
+LookupError:
+**********************************************************************
+  Resource [93mpunkt[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt/PY3/english.pickle[0m
+
+  Searched in:
+    - '/home/lily/hh638/nltk_data'
+    - '/home/lily/hh638/anaconda3/envs/simplification/nltk_data'
+    - '/home/lily/hh638/anaconda3/envs/simplification/share/nltk_data'
+    - '/home/lily/hh638/anaconda3/envs/simplification/lib/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - ''
+**********************************************************************
+
+[nltk_data] Downloading package punkt to /home/lily/hh638/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+Traceback (most recent call last):
+  File "eval.py", line 15, in <module>
+    from utils import get_readability_score
+ImportError: cannot import name 'get_readability_score' from 'utils' (/data/lily/hh638/Health/simplification-project/utils.py)
+[nltk_data] Downloading package punkt to /home/lily/hh638/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Using custom data configuration default-ae38e4e6b59d597c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-ae38e4e6b59d597c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: output/asset_gpt4_detail_128.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31.53it/s]
+Using custom data configuration default-3f91e594c1b18797
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3f91e594c1b18797/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 138.93it/s]
+{'rouge1': 0.6688, 'rouge2': 0.4439, 'rougeL': 0.6303, 'rougeLsum': 0.6296, 'bert_score': 0.93, 'sari': 39.8131, 'flesch_reading_ease_counts': Counter({'6th grade': 102, '7th grade': 99, '5th grade': 77, '8th & 9th grade': 54, '10th to 12th grade': 19, 'college': 8}), 'flesch_reading_ease_score': 79.3212}
