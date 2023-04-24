@@ -1,1 +1,0 @@
-Kivio is free flowcharting and diagramming software that is a part of KOffice, integrated graphic art and office suite by KDE.

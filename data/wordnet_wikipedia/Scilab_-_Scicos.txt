@@ -1,2 +1,0 @@
-Scicos is a graphical dynamical system modeler and simulator. The software’s purpose is to create block diagrams to model and simulate the dynamics of hybrid dynamical systems (both continuous and discrete time) and compile these models into executable code.  Applications include signal processing, systems control, queuing systems, and the study of physical and biological systems.
-Scilab includes a toolbox called Xcos which is based on Scicos.Scicos is developed in and distributed with the scientific software package ScicosLab. Scicos 4.4.1 has been released in April 2011.

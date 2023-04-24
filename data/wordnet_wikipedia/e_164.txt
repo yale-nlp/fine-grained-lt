@@ -1,4 +1,0 @@
-E.164 is an international standard (ITU-T Recommendation), titled The international public telecommunication numbering plan, that defines a numbering plan for the worldwide public switched telephone network (PSTN) and some other data networks.
-E.164 defines a general format for international telephone numbers. Plan-conforming telephone numbers are limited to only digits and to a maximum of fifteen digits. The specification divides the digit string into a country code of one to three digits, and the subscriber telephone number of a maximum of twelve digits.
-Alternative formats (with area codes and country specific numbers) are available. Any country-specific international call prefixes are not contained in the specification.
-The title of the original version and first revision of the E.164 standard was Numbering Plan for the ISDN Era

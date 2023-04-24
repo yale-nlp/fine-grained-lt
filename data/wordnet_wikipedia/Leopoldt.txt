@@ -1,3 +1,0 @@
-In algebraic number theory, Leopoldt's conjecture, introduced by  H.-W. Leopoldt (1962, 1975), states that the p-adic regulator of a number field does not vanish. The p-adic regulator is an analogue of the usual
-regulator defined using p-adic logarithms instead of the usual logarithms, introduced by H.-W. Leopoldt (1962).
-Leopoldt proposed a definition of a p-adic regulator Rp attached to K and a prime number p. The definition of Rp uses an appropriate determinant with entries the p-adic logarithm of a generating set of units of K (up to torsion), in the manner of the usual regulator. The conjecture, which for general K is still open as of 2009, then comes out as the statement that Rp is not zero.

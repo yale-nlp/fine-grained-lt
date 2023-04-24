@@ -1,1 +1,0 @@
-Probabilistic Signature Scheme (PSS) is a cryptographic signature scheme designed by Mihir Bellare and Phillip Rogaway.RSA-PSS is an adaptation of their work and is standardized as part of PKCS#1 v2.1. In general, RSA-PSS should be used as a replacement for RSA-PKCS#1 v1.5.

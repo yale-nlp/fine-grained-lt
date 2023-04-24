@@ -1,1 +1,0 @@
-(geometry) a plane rectangle with four equal sides and four right angles; a four-sided regular polygon
