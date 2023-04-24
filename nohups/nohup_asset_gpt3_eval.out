@@ -7,3 +7,12 @@ cuda
 Using dataset: asset
 Using prediction text file: output/asset_gpt3.txt
 {'questeval_ref': 0.7171931028781802, 'questeval_ref_std': 0.12448662405657487, 'questeval_no_ref': 0.6453247451142738, 'questeval_no_ref_std': 0.14048430716365248}
+Using custom data configuration default-ae38e4e6b59d597c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-ae38e4e6b59d597c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: output/asset_gpt3.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 141.96it/s]
+Using custom data configuration default-3f91e594c1b18797
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3f91e594c1b18797/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 141.01it/s]
+{'rouge1': 0.78, 'rouge2': 0.5759, 'rougeL': 0.7201, 'rougeLsum': 0.7195, 'bert_score': 0.9367, 'sari': 43.1479, 'flesch_reading_ease_counts': Counter({'8th & 9th grade': 77, '7th grade': 74, '10th to 12th grade': 62, '6th grade': 55, 'college': 45, '5th grade': 32, 'college graduate': 11, 'professional': 3}), 'flesch_reading_ease_score': 66.8964}

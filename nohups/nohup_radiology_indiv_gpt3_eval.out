@@ -1,0 +1,9 @@
+Using custom data configuration default-bfbf098c5fae933b
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-bfbf098c5fae933b/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: radiology_indiv
+Using prediction text file: output/radiology_indiv_gpt3.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 347.56it/s]
+Using custom data configuration default-e55755119d653c8e
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-e55755119d653c8e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 548.06it/s]
+{'rouge1': 0.3732, 'rouge2': 0.1481, 'rougeL': 0.3131, 'rougeLsum': 0.3127, 'bert_score': 0.9006, 'sari': 55.9185, 'flesch_reading_ease_counts': Counter({'6th grade': 445, '5th grade': 390, '7th grade': 380, '8th & 9th grade': 253, 'college': 236, '10th to 12th grade': 124, 'college graduate': 71, 'professional': 17}), 'flesch_reading_ease_score': 72.7881}

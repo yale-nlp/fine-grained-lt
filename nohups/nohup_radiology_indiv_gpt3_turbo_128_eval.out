@@ -7,3 +7,12 @@ cuda
 Using dataset: radiology_indiv
 Using prediction text file: output/radiology_indiv_gpt3_turbo_128.txt
 {'questeval_ref': 0.39744152899207524, 'questeval_ref_std': 0.1299418969292894, 'questeval_no_ref': 0.292912268533339, 'questeval_no_ref_std': 0.08105975751388587}
+Using custom data configuration default-bfbf098c5fae933b
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-bfbf098c5fae933b/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: radiology_indiv
+Using prediction text file: output/radiology_indiv_gpt3_turbo_128.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 145.96it/s]
+Using custom data configuration default-e55755119d653c8e
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-e55755119d653c8e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 154.67it/s]
+{'rouge1': 0.3144, 'rouge2': 0.1243, 'rougeL': 0.2645, 'rougeLsum': 0.2644, 'bert_score': 0.893, 'sari': 60.1413, 'flesch_reading_ease_counts': Counter({'5th grade': 1095, '6th grade': 537, '7th grade': 175, '8th & 9th grade': 92, '10th to 12th grade': 14, 'college': 3}), 'flesch_reading_ease_score': 90.5358}
