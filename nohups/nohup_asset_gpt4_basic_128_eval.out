@@ -1,0 +1,9 @@
+Using custom data configuration default-ae38e4e6b59d597c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-ae38e4e6b59d597c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: output/asset_gpt4_basic_128.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 402.33it/s]
+Using custom data configuration default-3f91e594c1b18797
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3f91e594c1b18797/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 424.27it/s]
+{'rouge1': 0.7516, 'rouge2': 0.532, 'rougeL': 0.713, 'rougeLsum': 0.7128, 'bert_score': 0.9405, 'sari': 40.716, 'flesch_reading_ease_counts': Counter({'8th & 9th grade': 74, '7th grade': 72, '6th grade': 58, '10th to 12th grade': 55, 'college': 53, '5th grade': 34, 'college graduate': 8, 'professional': 5}), 'flesch_reading_ease_score': 66.054}

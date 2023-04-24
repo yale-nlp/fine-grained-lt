@@ -1,0 +1,9 @@
+Using custom data configuration default-187a0b38c0199c09
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-187a0b38c0199c09/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_gpt4_basic_128.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 72.87it/s]
+Using custom data configuration default-3e04eaeca4c47c7c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3e04eaeca4c47c7c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 191.44it/s]
+{'rouge1': 0.3691, 'rouge2': 0.1128, 'rougeL': 0.2081, 'rougeLsum': 0.2079, 'bert_score': 0.8697, 'sari': 37.3626, 'flesch_reading_ease_counts': Counter({'college': 260, '10th to 12th grade': 128, 'college graduate': 46, '8th & 9th grade': 38, '7th grade': 6, 'professional': 2}), 'flesch_reading_ease_score': 45.3215}

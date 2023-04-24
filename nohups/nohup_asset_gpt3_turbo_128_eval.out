@@ -7,3 +7,24 @@ cuda
 Using dataset: asset
 Using prediction text file: output/asset_gpt3_turbo_128.txt
 {'questeval_ref': 0.6157078596316284, 'questeval_ref_std': 0.14375046386759982, 'questeval_no_ref': 0.5264514287169085, 'questeval_no_ref_std': 0.15269737048897825}
+Using custom data configuration default-ae38e4e6b59d597c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-ae38e4e6b59d597c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: outputasset_gpt3_turbo_128.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 277.38it/s]
+Using custom data configuration default-3f91e594c1b18797
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3f91e594c1b18797/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 410.12it/s]
+Traceback (most recent call last):
+  File "eval.py", line 174, in <module>
+    with open(args.preds_path) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'outputasset_gpt3_turbo_128.txt'
+Using custom data configuration default-ae38e4e6b59d597c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-ae38e4e6b59d597c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: asset
+Using prediction text file: output/asset_gpt3_turbo_128.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 422.81it/s]
+Using custom data configuration default-3f91e594c1b18797
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3f91e594c1b18797/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 546.06it/s]
+{'rouge1': 0.5903, 'rouge2': 0.36, 'rougeL': 0.5313, 'rougeLsum': 0.5312, 'bert_score': 0.9173, 'sari': 37.4018, 'flesch_reading_ease_counts': Counter({'6th grade': 107, '5th grade': 95, '7th grade': 87, '8th & 9th grade': 45, '10th to 12th grade': 16, 'college': 9}), 'flesch_reading_ease_score': 80.7625}

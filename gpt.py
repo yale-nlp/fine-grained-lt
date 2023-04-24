@@ -7,19 +7,19 @@ import argparse
 import os
 import re
 
-os.environ["OPENAI_API_KEY"] = " "
+os.environ["OPENAI_API_KEY"] = ""
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-# DATASET_NAME = "turkcorpus"
+DATASET_NAME = "turkcorpus"
 # DATASET_NAME = "radiology_indiv"
-DATASET_NAME = "cochrane"
+# DATASET_NAME = "cochrane"
 # DATASET_NAME = "asset"
 dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
 # test_output = []
-for text in dataset["input"]:
+for text in dataset["input"][117:]:
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
