@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import nltk
+
+# nltk.download('punkt')
 from datasets import Dataset, DatasetDict, load_metric, load_dataset
 from transformers import BartTokenizer, BartForConditionalGeneration, TrainingArguments
 from transformers import (
@@ -11,7 +13,8 @@ from transformers import (
 from evaluate import load
 import argparse
 import textstat
-from utils import get_readability_score
+
+# from utils import get_readability_score
 from collections import Counter
 
 metric_rouge = load("rouge")
