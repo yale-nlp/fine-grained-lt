@@ -19,7 +19,7 @@ dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
 # test_output = []
-for text in dataset["input"][117:]:
+for text in dataset["input"]:
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
