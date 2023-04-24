@@ -1,21 +1,0 @@
-Using custom data configuration default-06084af75ccc14fc
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 375.67it/s]
-Traceback (most recent call last):
-  File "gpt.py", line 23, in <module>
-    response = openai.ChatCompletion.create(
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
-    return super().create(*args, **kwargs)
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
-    response, _, api_key = requestor.request(
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 226, in request
-    resp, got_stream = self._interpret_response(result, stream)
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 620, in _interpret_response
-    self._interpret_response_line(
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/openai/api_requestor.py", line 683, in _interpret_response_line
-    raise self.handle_error_response(
-openai.error.AuthenticationError: You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.
-Using custom data configuration default-06084af75ccc14fc
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 491.94it/s]
-turkcorpus Done
