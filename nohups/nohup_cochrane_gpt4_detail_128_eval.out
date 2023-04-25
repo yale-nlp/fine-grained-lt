@@ -35,3 +35,7 @@ Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-
   self.metric_BERTScore = load_metric("bertscore")
 /home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
   warnings.warn(
+/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(

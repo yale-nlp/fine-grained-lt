@@ -7,19 +7,19 @@ import argparse
 import os
 import re
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 # DATASET_NAME = "turkcorpus_context_all"
-DATASET_NAME = "radiology_indiv_context_some"
+# DATASET_NAME = "radiology_indiv_context_some"
 # DATASET_NAME = "cochrane_context_some"
-# DATASET_NAME = "asset_context_all"
+DATASET_NAME = "asset_context_all"
 dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
 # test_output = []
-for text in dataset["input"][540:]:
+for text in dataset["input"][336:]:
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
@@ -50,3 +50,5 @@ for text in dataset["input"][540:]:
         fp.write("%s\n" % simplified_sen)
 
 print(f"{DATASET_NAME} Done")
+
+# openai.error.InvalidRequestError: This model's maximum context length is 8192 tokens. However, your messages resulted in 8534 tokens. Please reduce the length of the messages.
