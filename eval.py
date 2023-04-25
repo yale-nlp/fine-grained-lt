@@ -119,6 +119,13 @@ def compute_metrics(sources, predictions, labels):
         )
         result_bert.append(result_bert_temp["f1"])
 
+    result_bert_l = []
+    for (pred, source) in zip(predictions, sources):
+        result_bert_temp = metric_bertscore.compute(
+            predictions=[pred], references=[source], lang="en"
+        )
+        result_bert.append(result_bert_temp["f1"])
+
     READABILITY_METRICS = ["flesch_reading_ease"]
     readability_dict = {}
     for metric in READABILITY_METRICS:
@@ -135,6 +142,7 @@ def compute_metrics(sources, predictions, labels):
     # Extract results
     result = result_rouge
     result["bert_score"] = np.mean(result_bert)
+    result["bert_score_l"] = np.mean(result_bert_l)
     result["sari"] = result_sari["sari"]
     result.update(readability_dict)
 

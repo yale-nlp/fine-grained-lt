@@ -29,8 +29,8 @@ class QuestEval:
         src_preproc_pipe=None,
         do_weighter: bool = False,
         do_consistency: bool = False,
-        qg_batch_size: int = 36,
-        clf_batch_size: int = 48,
+        qg_batch_size: int = 8,
+        clf_batch_size: int = 8,
         limit_sent: int = 5,
         reduction_multi_refs: Callable = max,
         no_cuda: bool = False,
@@ -186,7 +186,7 @@ class QuestEval:
         hypothesis: List[str],
         sources: List[str] = None,
         list_references: List[List[str]] = None,
-        batch_size: int = 512,
+        batch_size: int = 8,
     ) -> Dict:
 
         assert hypothesis is not None
