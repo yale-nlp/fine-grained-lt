@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "eval.py", line 7, in <module>
+    from utils import get_readability_score
+ImportError: cannot import name 'get_readability_score' from 'utils' (/data/lily/hh638/Health/simplification-project/utils.py)
+Using custom data configuration default-6a4ff85ad620f84f
+Using dataset: turkcorpus_context_all
+Using prediction text file: output/turkcorpus_context_all_gpt4_basic_128.txt
+Downloading and preparing dataset json/default to /home/lily/hh638/.cache/huggingface/datasets/json/default-6a4ff85ad620f84f/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 4660.34it/s]
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 113.14it/s]
+Dataset json downloaded and prepared to /home/lily/hh638/.cache/huggingface/datasets/json/default-6a4ff85ad620f84f/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 224.78it/s]
+Using custom data configuration default-c5ed1eb5cd46c292
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-c5ed1eb5cd46c292/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24.34it/s]
+{'rouge1': 0.6676, 'rouge2': 0.453, 'rougeL': 0.6237, 'rougeLsum': 0.6237, 'bert_score': 0.9051, 'sari': 40.3949, 'flesch_reading_ease_counts': Counter({'college': 75, '10th to 12th grade': 74, '7th grade': 67, '8th & 9th grade': 64, '6th grade': 37, '5th grade': 21, 'college graduate': 19, 'professional': 2}), 'flesch_reading_ease_score': 61.0486}
+Traceback (most recent call last):
+  File "eval_questeval.py", line 1, in <module>
+    from questeval.questeval_metric import QuestEval
+ModuleNotFoundError: No module named 'questeval'
+/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(

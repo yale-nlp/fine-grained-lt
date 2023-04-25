@@ -7,3 +7,12 @@ cuda
 Using dataset: turkcorpus
 Using prediction text file: output/turkcorpus_gpt3.txt
 {'questeval_ref': 0.6651479097171394, 'questeval_ref_std': 0.11877853452020355, 'questeval_no_ref': 0.6134761191111363, 'questeval_no_ref_std': 0.12641673380587057}
+Using custom data configuration default-13151661945cfe5e
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-13151661945cfe5e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: turkcorpus
+Using prediction text file: output/turkcorpus_gpt3.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 166.01it/s]
+Using custom data configuration default-06084af75ccc14fc
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 547.20it/s]
+{'rouge1': 0.751, 'rouge2': 0.5182, 'rougeL': 0.6772, 'rougeLsum': 0.6771, 'bert_score': 0.9113, 'sari': 34.34, 'flesch_reading_ease_counts': Counter({'7th grade': 81, '8th & 9th grade': 76, '10th to 12th grade': 65, 'college': 50, '6th grade': 40, '5th grade': 33, 'college graduate': 11, 'professional': 3}), 'flesch_reading_ease_score': 65.6151}

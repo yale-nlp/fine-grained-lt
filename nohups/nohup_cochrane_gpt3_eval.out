@@ -21,3 +21,30 @@ cuda
 Using dataset: cochrane
 Using prediction text file: output/cochrane_gpt3_modified.txt
 {'questeval_ref': 0.5202905932335499, 'questeval_ref_std': 0.07281085303865034, 'questeval_no_ref': 0.5122091733423823, 'questeval_no_ref_std': 0.07865694845631095}
+Using custom data configuration default-187a0b38c0199c09
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-187a0b38c0199c09/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_gpt3.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 139.62it/s]
+Using custom data configuration default-3e04eaeca4c47c7c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3e04eaeca4c47c7c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 136.64it/s]
+Traceback (most recent call last):
+  File "eval.py", line 177, in <module>
+    print(compute_metrics(sources, preds, labels))
+  File "eval.py", line 119, in compute_metrics
+    result_rouge = metric_rouge.compute(
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/evaluate/module.py", line 432, in compute
+    self.add_batch(**inputs)
+  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/evaluate/module.py", line 512, in add_batch
+    raise ValueError(error_msg) from None
+ValueError: Mismatch in the number of predictions (504) and references (480)
+Using custom data configuration default-187a0b38c0199c09
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-187a0b38c0199c09/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_gpt3_modified.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 246.35it/s]
+Using custom data configuration default-3e04eaeca4c47c7c
+Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3e04eaeca4c47c7c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 446.63it/s]
+{'rouge1': 0.4355, 'rouge2': 0.1525, 'rougeL': 0.2417, 'rougeLsum': 0.2416, 'bert_score': 0.8751, 'sari': 39.4801, 'flesch_reading_ease_counts': Counter({'college': 246, '10th to 12th grade': 127, 'college graduate': 53, '8th & 9th grade': 45, '7th grade': 8, 'professional': 1}), 'flesch_reading_ease_score': 45.6208}
