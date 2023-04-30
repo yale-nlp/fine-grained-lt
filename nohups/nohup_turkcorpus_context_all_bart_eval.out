@@ -1,19 +1,17 @@
-Using custom data configuration default-fd41b346f709120e
-Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-fd41b346f709120e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-fbca13abfcdaf135/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 Using dataset: turkcorpus_context_all
 Using prediction text file: output/turkcorpus_context_all_bart.txt
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 89.81it/s]
-Using custom data configuration default-66689200dc9b9613
-Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-66689200dc9b9613/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+100%|██████████| 1/1 [00:00<00:00, 33.11it/s]
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-bf7ccd29e1588190/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 142.53it/s]
-{'rouge1': 0.9681, 'rouge2': 0.9383, 'rougeL': 0.9657, 'rougeLsum': 0.9659, 'bert_score': 0.953, 'sari': 58.0552, 'flesch_reading_ease_counts': Counter({'college': 95, '10th to 12th grade': 80, '8th & 9th grade': 60, '7th grade': 45, '6th grade': 37, 'college graduate': 27, '5th grade': 13, 'professional': 2}), 'flesch_reading_ease_score': 57.1358}
+100%|██████████| 1/1 [00:00<00:00, 26.33it/s]
+{'rouge1': 0.9685, 'rouge2': 0.941, 'rougeL': 0.9665, 'rougeLsum': 0.9667, 'bert_score': 0.9475, 'bert_score_l': 0.9349, 'sari': 57.475, 'flesch_reading_ease_counts': Counter({'college': 97, '10th to 12th grade': 75, '8th & 9th grade': 62, '7th grade': 50, '6th grade': 31, 'college graduate': 27, '5th grade': 13, 'professional': 4}), 'flesch_reading_ease_score': 56.498}
 
 True
 cuda
-Using dataset: turkcorpus
+Using dataset: turkcorpus_context_all
 Using prediction text file: output/turkcorpus_context_all_bart.txt
-{'questeval_ref': 0.7149441977041777, 'questeval_ref_std': 0.12904306077027783, 'questeval_no_ref': 0.6792817872453757, 'questeval_no_ref_std': 0.142291571385414}
+{'questeval_ref': 0.7160545483623684, 'questeval_ref_std': 0.12698250564761496, 'questeval_no_ref': 0.5891276642019679, 'questeval_no_ref_std': 0.14740184108646293}

@@ -1,20 +1,19 @@
-Using custom data configuration default-b4088db718ca8391
-Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-b4088db718ca8391/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-71351341ad7ffd0e/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 Using dataset: radiology_indiv_context_some
 Using prediction text file: output/radiology_indiv_context_some_bart.txt
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 14.87it/s]
-Using custom data configuration default-8919ccebd961878c
-Reusing dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-8919ccebd961878c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
+100%|██████████| 1/1 [00:00<00:00,  9.32it/s]
+100%|██████████| 1/1 [00:00<00:00,  9.30it/s]
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-29037fd5d9a2ddc8/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 30.06it/s]
-Warning: Empty candidate sentence detected; setting raw BERTscores to 0.
-{'rouge1': 0.7615, 'rouge2': 0.6441, 'rougeL': 0.7332, 'rougeLsum': 0.7337, 'bert_score': 0.9557, 'sari': 82.0845, 'flesch_reading_ease_counts': Counter({'5th grade': 962, '6th grade': 558, '7th grade': 166, '8th & 9th grade': 140, '10th to 12th grade': 62, 'college': 28}), 'flesch_reading_ease_score': 88.4159}
+100%|██████████| 1/1 [00:00<00:00, 19.62it/s]
+Warning: Empty reference sentence detected; setting raw BERTScores to 0.
+{'rouge1': 0.8808, 'rouge2': 0.8072, 'rougeL': 0.8677, 'rougeLsum': 0.8675, 'bert_score': 0.9788, 'bert_score_l': 0.8439, 'sari': 89.1743, 'flesch_reading_ease_counts': Counter({'5th grade': 879, '6th grade': 555, '7th grade': 196, '8th & 9th grade': 146, '10th to 12th grade': 98, 'college': 42}), 'flesch_reading_ease_score': 86.8342}
 
 True
 cuda
-Using dataset: radiology_indiv
+Using dataset: radiology_indiv_context_some
 Using prediction text file: output/radiology_indiv_context_some_bart.txt
-{'questeval_ref': 0.5365530167137577, 'questeval_ref_std': 0.2183792820320659, 'questeval_no_ref': 0.26938015371607515, 'questeval_no_ref_std': 0.06841221989425789}
+{'questeval_ref': 0.6034550914332255, 'questeval_ref_std': 0.2263736944225288, 'questeval_no_ref': 0.265409136002083, 'questeval_no_ref_std': 0.05933441592725188}

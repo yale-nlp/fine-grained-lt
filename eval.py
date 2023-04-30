@@ -12,7 +12,7 @@ metric_bertscore = load("bertscore")
 metric_sari = load("sari")
 
 
-def get_readability_score(text, metric="flesch_reading_ease"):
+def get_readability_score(text, metric="flesch_reading_grade"):
     """get the readability score and grade level of text"""
     if metric == "flesch_reading_ease":
         score = textstat.flesch_reading_ease(text)
@@ -118,14 +118,20 @@ def compute_metrics(sources, predictions, labels):
         result_bert_temp = metric_bertscore.compute(
             predictions=[pred] * len(label), references=label, lang="en"
         )
-        result_bert.append(result_bert_temp["f1"])
+        if type(result_bert_temp["f1"]) == list:
+            result_bert.append(result_bert_temp["f1"][0])
+        else:
+            result_bert.append(result_bert_temp["f1"])
 
     result_bert_l = []
     for (pred, source) in zip(predictions, sources):
         result_bert_temp = metric_bertscore.compute(
             predictions=[pred], references=[source], lang="en"
         )
-        result_bert.append(result_bert_temp["f1"])
+        if type(result_bert_temp["f1"]) == list:
+            result_bert_l.append(result_bert_temp["f1"][0])
+        else:
+            result_bert_l.append(result_bert_temp["f1"])
 
     READABILITY_METRICS = ["flesch_reading_ease"]
     readability_dict = {}

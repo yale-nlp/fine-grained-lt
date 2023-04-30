@@ -1,33 +1,17 @@
-Using custom data configuration default-3f3567acebcaf41f
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-8a2ff5ffcc03d789/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 Using dataset: asset_context_all
 Using prediction text file: output/asset_context_all_flant5_base.txt
-Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-3f3567acebcaf41f/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
-
-Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3591.01it/s]
-
-Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 306.06it/s]
-Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-3f3567acebcaf41f/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 126.47it/s]
-Using custom data configuration default-16c79ca3e16db46c
-Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-16c79ca3e16db46c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
-
-Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3132.42it/s]
-
-Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 73.48it/s]
-Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-16c79ca3e16db46c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+100%|██████████| 1/1 [00:00<00:00, 690.76it/s]
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-6397f805fcee6b10/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 201.66it/s]
-{'rouge1': 0.9187, 'rouge2': 0.8403, 'rougeL': 0.9087, 'rougeLsum': 0.9087, 'bert_score': 0.951, 'sari': 54.7818, 'flesch_reading_ease_counts': Counter({'8th & 9th grade': 74, 'college': 66, '10th to 12th grade': 62, '7th grade': 54, '6th grade': 44, '5th grade': 34, 'college graduate': 22, 'professional': 3}), 'flesch_reading_ease_score': 63.1273}
+100%|██████████| 1/1 [00:00<00:00, 510.44it/s]
+{'rouge1': 0.9083, 'rouge2': 0.8271, 'rougeL': 0.8996, 'rougeLsum': 0.8997, 'bert_score': 0.9494, 'bert_score_l': 0.9209, 'sari': 54.0462, 'flesch_reading_ease_counts': Counter({'8th & 9th grade': 74, 'college': 69, '10th to 12th grade': 57, '6th grade': 50, '7th grade': 49, '5th grade': 36, 'college graduate': 21, 'professional': 3}), 'flesch_reading_ease_score': 63.2888}
 
 True
 cuda
-Using dataset: asset
+Using dataset: asset_context_all
 Using prediction text file: output/asset_context_all_flant5_base.txt
-{'questeval_ref': 0.7480090862478163, 'questeval_ref_std': 0.12375820745955746, 'questeval_no_ref': 0.7032711365262753, 'questeval_no_ref_std': 0.14243116632771005}
+{'questeval_ref': 0.7381918957247467, 'questeval_ref_std': 0.12833591964039967, 'questeval_no_ref': 0.5703669958313304, 'questeval_no_ref_std': 0.13777277594893478}

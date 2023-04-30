@@ -1,33 +1,17 @@
-Using custom data configuration default-fd41b346f709120e
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-fbca13abfcdaf135/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 Using dataset: turkcorpus_context_all
 Using prediction text file: output/turkcorpus_context_all_flant5_base.txt
-Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-fd41b346f709120e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
-
-Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3289.65it/s]
-
-Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 210.65it/s]
-Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-fd41b346f709120e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 125.61it/s]
-Using custom data configuration default-66689200dc9b9613
-Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-66689200dc9b9613/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
-
-Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 4161.02it/s]
-
-Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 419.43it/s]
-Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-66689200dc9b9613/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
+100%|██████████| 1/1 [00:00<00:00, 597.73it/s]
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-bf7ccd29e1588190/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 
   0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 139.85it/s]
-{'rouge1': 0.9745, 'rouge2': 0.9484, 'rougeL': 0.9724, 'rougeLsum': 0.9722, 'bert_score': 0.9541, 'sari': 58.9912, 'flesch_reading_ease_counts': Counter({'college': 92, '10th to 12th grade': 85, '7th grade': 57, '8th & 9th grade': 54, '6th grade': 29, 'college graduate': 26, '5th grade': 13, 'professional': 3}), 'flesch_reading_ease_score': 57.0098}
+100%|██████████| 1/1 [00:00<00:00, 453.34it/s]
+{'rouge1': 0.9766, 'rouge2': 0.9507, 'rougeL': 0.9749, 'rougeLsum': 0.9748, 'bert_score': 0.9482, 'bert_score_l': 0.9365, 'sari': 58.34, 'flesch_reading_ease_counts': Counter({'college': 89, '10th to 12th grade': 85, '8th & 9th grade': 60, '7th grade': 52, '6th grade': 30, 'college graduate': 28, '5th grade': 12, 'professional': 3}), 'flesch_reading_ease_score': 56.868}
 
 True
 cuda
-Using dataset: turkcorpus
+Using dataset: turkcorpus_context_all
 Using prediction text file: output/turkcorpus_context_all_flant5_base.txt
-{'questeval_ref': 0.7171131518393058, 'questeval_ref_std': 0.12546115308206462, 'questeval_no_ref': 0.6836519300694103, 'questeval_no_ref_std': 0.13875755463106013}
+{'questeval_ref': 0.7179535090494498, 'questeval_ref_std': 0.12546024224830865, 'questeval_no_ref': 0.5911372639177058, 'questeval_no_ref_std': 0.14708989024387414}

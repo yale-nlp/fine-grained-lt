@@ -1,33 +1,16 @@
-Using custom data configuration default-9de64061dfdd6f31
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-3e599cd187b0bd0a/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
 Using dataset: cochrane_context_some
 Using prediction text file: output/cochrane_context_some_flant5_base.txt
-Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-9de64061dfdd6f31/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
-
-Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 3358.13it/s]
-
-Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 35.86it/s]
-Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-9de64061dfdd6f31/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
-
-  0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 153.88it/s]
-Using custom data configuration default-d8982e3b25b67a5d
-Downloading and preparing dataset json/default to /home/lily/lyf6/.cache/huggingface/datasets/json/default-d8982e3b25b67a5d/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b...
-
-Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Downloading data files: 100%|██████████| 1/1 [00:00<00:00, 4462.03it/s]
-
-Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]
-Extracting data files: 100%|██████████| 1/1 [00:00<00:00, 34.63it/s]
-Dataset json downloaded and prepared to /home/lily/lyf6/.cache/huggingface/datasets/json/default-d8982e3b25b67a5d/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b. Subsequent calls will reuse this data.
-
-  0%|          | 0/1 [00:00<?, ?it/s]
-100%|██████████| 1/1 [00:00<00:00, 194.60it/s]
-{'rouge1': 0.2925, 'rouge2': 0.1015, 'rougeL': 0.1885, 'rougeLsum': 0.1887, 'bert_score': 0.8487, 'sari': 36.3156, 'flesch_reading_ease_counts': Counter({'college': 202, '10th to 12th grade': 128, '8th & 9th grade': 64, 'college graduate': 53, '7th grade': 21, 'professional': 6, '6th grade': 6}), 'flesch_reading_ease_score': 47.4027}
-
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 640.74it/s]
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-de135d8598d979da/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 498.55it/s]
+{'rouge1': 0.277, 'rouge2': 0.0818, 'rougeL': 0.178, 'rougeLsum': 0.1779, 'bert_score': 0.842, 'bert_score_l': 0.7964, 'sari': 39.4883, 'flesch_reading_ease_counts': Counter({'college': 156, '10th to 12th grade': 124, '8th & 9th grade': 110, 'college graduate': 35, '7th grade': 35, 'professional': 14, '6th grade': 4, '5th grade': 2}), 'flesch_reading_ease_score': 51.0299}
+/data/lily/lyf6/Simplification-Project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  self.metric_BERTScore = load_metric("bertscore")
+/home/lily/lyf6/miniconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
 True
 cuda
-Using dataset: cochrane
+Using dataset: cochrane_context_some
 Using prediction text file: output/cochrane_context_some_flant5_base.txt
-{'questeval_ref': 0.48629803392739585, 'questeval_ref_std': 0.09464110005878391, 'questeval_no_ref': 0.47611918788701835, 'questeval_no_ref_std': 0.10284106477604898}
+{'questeval_ref': 0.4120597721719459, 'questeval_ref_std': 0.07102699799536068, 'questeval_no_ref': 0.3785856090809002, 'questeval_no_ref_std': 0.07130493982497782}

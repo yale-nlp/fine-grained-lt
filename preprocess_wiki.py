@@ -24,7 +24,14 @@ if args.dataset in ["asset", "turkcorpus"]:
     ner_model = spacy.load("en_core_web_lg")
     linker = None
     kb = "wordnet_wikipedia"
-elif args.dataset in ["radiology_indiv", "radiology_full", "radiology", "cochrane"]:
+elif args.dataset in [
+    "radiology_indiv",
+    "radiology_full",
+    "radiology",
+    "cochrane",
+    "mimic_sent",
+    "pilot",
+]:
     import scispacy
     from scispacy.linking import EntityLinker
 
