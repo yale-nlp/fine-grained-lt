@@ -1,0 +1,80 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "contrastive_training",
+            "type": "python",
+            "request": "launch",
+            "args": ["--kg_path", "data/wordnet_wikipedia",
+                     "--model", "flant5_base",
+                     "--lr", "5e-4",
+                     "--epochs", "3",
+                     "--batch_size", "28",
+                     "--gradient_accumulation_steps", "4"],
+            "program": "${workspaceFolder}/contrastive_training.py",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            }
+        },
+        {
+            "name": "train3",
+            "type": "python",
+            "request": "launch",
+            "args": ["--dataset", "testfile",
+                     "--model", "bart_xsum",
+                     "--hyperparameter_tune", "True",
+                     "--loss_type", "rl_policy"],
+            "program": "${workspaceFolder}/train3.py",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            }
+        },
+        {
+            "name": "test_train3_rl",
+            "type": "python",
+            "request": "launch",
+            "args": ["--dataset", "testfile",
+                    "--model", "bart_xsum",
+                    "--loss_type", "rl",
+                    "--hyperparameter_tune", "False",
+                    "--predict_only", "False",
+                    "--batch_size", "1",
+                    "--gradient_accumulation_steps", "1",
+                    "--epochs", "1",
+                    "--learning_rate", "3e-5",
+                    "--weight_decay", "0.0",
+                    "--warmup_steps", "0"],
+            "program": "${workspaceFolder}/train3.py",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            }
+        },
+        {
+            "name": "test_train3_rl_hyp_tune",
+            "type": "python",
+            "request": "launch",
+            "args": ["--dataset", "testfile",
+                    "--model", "bart_xsum",
+                    "--loss_type", "rl",
+                    "--hyperparameter_tune", "True"],
+            "program": "${workspaceFolder}/train3.py",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            }
+        }
+    ]
+}

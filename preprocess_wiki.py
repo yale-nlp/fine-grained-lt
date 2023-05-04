@@ -5,7 +5,7 @@ import pickle
 import spacy
 import shutil
 
-from utils import add_context
+from utils_context import add_context
 
 
 def write_json(output_json, path):

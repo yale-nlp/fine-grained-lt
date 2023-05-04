@@ -1,0 +1,7 @@
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-3e599cd187b0bd0a/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Using dataset: cochrane_context_some
+Using prediction text file: output/cochrane_bart_xsum.txt
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.88it/s]100%|██████████| 1/1 [00:00<00:00,  8.85it/s]
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-de135d8598d979da/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 663.97it/s]
+{'rouge1': 0.316, 'rouge2': 0.118, 'rougeL': 0.1947, 'rougeLsum': 0.1949, 'bert_score': 0.8561, 'bert_score_l': 0.8015, 'sari': 40.8052, 'flesch_reading_ease_counts': Counter({'college': 253, '10th to 12th grade': 106, 'college graduate': 74, '8th & 9th grade': 31, 'professional': 11, '7th grade': 5}), 'flesch_reading_ease_score': 41.9902}

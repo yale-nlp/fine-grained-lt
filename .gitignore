@@ -6,6 +6,8 @@ data/mesh/*
 misc/*
 models/*
 wandb/*
+scratch/*
+test*
 output/archived/*
 nohups/scratch/*
 *__pycache__
