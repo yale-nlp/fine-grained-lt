@@ -20,16 +20,17 @@ pip install -r requirements.txt
 pre-commit install
 ```
 
-We also create a new environment specifically for the <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric, using the following steps. Note we've modified the requirements file from the original `requirements.txt` file, so kindly use the QuestEval version in this directory.
+<b>QuestEval: </b> We also install the QuestEval <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric. Note we've modified the requirements file from the original `requirements.txt` file, so kindly use the QuestEval version in this directory.
 ```
-# Create environment and install requirements
-conda create --name questeval python=3.9
-conda activate questeval
-pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu113
-
-# Clone QuestEval and install
 cd QuestEval
 pip3 install -e .
+```
+
+<b>OpenAI: </b> We also use the OpenAI API for various generation and evaluation tasks. To save your key (and use the evaluation script), first create a file called `openai_key` (no `.txt` extension!), then paste your key there! The script will look for this file and read the key from it. This key is also automatically excluded using the `.gitignore`, so we don't push our keys here online.
+
+<b>Weights and Biases:</b> Before training, be sure to log in to <a href="https://wandb.ai/">wandb</a> (weights and biases), which helps us log experiments and keep track of their performance. To do this, set up a (free) account with wandb, then copy the API key! Back in the terminal, we can log in as follows:
+```
+wandb login <API_KEY>
 ```
 
 ### Data
@@ -61,12 +62,6 @@ Each dataset is stored using `json` files – each with two versions: `<dataset
              "labels": [<str>, <str>, ..., <str>]},
             ],
 }
-```
-
-### Weights and Biases
-Before training, be sure to log in to <a href="https://wandb.ai/">wandb</a> (weights and biases), which helps us log experiments and keep track of their performance. To do this, set up a (free) account with wandb, then copy the API key! Back in the terminal, we can log in as follows:
-```
-wandb login <API_KEY>
 ```
 
 ### Training
