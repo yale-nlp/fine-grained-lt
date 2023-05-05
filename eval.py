@@ -28,7 +28,15 @@ result = compute_metrics(
     sources,
     preds,
     labels,
-    ["rouge", "bert_score", "bert_score_l", "sari", "flesch_kincaid_grade", "ari"],
+    [
+        "rouge",
+        "bert_score",
+        "bert_score_l",
+        "sari",
+        "flesch_kincaid_grade",
+        "ari",
+        "questeval",
+    ],
 )
 print(result)
 print("Copy this string into the Excel and separate by comma")
@@ -46,6 +54,8 @@ print(
                 "sari",
                 "flesch_kincaid_grade_score",
                 "ari_score",
+                "questeval_no_ref",
+                "questeval_ref",
             ]
         ]
     )

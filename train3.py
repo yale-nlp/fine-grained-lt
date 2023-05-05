@@ -102,10 +102,10 @@ class SimplificationTrainer(Seq2SeqTrainer):
                 logits.view(-1, logits.shape[-1]), inputs["labels"].view(-1)
             )
             loss = loss.view(batch_size, seq_len).mean(axis=1)
-            loss = loss / loss.item()
+            # loss = loss / loss.item() # TODO: Check if this should be removed, discuss
 
             if args.loss_type == "rl":
-                # Reshape SARI for loss calculation
+                # Rescale SARI for numeric stability
                 sari_scores = torch.tensor(
                     [0.01 * (100.0 - s) for s in sari_scores]
                 ).cuda()
@@ -137,13 +137,11 @@ class SimplificationTrainer(Seq2SeqTrainer):
                     )
                 ]
 
-                # Subtract sari_sampling - sari_base
-                sari_scores = torch.tensor(sari_scores_sampling) - torch.tensor(
-                    sari_scores
+                # Subtract sari_sampling - sari_base, rescale for stability
+                sari_scores = torch.tensor(sari_scores) - torch.tensor(
+                    sari_scores_sampling
                 )
-
-                # Reshape SARI for loss calculation
-                sari_scores = sari_scores.cuda()
+                sari_scores = 0.01 * sari_scores.cuda()
 
                 # Scale cross entropy loss by the SARI score
                 loss = torch.sum(loss * sari_scores)
@@ -287,7 +285,7 @@ def train(config=None, project=None):
             )
 
             # open file in write mode
-            with open(f"output/{args.dataset}_{args.model}.txt", "w") as fp:
+            with open(f"output/{PROJECT_NAME}.txt", "w") as fp:
                 for item in test_output:
                     fp.write("%s\n" % item)
                 print("Done")
@@ -300,7 +298,7 @@ sweep_config = {
         "batch_size": {"value": 1},
         "gradient_accumulation_steps": {"values": [1, 2, 4]},
         "epochs": {"value": 1},
-        "learning_rate": {"distribution": "uniform", "max": 1e-3, "min": 1e-7},
+        "learning_rate": {"distribution": "uniform", "max": 1e-4, "min": 1e-6},
         "weight_decay": {"distribution": "uniform", "max": 0.05, "min": 0.0},
         "warmup_steps": {"value": 0},
     },
@@ -312,9 +310,14 @@ tokenizer = AutoTokenizer.from_pretrained(model_name_dict[args.model][1])
 # Naming variables
 DATASET_NAME = args.dataset
 MODEL_NAME = model_name_dict[args.model][0]
+PRETRAIN_NAME = (
+    ""
+    if (args.checkpoint is None) or ("PRETRAIN" not in args.checkpoint)
+    else "_PRETRAIN"
+)
 LOSS_TYPE_NAME = "" if args.loss_type == "standard" else f"_{args.loss_type}"
-MODEL_OUT_NAME = f"{MODEL_NAME}_{DATASET_NAME}{LOSS_TYPE_NAME}"
-PROJECT_NAME = f"{DATASET_NAME}_{args.model}{LOSS_TYPE_NAME}"
+MODEL_OUT_NAME = f"{MODEL_NAME}{PRETRAIN_NAME}_{DATASET_NAME}{LOSS_TYPE_NAME}"
+PROJECT_NAME = f"{DATASET_NAME}_{args.model}{PRETRAIN_NAME.lower()}{LOSS_TYPE_NAME}"
 
 # Load and preprocess the datasets
 dataset = load_dataset("json", data_files=f"data/{DATASET_NAME}.json", field="train")

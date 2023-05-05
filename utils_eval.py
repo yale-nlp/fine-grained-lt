@@ -5,6 +5,9 @@ import textstat
 import nltk
 from rouge_score import rouge_scorer, scoring
 from typing import List, Dict, Tuple
+from questeval.questeval_metric import QuestEval
+import numpy as np
+import json
 
 metric_bertscore = load("bertscore")
 metric_sari = load("sari")
@@ -14,6 +17,75 @@ def add_newline_to_end_of_each_sentence(s):
     """This was added to get rougeLsum scores matching published rougeL scores for BART and PEGASUS."""
     s = s.replace("\n", "")
     return "\n".join(nltk.sent_tokenize(s))
+
+
+import openai
+
+
+def calculate_g_eval(sources, predictions, model, **kwargs):
+
+    openai.api_key_path = "openai_key"
+
+    result = []
+    for document, summary in zip(sources, predictions):
+        try:
+            response = openai.ChatCompletion.create(
+                model=model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Your task is to rate the summary on one metric.",
+                    },
+                    {
+                        "role": "user",
+                        "content": (
+                            "Human Evaluation of Text Summarization Systems: \n"
+                            "Factual Consistency: Does the summary untruthful or "
+                            "misleading facts that are not supported by the source text? \n"
+                            f"Source Text: {document} \n"
+                            f"Summary: {summary} \n"
+                            "Does the summary contain factual inconsistency? \n"
+                            "Answer: "
+                        ),
+                    },
+                ],
+                **kwargs,
+            )
+        except Exception as e:
+            response = {}
+            print(e)
+        result.append(response)
+        # simplified_sen = response["choices"][0]["message"]["content"]
+    return result
+
+
+def calculate_questeval(sources, predictions, labels, questeval):
+    """_summary_
+
+    Args:
+        source (list[str]): List of input sources
+        prediction (list[str]): List of output sources
+        labels (list[list[str]]): List of list of reference strings
+
+    Returns:
+        dict: Output of computed metrics
+    """
+    result = {}
+
+    score = questeval.corpus_questeval(
+        hypothesis=predictions, sources=sources, list_references=labels
+    )
+    result["questeval_ref"] = score["corpus_score"]
+    result["questeval_ref_std"] = np.std(score["ex_level_scores"])
+
+    score = questeval.corpus_questeval(
+        hypothesis=predictions,
+        sources=sources,
+    )
+    result["questeval_no_ref"] = score["corpus_score"]
+    result["questeval_no_ref_std"] = np.std(score["ex_level_scores"])
+
+    return result
 
 
 def calculate_rouge(
@@ -162,8 +234,8 @@ def compute_metrics(
         labels (list[list[str]]): List of list of reference strings
     Returns:
         dict: Output of computed metrics
-    """
 
+    """
     assert type(sources) == list and type(sources[0]) == str, print(
         "Sources should be a list of strings"
     )
@@ -190,6 +262,7 @@ def compute_metrics(
             sources=sources, predictions=predictions, references=labels
         )
         result["sari"] = result_sari["sari"]
+
     if "bert_score" in metrics:
         result_bert = []
         for (pred, label) in zip(predictions, labels):
@@ -234,4 +307,24 @@ def compute_metrics(
             )
     result.update(readability_dict)
 
-    return {k: round(v, 4) if "counts" not in k else v for k, v in result.items()}
+    if "questeval" in metrics:
+        questeval = QuestEval(no_cuda=False)
+        questeval_dict = calculate_questeval(sources, predictions, labels, questeval)
+        result.update(questeval_dict)
+
+    if ("geval-3.5" in metrics) or ("geval-4" in metrics):
+        if "geval-3.5" in metrics:
+            geval_dict = calculate_g_eval(
+                sources, predictions, model="gpt-3.5-turbo", temperature=0, max_tokens=1
+            )
+        else:
+            geval_dict = calculate_g_eval(
+                sources, predictions, model="gpt-4", n=1, temperature=1, top_p=1
+            )
+        geval_answers = [
+            d["choices"][0]["message"]["content"] if "choices" in d else ""
+            for d in geval_dict
+        ]
+        result["geval"] = Counter(geval_answers)
+
+    return {k: round(v, 4) if type(v) in [float, int] else v for k, v in result.items()}

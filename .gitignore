@@ -10,5 +10,6 @@ scratch/*
 test*
 output/archived/*
 nohups/scratch/*
+openai_key
 *__pycache__
 *.ipynb
