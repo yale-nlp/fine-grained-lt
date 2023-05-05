@@ -20,14 +20,8 @@ pip install -r requirements.txt
 pre-commit install
 ```
 
-We also create a new environment specifically for the <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric, using the following steps. Note we've modified the requirements file from the original `requirements.txt` file, so kindly use the QuestEval version in this directory.
+We also install the QuestEval <a href="https://github.com/ThomasScialom/QuestEval#text-simplification">QuestEval</a> evaluation metric. Note we've modified the requirements file from the original `requirements.txt` file, so kindly use the QuestEval version in this directory.
 ```
-# Create environment and install requirements
-conda create --name questeval python=3.9
-conda activate questeval
-pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu113
-
-# Clone QuestEval and install
 cd QuestEval
 pip3 install -e .
 ```
