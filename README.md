@@ -38,6 +38,13 @@ cd QuestEval
 pip3 install -e .
 ```
 
+<b> SARI (Easse Implementation): </b> We also install the SARI implementation from the EASSE package (in addition to the HuggingFace version) as some papers use this.
+```
+git clone https://github.com/feralvam/easse.git
+cd easse
+pip install -e .
+```
+
 <b>OpenAI: </b> We also use the OpenAI API for various generation and evaluation tasks. To save your key (and use the evaluation script), first create a file called `openai_key` (no `.txt` extension!), then paste your key there! The script will look for this file and read the key from it. This key is also automatically excluded using the `.gitignore`, so we don't push our keys here online.
 
 <b>Weights and Biases:</b> Before training, be sure to log in to <a href="https://wandb.ai/">wandb</a> (weights and biases), which helps us log experiments and keep track of their performance. To do this, set up a (free) account with wandb, then copy the API key! Back in the terminal, we can log in as follows:
