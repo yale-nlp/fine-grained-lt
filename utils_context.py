@@ -3,11 +3,34 @@ from nltk.corpus import wordnet as wn
 import nltk.data
 import os
 import openai
+import random
 import re
 import requests
 import scispacy
 import spacy
 import wikipedia
+
+SEMTYPES = [
+    "T023",
+    "T028",
+    "T046",
+    "T047",
+    "T048",
+    "T059",
+    "T060",
+    "T061",
+    "T074",
+    "T109",
+    "T116",
+    "T121",
+    "T122",
+    "T123",
+    "T125",
+    "T129",
+    "T184",
+    "T191",
+    "T195",
+]
 
 REFERENCE_PATHS = {
     "wordnet_wikipedia": "data/wordnet_wikipedia",
@@ -140,6 +163,8 @@ def search_medline(term):
 
 
 def search_history(term, kb):
+    if not os.path.exists(f"{REFERENCE_PATHS[kb]}/{term}.txt"):
+        return ""
     with open(f"{REFERENCE_PATHS[kb]}/{term}.txt") as f:
         lines = f.readlines()
     result = "".join(lines)
@@ -158,7 +183,7 @@ def search_wordnet(term):
 
 
 # def add_context(s, kb, entities=[]):
-def add_context(s, ner_model, kb, linker):
+def add_context(s, ner_model, kb, linker, ablation):
 
     # Extract entities
     entity_lst = set(ner_model(s).ents)
@@ -170,56 +195,87 @@ def add_context(s, ner_model, kb, linker):
     # Search entity descriptions, but pull from history when possible
     if kb == "wordnet_wikipedia":
         entity_dict = {}
-        entity_lst = list(
-            filter(
-                lambda e: e.label_
-                in [
-                    "EVENT",
-                    "FAC",
-                    "GPE",
-                    "LANGUAGE",
-                    "LAW",
-                    "LOC",
-                    "NORP",
-                    "ORG",
-                    "PERSON",
-                    "PRODUCT",
-                    "WORK_OF_ART",
-                ],
-                entity_lst,
-            )
-        )
-        for e in entity_lst:
-            if f"{clean_term(str(e))}.txt" in existing_files:
-                entity_dict[str(e)] = search_history(
-                    clean_term(str(e)), "wordnet_wikipedia"
+        if len(entity_lst) > 0 and hasattr(list(entity_lst)[0], "label_"):
+            entity_lst = list(
+                filter(
+                    lambda e: e.label_
+                    in [
+                        "EVENT",
+                        "FAC",
+                        "GPE",
+                        "LANGUAGE",
+                        "LAW",
+                        "LOC",
+                        "NORP",
+                        "ORG",
+                        "PERSON",
+                        "PRODUCT",
+                        "WORK_OF_ART",
+                    ],
+                    entity_lst,
                 )
+            )
+        for e in entity_lst:
+            e = str(e)
+            if ablation:
+                entity_dict[e] = search_history(
+                    random.choice(existing_files).replace(".txt", ""),
+                    "wordnet_wikipedia",
+                )
+            elif f"{clean_term(e)}.txt" in existing_files:
+                entity_dict[e] = search_history(clean_term(e), "wordnet_wikipedia")
             else:
-                desc = search_wordnet(str(e))
+                desc = search_wordnet(e)
                 if desc == "":
-                    desc = search_wikipedia(str(e))
-                entity_dict[str(e)] = desc
+                    desc = search_wikipedia(e)
+                entity_dict[e] = desc
     elif kb == "medline":
-        entity_dict = {
-            key: search_medline(key)
-            if f"{clean_term(key)}.txt" not in existing_files
-            else search_history(clean_term(key), "medline")
-            for key in list(map(str, entity_lst))
-        }
+        if ablation:
+            entity_dict = {
+                key: search_history(
+                    random.choice(existing_files).replace(".txt", ""), "medline"
+                )
+                for key in list(map(str, entity_lst))
+            }
+        else:
+            entity_dict = {
+                key: search_medline(key)
+                if f"{clean_term(key)}.txt" not in existing_files
+                else search_history(clean_term(key), "medline")
+                for key in list(map(str, entity_lst))
+            }
     elif kb in ["umls", "mesh"]:
         entity_dict = {}
         for e in entity_lst:
-            if f"{clean_term(str(e))}.txt" in existing_files:
-                entity_dict[str(e)] = search_history(clean_term(str(e)), kb)
+            if ablation and len(e._.kb_ents) > 0:
+                umls_ent_id, score = e._.kb_ents[0]  # Get top hit from UMLS
+                umls_ent = linker.kb.cui_to_entity[umls_ent_id]  # Get UMLS entity
+                umls_semt = umls_ent[3]
+                if any([t in SEMTYPES for t in umls_semt]):
+                    entity_dict[str(e)] = search_history(
+                        random.choice(existing_files).replace(".txt", ""), kb
+                    )
             elif len(e._.kb_ents) > 0:
                 umls_ent_id, score = e._.kb_ents[0]  # Get top hit from UMLS
-                entity_dict[str(e)] = (
-                    linker.kb.cui_to_entity[umls_ent_id][4] if score >= 0.75 else ""
-                )  # Use threshold of 0.9 to filter out legit descriptions
+                umls_ent = linker.kb.cui_to_entity[umls_ent_id]  # Get UMLS entity
+                umls_desc = umls_ent[4]  # Get description
+                umls_semt = umls_ent[3]  # Get semantic types
+                if (
+                    score >= 0.75
+                    and umls_desc is not None
+                    and any([t in SEMTYPES for t in umls_semt])
+                ):
+                    entity_dict[
+                        str(e)
+                    ] = umls_desc  # Use threshold of 0.9 to filter out legit descriptions
+                else:
+                    entity_dict[str(e)] = ""
             else:
                 entity_dict[str(e)] = ""
     else:
-        assert False, print("kb must be in ['wikipedia','medline','umls','mesh']")
+        assert False, print(
+            "kb must be in ['wordnet_wikipedia','medline','umls','mesh']"
+        )
 
     # Ensure the entity_dict does not have Null values and clean the description
     for key in entity_dict:
@@ -230,7 +286,7 @@ def add_context(s, ner_model, kb, linker):
     # Save for future reference
     for key in entity_dict:
         cleaned_term = clean_term(key)
-        if f"{cleaned_term}.txt" not in existing_files:
+        if f"{cleaned_term}.txt" not in existing_files and not ablation:
             file = open(f"{REFERENCE_PATHS[kb]}/{cleaned_term}.txt", "w")
             file.write(entity_dict[key])
             file.close()

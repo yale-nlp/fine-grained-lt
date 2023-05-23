@@ -1,13 +1,15 @@
-from collections import Counter
-from evaluate import load
-import numpy as np
-import textstat
+import json
 import nltk
+import numpy as np
+import openai
+import textstat
+
+from collections import Counter
+from easse.sari import corpus_sari
+from evaluate import load
+from questeval.questeval_metric import QuestEval
 from rouge_score import rouge_scorer, scoring
 from typing import List, Dict, Tuple
-from questeval.questeval_metric import QuestEval
-import numpy as np
-import json
 
 metric_bertscore = load("bertscore")
 metric_sari = load("sari")
@@ -17,9 +19,6 @@ def add_newline_to_end_of_each_sentence(s):
     """This was added to get rougeLsum scores matching published rougeL scores for BART and PEGASUS."""
     s = s.replace("\n", "")
     return "\n".join(nltk.sent_tokenize(s))
-
-
-import openai
 
 
 def calculate_g_eval(sources, predictions, model, **kwargs):
@@ -59,7 +58,7 @@ def calculate_g_eval(sources, predictions, model, **kwargs):
     return result
 
 
-def calculate_questeval(sources, predictions, labels, questeval):
+def calculate_questeval(sources, predictions, labels, questeval, both=True):
     """_summary_
 
     Args:
@@ -71,21 +70,32 @@ def calculate_questeval(sources, predictions, labels, questeval):
         dict: Output of computed metrics
     """
     result = {}
-
-    score = questeval.corpus_questeval(
-        hypothesis=predictions, sources=sources, list_references=labels
-    )
-    result["questeval_ref"] = score["corpus_score"]
-    result["questeval_ref_std"] = np.std(score["ex_level_scores"])
+    if both:
+        score = questeval.corpus_questeval(
+            hypothesis=predictions, sources=sources, list_references=labels
+        )
+        result["questeval_ref"] = score["corpus_score"]
+        result["questeval_ref_std"] = np.std(score["ex_level_scores"])
 
     score = questeval.corpus_questeval(
         hypothesis=predictions,
         sources=sources,
     )
     result["questeval_no_ref"] = score["corpus_score"]
+    result["questeval_no_ref_raw"] = score["ex_level_scores"]
     result["questeval_no_ref_std"] = np.std(score["ex_level_scores"])
 
     return result
+
+
+# def calculate_bleurt(predictions, labels, scorer):
+#     bleurt = []
+#     for (p,l) in zip(predictions, labels):
+#         candidates = [p]
+#         references = l
+#         scores = scorer.score(references=references, candidates=candidates)
+#         bleurt.append(scores[0])
+#     return np.mean(bleurt)
 
 
 def calculate_rouge(
@@ -210,10 +220,17 @@ def get_readability_score(text, metric="flesch_reading_grade"):
 
 
 def calculate_sari(sources, predictions, references):
-    result_sari = metric_sari.compute(
-        sources=sources, predictions=predictions, references=references
-    )
-    return result_sari
+    result = []
+    for (s, p, r) in zip(sources, predictions, references):
+        result_sari = metric_sari.compute(sources=[s], predictions=[p], references=[r])[
+            "sari"
+        ]
+        result.append(result_sari)
+    return np.mean(result)
+
+
+def calculate_sari_easse(sources, predictions, references):
+    return corpus_sari(orig_sents=sources, sys_sents=predictions, refs_sents=references)
 
 
 def clean_string(s):
@@ -261,8 +278,17 @@ def compute_metrics(
         result_sari = calculate_sari(
             sources=sources, predictions=predictions, references=labels
         )
-        result["sari"] = result_sari["sari"]
-
+        result["sari"] = result_sari
+    # if "bleurt" in metrics:
+    #     scorer = score.BleurtScorer()
+    #     result["bleurt"] = calculate_bleurt(predictions=predictions,
+    #                                         labels=labels,
+    #                                         scorer=scorer)
+    if "sari_easse" in metrics:
+        labels_transposed = [l for l in zip(*labels)]
+        result["sari_easse"] = calculate_sari_easse(
+            sources=sources, predictions=predictions, references=labels_transposed
+        )
     if "bert_score" in metrics:
         result_bert = []
         for (pred, label) in zip(predictions, labels):

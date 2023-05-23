@@ -1,36 +1,0 @@
-Using custom data configuration default-13151661945cfe5e
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-13151661945cfe5e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-Using dataset: turkcorpus
-Using prediction text file: output/turkcorpus_gpt4_basic_128.txt
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 340.61it/s]
-Using custom data configuration default-06084af75ccc14fc
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 453.14it/s]
-Traceback (most recent call last):
-  File "eval.py", line 177, in <module>
-    print(compute_metrics(sources, preds, labels))
-  File "eval.py", line 119, in compute_metrics
-    result_rouge = metric_rouge.compute(
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/evaluate/module.py", line 432, in compute
-    self.add_batch(**inputs)
-  File "/home/lily/hh638/anaconda3/envs/simplification/lib/python3.8/site-packages/evaluate/module.py", line 512, in add_batch
-    raise ValueError(error_msg) from None
-ValueError: Mismatch in the number of predictions (117) and references (359)
-Using custom data configuration default-13151661945cfe5e
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-13151661945cfe5e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-Using dataset: turkcorpus
-Using prediction text file: output/turkcorpus_gpt4_basic_128.txt
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 159.66it/s]
-Using custom data configuration default-06084af75ccc14fc
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-06084af75ccc14fc/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 162.45it/s]
-{'rouge1': 0.7274, 'rouge2': 0.4953, 'rougeL': 0.6837, 'rougeLsum': 0.6838, 'bert_score': 0.9154, 'sari': 32.4385, 'flesch_reading_ease_counts': Counter({'7th grade': 75, '8th & 9th grade': 72, 'college': 58, '10th to 12th grade': 56, '6th grade': 51, '5th grade': 31, 'college graduate': 14, 'professional': 2}), 'flesch_reading_ease_score': 64.8657}
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-True
-cuda
-Using dataset: turkcorpus
-Using prediction text file: output/turkcorpus_gpt4_basic_128.txt
-{'questeval_ref': 0.6655456251411391, 'questeval_ref_std': 0.1230707961469284, 'questeval_no_ref': 0.6131710414159164, 'questeval_no_ref_std': 0.13439491242637372}

@@ -1,41 +1,0 @@
-Using custom data configuration default-187a0b38c0199c09
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-187a0b38c0199c09/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-Using dataset: cochrane
-Using prediction text file: output/cochrane_gpt4_detail_128.txt
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 50.06it/s]
-Using custom data configuration default-3e04eaeca4c47c7c
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-3e04eaeca4c47c7c/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 199.49it/s]
-{'rouge1': 0.2897, 'rouge2': 0.0581, 'rougeL': 0.1595, 'rougeLsum': 0.1595, 'bert_score': 0.8564, 'sari': 35.5199, 'flesch_reading_ease_counts': Counter({'6th grade': 199, '7th grade': 196, '8th & 9th grade': 49, '5th grade': 24, '10th to 12th grade': 12}), 'flesch_reading_ease_score': 78.0594}
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(

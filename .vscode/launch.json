@@ -15,6 +15,9 @@
 
 
 
+
+
+
         {
             "name": "contrastive_training",
             "type": "python",
@@ -26,6 +29,18 @@
                      "--batch_size", "28",
                      "--gradient_accumulation_steps", "4"],
             "program": "${workspaceFolder}/contrastive_training.py",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            }
+        },
+        {
+            "name": "train3_ul",
+            "type": "python",
+            "request": "launch",
+            "args": ["--dataset", "testfile_context",
+                     "--model", "bart_xsum",
+                     "--loss_type", "ul"],
+            "program": "${workspaceFolder}/train3.py",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "1"
             }

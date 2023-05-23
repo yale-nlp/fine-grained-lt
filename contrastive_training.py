@@ -26,7 +26,7 @@ parser.add_argument("--epochs", required=False, type=int, default=5)
 parser.add_argument("--batch_size", required=False, type=int, default=1)
 parser.add_argument("--checkpoint", required=False, type=str, default=None)
 parser.add_argument("--weight_decay", required=False, type=float, default=0.01)
-parser.add_argument("--warmup_steps", required=False, type=int, default=1000)
+parser.add_argument("--warmup_steps", required=False, type=int, default=0)
 parser.add_argument(
     "--gradient_accumulation_steps", required=False, type=int, default=1
 )
@@ -57,10 +57,10 @@ dataloader = DataLoader(dataset, shuffle=True, batch_size=args.batch_size)
 
 if args.loss_type == "cs":
     criterion = torch.nn.BCELoss()
-elif args.loss_type in ["mse_minimize", "mse_contrastive"]:
+elif args.loss_type in ["mse_minimize", "mse_contrastive", "cs", "seq2seq"]:
     criterion = torch.nn.MSELoss()
 else:
-    assert False, print("loss type must be either cs or mse")
+    assert False, print("loss not accepted")
 
 model_name_dict = {
     "bart": ("BART", "facebook/bart-large"),
@@ -73,9 +73,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(
     model_name_dict[args.model][1] if args.checkpoint == None else args.checkpoint,
     output_hidden_states=True,
 ).to(device)
-tokenizer = AutoTokenizer.from_pretrained(
-    model_name_dict[args.model][1] if args.checkpoint == None else args.checkpoint
-)
+tokenizer = AutoTokenizer.from_pretrained(model_name_dict[args.model][1])
 
 # Optimizer and scheduler
 optimizer = AdamW(model.parameters(), lr=args.lr)
@@ -102,15 +100,26 @@ def preprocess_function(examples):
     )
     num_items = len(examples["terms"])
 
-    model_terms = {}
-    model_terms["input_ids"] = inputs["input_ids"][:num_items]
-    model_terms["attention_mask"] = inputs["attention_mask"][:num_items]
-    model_terms["labels"] = inputs["input_ids"][:num_items]
+    if args.loss_type == "seq2seq":
+        model_terms = {}
+        model_terms["input_ids"] = inputs["input_ids"][:num_items]
+        model_terms["attention_mask"] = inputs["attention_mask"][:num_items]
+        model_terms["labels"] = inputs["input_ids"][num_items : 2 * num_items]
 
-    model_defns = {}
-    model_defns["input_ids"] = inputs["input_ids"][num_items : 2 * num_items]
-    model_defns["attention_mask"] = inputs["attention_mask"][num_items : 2 * num_items]
-    model_defns["labels"] = inputs["input_ids"][num_items : 2 * num_items]
+        model_defns = {}
+
+    else:
+        model_terms = {}
+        model_terms["input_ids"] = inputs["input_ids"][:num_items]
+        model_terms["attention_mask"] = inputs["attention_mask"][:num_items]
+        model_terms["labels"] = inputs["input_ids"][:num_items]
+
+        model_defns = {}
+        model_defns["input_ids"] = inputs["input_ids"][num_items : 2 * num_items]
+        model_defns["attention_mask"] = inputs["attention_mask"][
+            num_items : 2 * num_items
+        ]
+        model_defns["labels"] = inputs["input_ids"][num_items : 2 * num_items]
 
     model_conts = {}
     if "contrast" in examples.keys():
@@ -137,7 +146,11 @@ for ep in range(args.epochs):
 
         # Get model embeddings
         x = model(**batch_terms)
-        y = model(**batch_defns)
+        if args.loss_type != "seq2seq":
+            y = model(**batch_defns)
+
+        if args.loss_type == "seq2seq":
+            loss = x.loss
 
         if args.loss_type == "cs":
             # Get labels

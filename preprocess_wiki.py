@@ -17,13 +17,21 @@ def write_json(output_json, path):
 # Get dataset from arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", required=True)
+parser.add_argument("--kb", required=True)
+parser.add_argument("--ablation", required=False, default="False", type=str)
 args = parser.parse_args()
 print(f"Using dataset: {args.dataset}")
+
+ABLATION_FLAG = "" if args.ablation == "False" else "_ablation"
+ablation = False if args.ablation == "False" else True
+
+assert args.kb in ["umls", "wordnet_wikipedia"]
+kb = args.kb
 
 if args.dataset in ["asset", "turkcorpus"]:
     ner_model = spacy.load("en_core_web_lg")
     linker = None
-    kb = "wordnet_wikipedia"
+
 elif args.dataset in [
     "radiology_indiv",
     "radiology_full",
@@ -36,11 +44,14 @@ elif args.dataset in [
     from scispacy.linking import EntityLinker
 
     ner_model = spacy.load("en_core_sci_lg")
-    ner_model.add_pipe(
-        "scispacy_linker", config={"resolve_abbreviations": True, "linker_name": "umls"}
-    )
-    linker = ner_model.get_pipe("scispacy_linker")
-    kb = "umls"
+    if args.kb == "umls":
+        ner_model.add_pipe(
+            "scispacy_linker",
+            config={"resolve_abbreviations": True, "linker_name": "umls"},
+        )
+        linker = ner_model.get_pipe("scispacy_linker")
+    else:
+        linker = None
 else:
     assert False
 
@@ -55,43 +66,59 @@ test_input_lst = list(map(lambda d: d["input"], data["test"]))
 test_label_lst = list(map(lambda d: d["labels"], data["test"]))
 
 # Add context
-if os.path.exists(f"misc/train_{input_dict['name']}_{kb}.pkl") and os.path.exists(
-    f"misc/test_{input_dict['name']}_{kb}.pkl"
-):
+if os.path.exists(
+    f"misc/train_{input_dict['name']}_{kb}{ABLATION_FLAG}.pkl"
+) and os.path.exists(f"misc/test_{input_dict['name']}_{kb}{ABLATION_FLAG}.pkl"):
     # If they exist, read context files from past run
-    with open(f"misc/train_{input_dict['name']}_{kb}.pkl", "rb") as input_file:
+    with open(
+        f"misc/train_{input_dict['name']}_{kb}{ABLATION_FLAG}.pkl", "rb"
+    ) as input_file:
         train_wiki_input_lst = pickle.load(input_file)
-    with open(f"misc/test_{input_dict['name']}_{kb}.pkl", "rb") as input_file:
+    with open(
+        f"misc/test_{input_dict['name']}_{kb}{ABLATION_FLAG}.pkl", "rb"
+    ) as input_file:
         test_wiki_input_lst = pickle.load(input_file)
 else:
     # Create a directory to save temporary files
-    os.makedirs(f"data/temp/{input_dict['name']}", exist_ok=True)
+    os.makedirs(f"data/temp/{input_dict['name']}{ABLATION_FLAG}", exist_ok=True)
 
     # For each item, add context and temporarily save in a pickle file
     for idx, item in enumerate(train_input_lst):
-        item_replaced = add_context(item, ner_model, kb, linker)
-        with open(f"data/temp/{input_dict['name']}/train_{idx}.pkl", "wb") as handle:
+        if idx % 100 == 0:
+            print("Train", idx)
+        item_replaced = add_context(item, ner_model, kb, linker, ablation)
+        with open(
+            f"data/temp/{input_dict['name']}{ABLATION_FLAG}/train_{idx}.pkl", "wb"
+        ) as handle:
             pickle.dump(item_replaced, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     for idx, item in enumerate(test_input_lst):
-        item_replaced = add_context(item, ner_model, kb, linker)
-        with open(f"data/temp/{input_dict['name']}/test_{idx}.pkl", "wb") as handle:
+        if idx % 100 == 0:
+            print("Test", idx)
+        item_replaced = add_context(item, ner_model, kb, linker, ablation)
+        with open(
+            f"data/temp/{input_dict['name']}{ABLATION_FLAG}/test_{idx}.pkl", "wb"
+        ) as handle:
             pickle.dump(item_replaced, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     train_wiki_input_lst = [
-        pickle.load(open(f"data/temp/{input_dict['name']}/train_{idx}.pkl", "rb"))
+        pickle.load(
+            open(f"data/temp/{input_dict['name']}{ABLATION_FLAG}/train_{idx}.pkl", "rb")
+        )
         for idx in range(len(train_input_lst))
     ]
     test_wiki_input_lst = [
-        pickle.load(open(f"data/temp/{input_dict['name']}/test_{idx}.pkl", "rb"))
+        pickle.load(
+            open(f"data/temp/{input_dict['name']}{ABLATION_FLAG}/test_{idx}.pkl", "rb")
+        )
         for idx in range(len(test_input_lst))
     ]
 
-    with open(f"misc/train_{input_dict['name']}_{kb}.pkl", "wb") as f:
+    with open(f"misc/train_{input_dict['name']}_{kb}{ABLATION_FLAG}.pkl", "wb") as f:
         pickle.dump(train_wiki_input_lst, f)
-    with open(f"misc/test_{input_dict['name']}_{kb}.pkl", "wb") as f:
+    with open(f"misc/test_{input_dict['name']}_{kb}{ABLATION_FLAG}.pkl", "wb") as f:
         pickle.dump(test_wiki_input_lst, f)
-    shutil.rmtree(f"data/temp/{input_dict['name']}", ignore_errors=True)
+    shutil.rmtree(f"data/temp/{input_dict['name']}{ABLATION_FLAG}", ignore_errors=True)
 
 # Filter datasets by number of entities found
 train_all_filter = [
@@ -124,7 +151,8 @@ for train_idx, test_idx, filter_type in [input_lst_all, input_lst_some]:
 
     # Output the file
     write_json(
-        output_json_indiv, f"data/{input_dict['name']}_context_{filter_type}.json"
+        output_json_indiv,
+        f"data/{input_dict['name']}_context_{filter_type}{ABLATION_FLAG}.json",
     )
 
     # Then multiple references per input (for evaluation)
@@ -141,5 +169,5 @@ for train_idx, test_idx, filter_type in [input_lst_all, input_lst_some]:
     # Output the file
     write_json(
         output_json_mult,
-        f"data/{input_dict['name']}_context_{filter_type}_multiple.json",
+        f"data/{input_dict['name']}_context_{filter_type}_multiple{ABLATION_FLAG}.json",
     )

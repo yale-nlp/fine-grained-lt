@@ -1,0 +1,47 @@
+BART XSUM COCHRANE BASE
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-eb5a7185c85c2060/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-111bc7946c5cb32c/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-eb5a7185c85c2060/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-75153f38f15b9228.arrow
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-111bc7946c5cb32c/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-234cff71f6e31fe6.arrow
+loading configuration file models/BART_XSUM_cochrane/6o8j6v1x/checkpoint-892/config.json
+
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-47b6999d2195e6eb/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_bart_xsum.txt
+{'rouge1': 46.8793, 'rouge2': 19.0464, 'rougeL': 25.5598, 'rougeLsum': 43.6587, 'sari': 37.8781, 'bert_score': 0.8681413778414329, 'bert_score_l': 0.9250399479021628, 'flesch_kincaid_grade_counts': Counter({'college': 166, '12th grade': 88, '11th grade': 80, '10th grade': 76, '9th grade': 35, 'college graduate': 15, '8th grade': 13, '7th grade': 6, '6th grade': 1}), 'flesch_kincaid_grade_score': 11.985416666666667, 'ari_counts': Counter({'None': 480}), 'ari_score': 13.872869844486564, 'questeval_ref': 0.554035967949098, 'questeval_ref_std': 0.07946274987522062, 'questeval_no_ref': 0.5521906612693454}
+Copy this string into the Excel and separate by comma
+46.8793,19.0464,25.5598,43.6587,0.8681413778414329,0.9250399479021628,37.8781,11.985416666666667,13.872869844486564,0.5521906612693454,0.554035967949098
+
+BART XSUM COCHRANE PRETRAIN CONTRASTIVE
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-eb5a7185c85c2060/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-eb5a7185c85c2060/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-75153f38f15b9228.arrow
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-111bc7946c5cb32c/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-234cff71f6e31fe6.arrow
+loading configuration file models/BART_XSUM_PRETRAIN_cochrane/4scmq9vl/checkpoint-892/config.json
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-47b6999d2195e6eb/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Using dataset: cochrane
+Using prediction text file: output/cochrane_bart_xsum_pretrain.txt
+{'rouge1': 47.79, 'rouge2': 19.428, 'rougeL': 25.8005, 'rougeLsum': 44.5463, 'sari': 37.8437, 'bert_score': 0.8680434146275123, 'bert_score_l': 0.9294982956101497, 'flesch_kincaid_grade_counts': Counter({'college': 161, '12th grade': 95, '11th grade': 86, '10th grade': 69, '9th grade': 41, '8th grade': 12, 'college graduate': 12, '7th grade': 2, '6th grade': 2}), 'flesch_kincaid_grade_score': 11.923541666666667, 'ari_counts': Counter({'None': 480}), 'ari_score': 13.995547741369117, 'questeval_ref': 0.5571158028879809, 'questeval_ref_std': 0.07773997687026678, 'questeval_no_ref': 0.5547720167013697}
+Copy this string into the Excel and separate by comma
+47.79,19.428,25.8005,44.5463,0.8680434146275123,0.9294982956101497,37.8437,11.923541666666667,13.995547741369117,0.5547720167013697,0.5571158028879809
+
+BART XSUM COCHRANE WITH CONTEXT
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-4c4eecba1a121e78/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-de135d8598d979da/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-4c4eecba1a121e78/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-bb3a632948fa06d2.arrow
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-de135d8598d979da/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-958306c0994fdd81.arrow
+Using dataset: cochrane_context_some
+Using prediction text file: output/cochrane_context_some_bart_xsum.txt
+True
+cuda
+{'rouge1': 39.178, 'rouge2': 12.9652, 'rougeL': 21.2706, 'rougeLsum': 36.4321, 'sari': 41.8115, 'bert_score': 0.8563497173289458, 'bert_score_l': 0.8016995973885059, 'flesch_kincaid_grade_counts': Counter({'10th grade': 100, 'college': 83, '12th grade': 78, '9th grade': 67, '11th grade': 65, '8th grade': 58, '7th grade': 19, 'college graduate': 5, '6th grade': 4, '5th grade': 1}), 'flesch_kincaid_grade_score': 10.688958333333336, 'ari_counts': Counter({'None': 480}), 'ari_score': 12.061158045771315, 'questeval_ref': 0.422847206004804, 'questeval_ref_std': 0.056789553778149066, 'questeval_no_ref': 0.38696140781842764}
+Copy this string into the Excel and separate by comma
+39.178,12.9652,21.2706,36.4321,0.8563497173289458,0.8016995973885059,41.8115,10.688958333333336,12.061158045771315,0.38696140781842764,0.422847206004804
+
+BART XSUM COCHRANE PRETRAIN MINIMIZE
+Found cached dataset json (/home/lily/lyf6/.cache/huggingface/datasets/json/default-eb5a7185c85c2060/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+Loading cached processed dataset at /home/lily/lyf6/.cache/huggingface/datasets/json/default-111bc7946c5cb32c/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-234cff71f6e31fe6.arrow
+Using dataset: cochrane
+Using prediction text file: output/cochrane_bart_xsum_pretrain.txt
+{'rouge1': 46.2483, 'rouge2': 18.6587, 'rougeL': 25.4647, 'rougeLsum': 43.0618, 'sari': 37.6009, 'bert_score': 0.8681861465175946, 'bert_score_l': 0.9208121123413245, 'flesch_kincaid_grade_counts': Counter({'college': 169, '12th grade': 95, '10th grade': 73, '11th grade': 69, '9th grade': 33, '8th grade': 23, 'college graduate': 10, '7th grade': 6, '6th grade': 1, '5th grade': 1}), 'flesch_kincaid_grade_score': 11.907083333333333, 'ari_counts': Counter({'None': 480}), 'ari_score': 13.532549036176556, 'questeval_ref': 0.5476755507546806, 'questeval_ref_std': 0.08262070247739695, 'questeval_no_ref': 0.5455323012803494}
+Copy this string into the Excel and separate by comma
+46.2483,18.6587,25.4647,43.0618,0.8681861465175946,0.9208121123413245,37.6009,11.907083333333333,13.532549036176556,0.5455323012803494,0.5476755507546806

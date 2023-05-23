@@ -1,18 +1,0 @@
-Using custom data configuration default-bfbf098c5fae933b
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-bfbf098c5fae933b/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-Using dataset: radiology_indiv
-Using prediction text file: output/radiology_indiv_gpt4_basic_128.txt
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 160.44it/s]
-Using custom data configuration default-e55755119d653c8e
-Reusing dataset json (/home/lily/hh638/.cache/huggingface/datasets/json/default-e55755119d653c8e/0.0.0/ac0ca5f5289a6cf108e706efcf040422dbbfa8e658dee6a819f20d76bb84d26b)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 157.95it/s]
-{'rouge1': 0.3707, 'rouge2': 0.1297, 'rougeL': 0.3203, 'rougeLsum': 0.32, 'bert_score': 0.8996, 'sari': 54.2634, 'flesch_reading_ease_counts': Counter({'6th grade': 402, '7th grade': 348, '5th grade': 340, '8th & 9th grade': 314, 'college': 235, '10th to 12th grade': 207, 'professional': 36, 'college graduate': 34}), 'flesch_reading_ease_score': 71.175}
-/data/lily/hh638/Health/simplification-project/QuestEval/questeval/questeval_metric.py:115: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
-  self.metric_BERTScore = load_metric("bertscore")
-/home/lily/hh638/anaconda3/envs/questeval/lib/python3.9/site-packages/transformers/generation/utils.py:1313: UserWarning: Using `max_length`'s default (20) to control the generation length. This behaviour is deprecated and will be removed from the config in v5 of Transformers -- we recommend using `max_new_tokens` to control the maximum length of the generation.
-  warnings.warn(
-True
-cuda
-Using dataset: radiology_indiv
-Using prediction text file: output/radiology_indiv_gpt4_basic_128.txt
-{'questeval_ref': 0.425427322055612, 'questeval_ref_std': 0.1336203468339263, 'questeval_no_ref': 0.3562739426925095, 'questeval_no_ref_std': 0.12913950415090517}

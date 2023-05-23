@@ -1,8 +1,14 @@
 import argparse
-import wandb
+import itertools
 import numpy as np
+import pandas as pd
+import pickle
+import spacy
+import torch
+import wandb
 
-from datasets import load_dataset
+from datasets import load_dataset, Dataset
+from nltk.tokenize import word_tokenize
 from transformers import (
     Seq2SeqTrainer,
     Seq2SeqTrainingArguments,
@@ -12,10 +18,15 @@ from transformers import (
 )
 from transformers.modeling_utils import unwrap_model
 from transformers.models.auto.modeling_auto import MODEL_FOR_CAUSAL_LM_MAPPING_NAMES
-from utils_eval import compute_metrics
-from utils_eval import compute_metrics, calculate_sari, clean_string
+from utils_context import clean_term, search_history
+from utils_eval import (
+    compute_metrics,
+    calculate_sari,
+    calculate_questeval,
+    clean_string,
+    get_readability_score,
+)
 from typing import Any, Dict, List, Optional, Tuple, Union
-import torch
 
 # Get dataset from arguments
 parser = argparse.ArgumentParser()
@@ -29,24 +40,25 @@ parser.add_argument("--checkpoint", required=False, type=str, default=None)
 parser.add_argument("--hyperparameter_tune", required=False, type=str, default="False")
 parser.add_argument("--hyperparameter_trials", required=False, type=int, default=5)
 parser.add_argument("--predict_only", required=False, type=str, default="False")
+parser.add_argument("--pred_split_sent", required=False, type=str, default="False")
 
 # Training parameters
-parser.add_argument("--learning_rate", required=False, type=float, default=1e-5)
-parser.add_argument("--epochs", required=False, type=int, default=5)
+parser.add_argument("--learning_rate", required=False, type=float, default=5e-5)
+parser.add_argument("--epochs", required=False, type=int, default=1)
 parser.add_argument("--batch_size", required=False, type=int, default=1)
 parser.add_argument("--weight_decay", required=False, type=float, default=0.01)
 parser.add_argument("--loss_type", required=False, type=str, default="standard")
 parser.add_argument(
     "--gradient_accumulation_steps", required=False, type=int, default=1
 )
-parser.add_argument("--warmup_steps", required=False, type=int, default=1000)
+parser.add_argument("--warmup_steps", required=False, type=int, default=0)
 args = parser.parse_args()
 
 assert args.hyperparameter_tune in ["True", "False"]
 assert args.predict_only in ["True", "False"]
-assert args.loss_type in ["standard", "rl", "rl_policy"]
 
-# Load in the model and tokenizer, for this we're using BART, which is good at generation tasks
+# Load in the model and tokenizer, for this we're using BART,
+# which is good at generation tasks
 model_name_dict = {
     "bart": ("BART", "facebook/bart-large"),
     "bart_xsum": ("BART_XSUM", "facebook/bart-large-xsum"),
@@ -54,8 +66,48 @@ model_name_dict = {
     "flant5_base": ("FLANT5_BASE", "google/flan-t5-base"),
 }
 
+if args.loss_type in ["rl_qe", "rl_policy_qe"]:
+    from questeval.questeval_metric import QuestEval
+
+    questeval = QuestEval(no_cuda=False)
+
 
 class SimplificationTrainer(Seq2SeqTrainer):
+    def shift_tokens_right(self, input_ids, pad_token_id):
+        """Shift input ids one token to the right, and wrap the last
+        non pad token (usually <eos>)."""
+        prev_output_tokens = input_ids.clone()
+        index_of_eos = (input_ids.ne(pad_token_id).sum(dim=1) - 1).unsqueeze(-1)
+        prev_output_tokens[:, 0] = input_ids.gather(1, index_of_eos).squeeze()
+        prev_output_tokens[:, 1:] = input_ids[:, :-1]
+        return prev_output_tokens
+
+    def unlikelihood_loss(self, decoder_input_ids, logits, weight_mask):
+        """
+        Taken from LuJunru NAPSS paper
+        https://github.com/LuJunru/NapSS/blob/main/modeling/finetune.py
+        decoder_input_ids - (N, s)
+        logits      - (N, s, vocab_size)
+        weight_mask - (N, s, vocab_size)
+        """
+        probs = torch.nn.functional.softmax(logits, dim=-1)
+        neg_probs = 1 - probs
+
+        # replace zeros with small positive constant for stability
+        neg_probs += (neg_probs == 0).float() * 1e-8
+        log_neg_probs = torch.log(neg_probs)  # (N,s,v)
+
+        # now create attention mask and apply it
+        attention_mask = decoder_input_ids.eq(1).eq(0).float()
+        attention_mask = attention_mask.unsqueeze(2).expand(-1, -1, logits.shape[2])
+        log_neg_probs_masked = log_neg_probs * attention_mask
+
+        # apply weight vector to the log probability tensor
+        weighted_probs = log_neg_probs_masked * weight_mask
+
+        # TODO: take into account batch size (doesn't matter now since N=1)
+        return -torch.sum(weighted_probs)
+
     def compute_loss(self, model, inputs, return_outputs=False):
         """
         How the loss is computed by Trainer. By default, all models
@@ -73,78 +125,75 @@ class SimplificationTrainer(Seq2SeqTrainer):
         if self.args.past_index >= 0:
             self._past = outputs[self.args.past_index]
 
-        if args.loss_type in ["rl", "rl_policy"] and self.is_in_train:
-
-            # Get and clean the orig prediction, source, and reference
-            decoded_output = self.tokenizer.batch_decode(
-                outputs["logits"].argmax(dim=2)
-            )
-            decoded_input = self.tokenizer.batch_decode(inputs["input_ids"])
-            decoded_labels = self.tokenizer.batch_decode(inputs["labels"])
-
-            decoded_output = list(map(clean_string, decoded_output))
-            decoded_input = list(map(clean_string, decoded_input))
-            decoded_labels = list(map(clean_string, decoded_labels))
-
-            decoded_labels = [[s] for s in decoded_labels]
-
-            # Compute SARI
-            sari_scores = [
-                calculate_sari([s], [p], [l])["sari"]
-                for (s, p, l) in zip(decoded_input, decoded_output, decoded_labels)
-            ]
-
-            # Compute cross entropy loss
-            criterion = torch.nn.CrossEntropyLoss(reduction="none")
+        if args.loss_type[:2] == "ul" and self.is_in_train:
+            # Get the logits and labels
             logits = outputs["logits"]
-            batch_size, seq_len, vocab_size = logits.shape
-            loss = criterion(
-                logits.view(-1, logits.shape[-1]), inputs["labels"].view(-1)
+            labels = inputs["labels"]
+            # labels = self.shift_tokens_right(labels, self.tokenizer.pad_token_id)
+
+            batch_size, seq_len, vocab_size = logits.size()
+            weight_mask = self.ul_weights
+            weight_mask = (
+                weight_mask.unsqueeze(0)
+                .unsqueeze(0)
+                .expand(batch_size, seq_len, vocab_size)
+                .clone()
             )
-            loss = loss.view(batch_size, seq_len).mean(axis=1)
-            # loss = loss / loss.item() # TODO: Check if this should be removed, discuss
 
-            if args.loss_type == "rl":
-                # Rescale SARI for numeric stability
-                sari_scores = torch.tensor(
-                    [0.01 * (100.0 - s) for s in sari_scores]
-                ).cuda()
+            selective_penalty = True
+            hallucination_penalty = []
+            if "_inp" in args.loss_type:
+                hallucination_penalty.append("inputs")
+            if "_lab" in args.loss_type:
+                hallucination_penalty.append("labels")
 
-                # Scale cross entropy loss by the SARI score
-                loss = torch.sum(loss * sari_scores)
+            # Generate logits indices mask to determine generated words
+            logits_indices = torch.argmax(logits, dim=-1)
+            logits_indices_mask = torch.nn.functional.one_hot(
+                logits_indices, num_classes=vocab_size
+            )  # (N,s,v)
 
-            if args.loss_type == "rl_policy":
-                # Run a prediction step using sampling decoding
-                inputs_copy = inputs.copy()
-                if "labels" in inputs_copy:
-                    inputs_copy.pop("labels")
-
-                outputs_sampling = self.model.generate(
-                    **inputs_copy,
-                    do_sample=True,
-                    top_k=0,
+            if selective_penalty:
+                # This is called selective penalty in the NAPSS paper
+                # Applying this penalizes ONLY the generated words by their complexity
+                # This improves readability
+                weight_mask *= 0.00150 * logits_indices_mask
+            if hallucination_penalty:
+                indices_mask = (
+                    torch.zeros((batch_size, seq_len, vocab_size)).float().cuda()
                 )
-
-                # Compute SARI of sampling decoding labels
-                decoded_output_sampling = self.tokenizer.batch_decode(outputs_sampling)
-                decoded_output_sampling = list(
-                    map(clean_string, decoded_output_sampling)
-                )
-                sari_scores_sampling = [
-                    calculate_sari([s], [p], [l])["sari"]
-                    for (s, p, l) in zip(
-                        decoded_input, decoded_output_sampling, decoded_labels
+                if "labels" in hallucination_penalty:
+                    # This is a penalty on words which are not in the labels
+                    # This reduces hallucination
+                    labels_indices_mask = torch.nn.functional.one_hot(
+                        labels, num_classes=vocab_size
                     )
-                ]
+                    indices_mask += (
+                        labels_indices_mask.sum(axis=1)
+                        .unsqueeze(1)
+                        .expand(batch_size, seq_len, vocab_size)
+                        * logits_indices_mask
+                    )
+                if "inputs" in hallucination_penalty:
+                    inputs_indices_mask = torch.nn.functional.one_hot(
+                        inputs["input_ids"], num_classes=vocab_size
+                    )
+                    indices_mask += (
+                        inputs_indices_mask.sum(axis=1)
+                        .unsqueeze(1)
+                        .expand(batch_size, seq_len, vocab_size)
+                        * logits_indices_mask
+                    )
+                # Get the tokens which do not appear in either label or input
+                neg_indices_mask = 1.0 * (indices_mask == 0)
+                # Penalize these non-appearing tokens with a fixed weight
+                weight_mask += 0.0005 * neg_indices_mask
 
-                # Subtract sari_sampling - sari_base, rescale for stability
-                sari_scores = torch.tensor(sari_scores) - torch.tensor(
-                    sari_scores_sampling
-                )
-                sari_scores = 0.01 * sari_scores.cuda()
-
-                # Scale cross entropy loss by the SARI score
-                loss = torch.sum(loss * sari_scores)
+            ul_loss = self.unlikelihood_loss(
+                decoder_input_ids=labels, logits=logits, weight_mask=weight_mask
+            )
+            loss = outputs["loss"]
+            loss += ul_loss
 
         elif labels is not None:
             if (
@@ -157,12 +206,15 @@ class SimplificationTrainer(Seq2SeqTrainer):
         else:
             if isinstance(outputs, dict) and "loss" not in outputs:
                 raise ValueError(
-                    "The model did not return a loss from the inputs, only the following keys: "
-                    f"{','.join(outputs.keys())}. For reference, the inputs it received are "
+                    "The model did not return a loss from the inputs, "
+                    "only the following keys: "
+                    f"{','.join(outputs.keys())}. For reference, the inputs"
+                    "it received are "
                     f"{','.join(inputs.keys())}."
                 )
             else:
-                # We don't use .loss here since the model may return tuples instead of ModelOutput.
+                # We don't use .loss here since the model may return tuples
+                # instead of ModelOutput.
                 loss = outputs["loss"] if isinstance(outputs, dict) else outputs[0]
 
         return (loss, outputs) if return_outputs else loss
@@ -180,7 +232,15 @@ def decode_and_compute_metrics(eval_pred):
     labels = tokenizer.batch_decode(label_raw)
     labels = [[s] for s in labels]  # labels must be a list of LISTS
 
-    return compute_metrics(sources, predictions, labels, ["rouge", "sari"])
+    with open("with_context.pkl", "wb") as f:  # open a text file
+        pickle.dump([sources, predictions, labels], f)  # serialize the list
+
+    result = compute_metrics(
+        sources, predictions, labels, ["rouge", "sari", "flesch_kincaid_grade", "ari"]
+    )
+    result.pop("flesch_kincaid_grade_counts")
+    result.pop("ari_counts")
+    return result
 
 
 def model_init_func(trial):
@@ -190,7 +250,8 @@ def model_init_func(trial):
 
 
 def encode(examples):
-    """This function takes a batch of samples, and tokenizes them into IDs for the model."""
+    """This function takes a batch of samples,
+    and tokenizes them into IDs for the model."""
     # Tokenize the Findings (the input)
     input_str = examples["input"]
     model_inputs = tokenizer(
@@ -232,14 +293,16 @@ def train(config=None, project=None):
             # Training parameters
             num_train_epochs=int(config.epochs),
             learning_rate=float(config.learning_rate),
+            lr_scheduler_type="constant",
             warmup_steps=int(config.warmup_steps),
             per_device_train_batch_size=int(config.batch_size),
             gradient_accumulation_steps=int(config.gradient_accumulation_steps),
             weight_decay=float(config.weight_decay),
             fp16=False,
             # Evaluation parameters
-            evaluation_strategy="epoch",
-            per_device_eval_batch_size=1,  # int(config.batch_size),
+            evaluation_strategy="steps",  # "epoch",
+            eval_steps=500,
+            per_device_eval_batch_size=2,  # int(config.batch_size),
             predict_with_generate=True,
             generation_max_length=768,
             include_inputs_for_metrics=True,
@@ -249,7 +312,7 @@ def train(config=None, project=None):
             run_name=f"{DATASET_NAME}_{MODEL_NAME}_{EFFECTIVE_BATCH}_{config.learning_rate}",
             report_to="wandb",
             # Saving parameters
-            save_strategy="epoch",
+            save_strategy="steps",  # "epoch",
             load_best_model_at_end=True,
             save_total_limit=5,
         )
@@ -268,6 +331,12 @@ def train(config=None, project=None):
             compute_metrics=decode_and_compute_metrics,
         )
 
+        if args.loss_type[:2] == "ul":
+            with open("fk_weights.pkl", "rb") as f:
+                ul_weights = pickle.load(f)
+            ul_weights = list(map(lambda x: max(x, 0.0), ul_weights))
+            trainer.ul_weights = torch.tensor(ul_weights).float().cuda()
+
         if args.predict_only != "True":
             trainer.train()
 
@@ -283,12 +352,9 @@ def train(config=None, project=None):
                     test_output,
                 )
             )
-
-            # open file in write mode
-            with open(f"output/{PROJECT_NAME}.txt", "w") as fp:
-                for item in test_output:
-                    fp.write("%s\n" % item)
-                print("Done")
+            return test_output
+        else:
+            return None
 
 
 sweep_config = {
@@ -305,7 +371,12 @@ sweep_config = {
 }
 
 # Tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model_name_dict[args.model][1])
+if args.predict_only == "True":
+    tokenizer = AutoTokenizer.from_pretrained(model_name_dict[args.model][1])
+else:
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name_dict[args.model][1] if args.checkpoint == None else args.checkpoint
+    )
 
 # Naming variables
 DATASET_NAME = args.dataset
@@ -315,7 +386,31 @@ PRETRAIN_NAME = (
     if (args.checkpoint is None) or ("PRETRAIN" not in args.checkpoint)
     else "_PRETRAIN"
 )
-LOSS_TYPE_NAME = "" if args.loss_type == "standard" else f"_{args.loss_type}"
+if args.predict_only == "True":
+    if "_rl_policy_qe" in args.checkpoint:
+        LOSS_TYPE_NAME = "_rl_policy_qe"
+    elif "_rl_policy" in args.checkpoint:
+        LOSS_TYPE_NAME = "_rl_policy"
+    elif "_rl_qe" in args.checkpoint:
+        LOSS_TYPE_NAME = "_rl_qe"
+    elif "_rl" in args.checkpoint:
+        LOSS_TYPE_NAME = "_rl"
+    elif "_ul_2voc" in args.checkpoint:
+        LOSS_TYPE_NAME = "_ul_2voc"
+    elif "_ul_inp_lab" in args.checkpoint:
+        LOSS_TYPE_NAME = "_ul_inp_lab"
+    elif "_ul_inp" in args.checkpoint:
+        LOSS_TYPE_NAME = "_ul_inp"
+    elif "_ul_lab" in args.checkpoint:
+        LOSS_TYPE_NAME = "_ul_lab"
+    elif "_ul_sel" in args.checkpoint:
+        LOSS_TYPE_NAME = "_ul_sel"
+    elif "_ul" in args.checkpoint:
+        LOSS_TYPE_NAME = "_ul"
+    else:
+        LOSS_TYPE_NAME = ""
+else:
+    LOSS_TYPE_NAME = "" if args.loss_type == "standard" else f"_{args.loss_type}"
 MODEL_OUT_NAME = f"{MODEL_NAME}{PRETRAIN_NAME}_{DATASET_NAME}{LOSS_TYPE_NAME}"
 PROJECT_NAME = f"{DATASET_NAME}_{args.model}{PRETRAIN_NAME.lower()}{LOSS_TYPE_NAME}"
 
@@ -324,6 +419,44 @@ dataset = load_dataset("json", data_files=f"data/{DATASET_NAME}.json", field="tr
 dataset["test"] = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
+
+
+def split_sent(s):
+    input_dict = tokenizer(s)
+    num_toks = len(input_dict["input_ids"])
+    if num_toks <= 768:
+        return [s]
+    elif num_toks <= 768 * 2:
+        lst = s.split(". ")
+        first = ". ".join(lst[: len(lst) // 2])
+        second = ". ".join(lst[len(lst) // 2 :])
+        return [first, second]
+    elif num_toks <= 768 * 3:
+        lst = s.split(". ")
+        first = ". ".join(lst[: len(lst) // 3])
+        second = ". ".join(lst[len(lst) // 3 : 2 * len(lst) // 3])
+        third = ". ".join(lst[2 * len(lst) // 3 :])
+        return [first, second, third]
+    else:
+        lst = s.split(". ")
+        first = ". ".join(lst[: len(lst) // 4])
+        second = ". ".join(lst[len(lst) // 4 : 2 * len(lst) // 4])
+        third = ". ".join(lst[2 * len(lst) // 4 : 3 * len(lst) // 4])
+        fourth = ". ".join(lst[3 * len(lst) // 4 :])
+        return [first, second, third, fourth]
+
+
+if args.pred_split_sent == "True":
+    df = pd.DataFrame(dataset["test"])
+    input_sents = list(map(split_sent, df["input"]))
+    report_id_lst = []
+    input_sent_lst = []
+    for idx, lst in enumerate(input_sents):
+        report_id_lst.extend([idx] * len(lst))
+        input_sent_lst.extend(lst)
+    df = pd.DataFrame({"report_id": report_id_lst, "input": input_sent_lst})
+    df["labels"] = [[""]] * len(df)
+    dataset["test"] = Dataset.from_pandas(df[["input", "labels"]])
 
 # We apply the function to all the examples in our train and test datasets
 dataset["train"] = dataset["train"].map(encode, batched=True)
@@ -351,4 +484,20 @@ else:
         "weight_decay": args.weight_decay,
         "warmup_steps": args.warmup_steps,
     }
-    train(config, PROJECT_NAME)
+    test_output = train(config, PROJECT_NAME)
+
+    # Collate sentences by report
+    if args.pred_split_sent == "True":
+        df["prediction"] = test_output
+        df = (
+            df.groupby("report_id")
+            .aggregate({"prediction": lambda lst: ". ".join(lst)})
+            .reset_index(drop=True)
+        )
+        test_output = list(df["prediction"])
+
+    # Write output
+    with open(f"output/{PROJECT_NAME}.txt", "w") as fp:
+        for item in test_output:
+            fp.write("%s\n" % item)
+        print("Done")
