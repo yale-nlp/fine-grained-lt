@@ -2,9 +2,11 @@ import json
 import nltk
 import numpy as np
 import openai
+import re
 import textstat
 
 from collections import Counter
+from easse.fkgl import corpus_fkgl
 from easse.sari import corpus_sari
 from evaluate import load
 from questeval.questeval_metric import QuestEval
@@ -220,22 +222,28 @@ def get_readability_score(text, metric="flesch_reading_grade"):
 
 
 def calculate_sari(sources, predictions, references):
-    result = []
-    for (s, p, r) in zip(sources, predictions, references):
-        result_sari = metric_sari.compute(sources=[s], predictions=[p], references=[r])[
-            "sari"
-        ]
-        result.append(result_sari)
-    return np.mean(result)
+    result_sari = metric_sari.compute(sources=sources, 
+                                        predictions=predictions, 
+                                        references=references)[
+        "sari"
+    ]
+    return result_sari
 
+def calculate_fkgl_easse(predictions):
+    return corpus_fkgl(sentences=predictions,
+                       tokenizer="13a")
 
 def calculate_sari_easse(sources, predictions, references):
-    return corpus_sari(orig_sents=sources, sys_sents=predictions, refs_sents=references)
-
+    return corpus_sari(orig_sents=sources, 
+                       sys_sents=predictions, 
+                       refs_sents=references,
+                       lowercase=True,
+                       tokenizer="13a")
 
 def clean_string(s):
-    return s.replace("<s>", "").replace("</s>", "").replace("<pad>", "")
-
+    s = s.replace("-lrb-"," ").replace("-rrb-", " ")
+    s = s.replace("<s>", "").replace("</s>", "").replace("<pad>", "")
+    return re.sub(" +", " ", s)
 
 def compute_metrics(
     sources: List[str],
@@ -288,6 +296,10 @@ def compute_metrics(
         labels_transposed = [l for l in zip(*labels)]
         result["sari_easse"] = calculate_sari_easse(
             sources=sources, predictions=predictions, references=labels_transposed
+        )
+    if "fkgl_easse" in metrics:
+        result["fkgl_easse"] = calculate_fkgl_easse(
+            predictions=predictions
         )
     if "bert_score" in metrics:
         result_bert = []
