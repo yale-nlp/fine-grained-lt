@@ -28,6 +28,11 @@ conda create --name simplification python=3.8
 conda activate simplification
 pip install -r requirements.txt
 
+# Install SciSpacy models
+pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_scibert-0.5.1.tar.gz
+pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.4.1/en_core_web_lg-3.4.1-py3-none-any.whl
+pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_ner_bionlp13cg_md-0.5.1.tar.gz
+
 # Set up pre-commit hooks
 pre-commit install
 ```
