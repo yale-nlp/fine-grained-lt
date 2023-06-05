@@ -220,6 +220,19 @@ def get_readability_score(text, metric="flesch_reading_grade"):
     else:
         raise ValueError(f"Unknown metric {metric}")
 
+def calculate_bertscore(predictions, references):
+    result_bert = []
+    for (pred, label) in zip(predictions, references):
+        result_bert_temp = metric_bertscore.compute(
+            predictions=[pred] * len(label), 
+            references=label, 
+            lang="en"
+        )
+        if type(result_bert_temp["f1"]) == list:
+            result_bert.append(result_bert_temp["f1"][0])
+        else:
+            result_bert.append(result_bert_temp["f1"])
+    return np.mean(result_bert)
 
 def calculate_sari(sources, predictions, references):
     result_sari = metric_sari.compute(sources=sources, 
@@ -297,33 +310,23 @@ def compute_metrics(
         result["sari_easse"] = calculate_sari_easse(
             sources=sources, predictions=predictions, references=labels_transposed
         )
+        
     if "fkgl_easse" in metrics:
         result["fkgl_easse"] = calculate_fkgl_easse(
             predictions=predictions
         )
+
     if "bert_score" in metrics:
-        result_bert = []
-        for (pred, label) in zip(predictions, labels):
-            result_bert_temp = metric_bertscore.compute(
-                predictions=[pred] * len(label), references=label, lang="en"
-            )
-            if type(result_bert_temp["f1"]) == list:
-                result_bert.append(result_bert_temp["f1"][0])
-            else:
-                result_bert.append(result_bert_temp["f1"])
-        result["bert_score"] = np.mean(result_bert)
+        result["bert_score"] = calculate_bertscore(
+            predictions=predictions, 
+            references=labels
+        )
 
     if "bert_score_l" in metrics:
-        result_bert_l = []
-        for (pred, source) in zip(predictions, sources):
-            result_bert_temp = metric_bertscore.compute(
-                predictions=[pred], references=[source], lang="en"
-            )
-            if type(result_bert_temp["f1"]) == list:
-                result_bert_l.append(result_bert_temp["f1"][0])
-            else:
-                result_bert_l.append(result_bert_temp["f1"])
-        result["bert_score_l"] = np.mean(result_bert_l)
+        result["bert_score_l"] = calculate_bertscore(
+            predictions=predictions, 
+            references=sources
+        )
 
     readability_dict = {}
     for metric in [

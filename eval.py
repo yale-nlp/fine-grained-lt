@@ -37,7 +37,7 @@ result = compute_metrics(
         "flesch_kincaid_grade",
         "fkgl_easse",
         "ari",
-        "questeval",
+        # "questeval",
     ],
 )
 print(result)
@@ -58,8 +58,8 @@ print(
                 "flesch_kincaid_grade_score",
                 "fkgl_easse",
                 "ari_score",
-                "questeval_no_ref",
-                "questeval_ref",
+                # "questeval_no_ref",
+                # "questeval_ref",
             ]
         ]
     )

@@ -1,6 +1,7 @@
 import argparse
 import itertools
 import numpy as np
+import os
 import pandas as pd
 import pickle
 import spacy
@@ -8,25 +9,18 @@ import torch
 import wandb
 
 from datasets import load_dataset, Dataset
-from nltk.tokenize import word_tokenize
 from transformers import (
     Seq2SeqTrainer,
     Seq2SeqTrainingArguments,
     DataCollatorForSeq2Seq,
     AutoTokenizer,
     AutoModelForSeq2SeqLM,
+    EarlyStoppingCallback
 )
 from transformers.modeling_utils import unwrap_model
 from transformers.models.auto.modeling_auto import MODEL_FOR_CAUSAL_LM_MAPPING_NAMES
-from utils_context import clean_term, search_history
-from utils_eval import (
-    compute_metrics,
-    calculate_sari,
-    calculate_questeval,
-    clean_string,
-    get_readability_score,
-)
 from typing import Any, Dict, List, Optional, Tuple, Union
+from utils_eval import compute_metrics
 
 # Get dataset from arguments
 parser = argparse.ArgumentParser()
@@ -35,6 +29,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", required=True, type=str)
 parser.add_argument("--model", required=True, type=str)
 parser.add_argument("--checkpoint", required=False, type=str, default=None)
+
+# Naming
+parser.add_argument("--suffix", required=False, type=str, default="")
 
 # Script mode
 parser.add_argument("--hyperparameter_tune", required=False, type=str, default="False")
@@ -126,12 +123,13 @@ class SimplificationTrainer(Seq2SeqTrainer):
             self._past = outputs[self.args.past_index]
 
         if args.loss_type[:2] == "ul" and self.is_in_train:
-            # Get the logits and labels
+            # Get the logits, labels, and matrix sizes
             logits = outputs["logits"]
             labels = inputs["labels"]
             # labels = self.shift_tokens_right(labels, self.tokenizer.pad_token_id)
-
             batch_size, seq_len, vocab_size = logits.size()
+            
+            # First generate the readability weights
             weight_mask = self.ul_weights
             weight_mask = (
                 weight_mask.unsqueeze(0)
@@ -140,24 +138,28 @@ class SimplificationTrainer(Seq2SeqTrainer):
                 .clone()
             )
 
+            # Readability Penalty
             selective_penalty = True
+
+            if selective_penalty:
+                # Generate logits indices mask to determine generated words
+                logits_indices = torch.argmax(logits, dim=-1)
+                logits_indices_mask = torch.nn.functional.one_hot(
+                    logits_indices, num_classes=vocab_size
+                )  # (N,s,v)
+                
+                # This is called selective penalty in the NAPSS paper
+                # Applying this penalizes ONLY the generated words by their complexity
+                # This improves readability
+                weight_mask *= 0.00150 * logits_indices_mask
+
+            # Hallucination Penalty
             hallucination_penalty = []
             if "_inp" in args.loss_type:
                 hallucination_penalty.append("inputs")
             if "_lab" in args.loss_type:
                 hallucination_penalty.append("labels")
 
-            # Generate logits indices mask to determine generated words
-            logits_indices = torch.argmax(logits, dim=-1)
-            logits_indices_mask = torch.nn.functional.one_hot(
-                logits_indices, num_classes=vocab_size
-            )  # (N,s,v)
-
-            if selective_penalty:
-                # This is called selective penalty in the NAPSS paper
-                # Applying this penalizes ONLY the generated words by their complexity
-                # This improves readability
-                weight_mask *= 0.0010 * logits_indices_mask
             if hallucination_penalty:
                 indices_mask = (
                     torch.zeros((batch_size, seq_len, vocab_size)).float().cuda()
@@ -187,7 +189,7 @@ class SimplificationTrainer(Seq2SeqTrainer):
                 # Get the tokens which do not appear in either label or input
                 neg_indices_mask = 1.0 * (indices_mask == 0)
                 # Penalize these non-appearing tokens with a fixed weight
-                weight_mask += 0.00075 * neg_indices_mask
+                weight_mask += 0.00050 * neg_indices_mask
 
             ul_loss = self.unlikelihood_loss(
                 decoder_input_ids=labels, logits=logits, weight_mask=weight_mask
@@ -236,8 +238,8 @@ def decode_and_compute_metrics(eval_pred):
     labels = tokenizer.batch_decode(label_raw)
     labels = [[s] for s in labels]  # labels must be a list of LISTS
 
-    with open("with_context.pkl", "wb") as f:  # open a text file
-        pickle.dump([sources, predictions, labels], f)  # serialize the list
+    # with open("with_context.pkl", "wb") as f:  # open a text file
+    #     pickle.dump([sources, predictions, labels], f)  # serialize the list
 
     result = compute_metrics(
         sources, predictions, labels, ["rouge", "sari", "flesch_kincaid_grade", "ari"]
@@ -303,9 +305,11 @@ def train(config=None, project=None):
             gradient_accumulation_steps=int(config.gradient_accumulation_steps),
             weight_decay=float(config.weight_decay),
             fp16=False,
+            # max_steps=10000,
             # Evaluation parameters
             evaluation_strategy="steps",  # "epoch",
-            eval_steps=500,
+            eval_steps=500, 
+            # metric_for_best_model="sari",
             per_device_eval_batch_size=2,  # int(config.batch_size),
             predict_with_generate=True,
             generation_max_length=768,
@@ -333,6 +337,7 @@ def train(config=None, project=None):
             data_collator=data_collator,
             tokenizer=tokenizer,
             compute_metrics=decode_and_compute_metrics,
+            # callbacks = [EarlyStoppingCallback(early_stopping_patience=3)]
         )
 
         if args.loss_type[:2] == "ul":
@@ -373,6 +378,12 @@ sweep_config = {
         "warmup_steps": {"value": 0},
     },
 }
+
+# Turn off WANDB if predicting only
+if args.predict_only == "True":
+    os.system("wandb offline")
+else:
+    os.system("wandb online")
 
 # Tokenizer
 if args.predict_only == "True":
@@ -501,7 +512,7 @@ else:
         test_output = list(df["prediction"])
 
     # Write output
-    with open(f"output/{PROJECT_NAME}.txt", "w") as fp:
+    with open(f"output/{PROJECT_NAME}{args.suffix}.txt", "w") as fp:
         for item in test_output:
             fp.write("%s\n" % item)
         print("Done")

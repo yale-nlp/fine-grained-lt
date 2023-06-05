@@ -12,4 +12,3 @@ output/archived/*
 nohups/*
 openai_key
 *__pycache__
-*.ipynb

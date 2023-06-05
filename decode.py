@@ -22,7 +22,10 @@ from transformers import (
     MaxLengthCriteria
 )
 from typing import List, Optional, Tuple, Union
-from utils_eval import get_readability_score, calculate_sari
+from utils_eval import (
+    calculate_fkgl_easse, 
+    calculate_bertscore
+    )
 
 ner_model = spacy.load("en_core_web_lg")
 
@@ -31,6 +34,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", required=True, type=str)
 parser.add_argument("--model", required=True, type=str)
 parser.add_argument("--checkpoint", required=False, type=str, default=None)
+parser.add_argument("--suffix", required=False, type=str, default="")
 args = parser.parse_args()
 
 class NewBeamScorer(BeamSearchScorer):
@@ -42,20 +46,26 @@ class NewBeamScorer(BeamSearchScorer):
         self.encoder_input = encoder_input
 
     def rescale_fk(self, score):
-        if score <= 6:
+        if score <= 4:
             return 1.0
         elif score <= 10:
-            return (10.0 - score)/4.0
+            return (10.0 - score) / 6.0
         else:
             return 0.0
         
-    def rescale_sari(self, score):
-        if score <= 20.0:
+    def rescale_bs(self, score):
+        if score <= 0.60:
             return 0.0
-        elif score <= 60.0:
-            return (score - 20.0)/40.0
         else:
-            return 1.0
+            return (score-0.60) / 0.40
+        
+    # def rescale_sari(self, score):
+    #     if score <= 20.0:
+    #         return 0.0
+    #     elif score <= 80.0:
+    #         return (score - 20.0) / 60.0
+    #     else:
+    #         return 1.0
 
     def rerank(self,
                input_ids: torch.LongTensor, # num_beams x curr_seq_len
@@ -74,29 +84,27 @@ class NewBeamScorer(BeamSearchScorer):
                 current_strings.append(current_string)
 
             # 1. Score beams based on their FK score
-            # if input_ids.shape[1] >= 10:
             current_strings_fk = [
-                get_readability_score(s, metric="flesch_kincaid_grade")[0] \
+                calculate_fkgl_easse(s) \
                     for s in current_strings
                 ]
             current_strings_fk = list(map(self.rescale_fk, current_strings_fk))
-            # else:
-            #     current_strings_fk = [30.0] * len(current_strings)
             
-            # 2. Score beams based on their SARI score
-            current_strings_sari = [
-                calculate_sari(sources=[input_strings[i]],
-                               predictions=[s],
-                               references=[[input_strings[i]]]) \
-                    for s in current_strings
+            # 2. Score beams based on their BERTScore
+            current_strings_bs = [
+                calculate_bertscore(
+                    predictions=[s],
+                    references=[input_strings[i]]
+                    ) for s in current_strings
             ]
-            current_strings_sari = list(map(self.rescale_sari, current_strings_sari))
+            current_strings_bs = list(map(self.rescale_bs, current_strings_bs))
 
             # TO TUNE
             # Use sqrt scaling
-            current_strings_fk   = [math.sqrt(x) for x in current_strings_fk]
-            current_strings_sari = [math.sqrt(x) for x in current_strings_sari]
-            current_scores = [a*b for (a,b) in zip(current_strings_fk, current_strings_sari)]
+            # current_strings_fk   = [math.sqrt(x) for x in current_strings_fk]
+            # current_strings_sari = [math.sqrt(x) for x in current_strings_sari]
+            current_scores = [(2*a*b)/(a+b) if a+b>0.0 else 0.0 for (a,b) \
+                              in zip(current_strings_fk, current_strings_bs)]
 
             # 3. Kill a beam if it has an unsupported entity
             for j in range(next_scores.shape[1]):
@@ -300,12 +308,12 @@ for idx, batch in enumerate(dataloader):
     decoded_outputs = tokenizer.batch_decode(outputs, skip_special_tokens=True)
     # output_list.append(decoded_outputs[0])
 
-    file1 = open(f"output/decode_{args.dataset}_{args.model}.txt", "a")  # append mode
+    file1 = open(f"output/decode/{args.dataset}_{args.model}{args.suffix}.txt", "a")  # append mode
     file1.write(f"{decoded_outputs[0]}\n")
     file1.close()
 
 # # Write output
-# with open(f"output/decode_{args.dataset}_{args.model}.txt", "w") as fp:
+# with open(f"output/decode_{args.dataset}_{args.model}{args.suffix}.txt", "w") as fp:
 #     for item in output_list:
 #         fp.write("%s\n" % item)
 #     print("Done")

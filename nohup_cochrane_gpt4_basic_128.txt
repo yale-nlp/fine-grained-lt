@@ -1,8 +1,0 @@
-Found cached dataset json (/home/lyf6/.cache/huggingface/datasets/json/default-9ba730f179d68666/0.0.0/e347ab1c932092252e717ff3f949105a4dd28b27e842dd53157d2f72e276c2e4)
-Using dataset: cochrane_full
-Using prediction text file: output/cochrane_gpt4_basic_128.txt
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 428.12it/s]
-Found cached dataset json (/home/lyf6/.cache/huggingface/datasets/json/default-9a0418f804e277a7/0.0.0/e347ab1c932092252e717ff3f949105a4dd28b27e842dd53157d2f72e276c2e4)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 609.90it/s]
-Some weights of RobertaModel were not initialized from the model checkpoint at roberta-large and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
-You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
