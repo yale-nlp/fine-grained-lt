@@ -1,10 +1,14 @@
 # Files to ignore
-data/medline/*
-data/umls/*
-data/wordnet_wikipedia/*
-data/mesh/*
+data/archived/*
+data/contrastive/*
+data/raw/*
+data/scratch/*
+muss/*
 misc/*
 models/*
+nohups/*
+QuestEval/*
+RL4LMs/*
 wandb/*
 scratch/*
 test*
@@ -12,3 +16,8 @@ output/archived/*
 nohups/*
 openai_key
 *__pycache__
+scratch.ipynb
+scratch_napss.ipynb
+.vscode
+contrastive_training.py
+preprocess_tico.ipynb

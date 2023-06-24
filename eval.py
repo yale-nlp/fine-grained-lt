@@ -24,6 +24,9 @@ labels = [item["labels"] for item in dataset["test"]]
 with open(args.preds_path) as f:
     preds = f.read().splitlines()
 
+if len(preds) > len(sources):
+    preds = list(filter(lambda s: s != "", preds))
+
 result = compute_metrics(
     sources,
     preds,
@@ -47,17 +50,17 @@ print(
         [
             str(result[key])
             for key in [
+                "fkgl_easse",
+                "ari_score",
+                "bert_score",
+                "sari_easse",
+                "rougeLsum",
                 "rouge1",
                 "rouge2",
                 "rougeL",
-                "rougeLsum",
-                "bert_score",
                 "bert_score_l",
                 "sari",
-                "sari_easse",
                 "flesch_kincaid_grade_score",
-                "fkgl_easse",
-                "ari_score",
                 # "questeval_no_ref",
                 # "questeval_ref",
             ]

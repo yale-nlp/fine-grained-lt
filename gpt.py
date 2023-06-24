@@ -6,6 +6,7 @@ from datasets import Dataset, DatasetDict, load_metric, load_dataset
 import argparse
 import os
 import re
+import time
 
 os.environ["OPENAI_API_KEY"] = "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"
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -15,13 +16,16 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # DATASET_NAME = "radiology_indiv_context_some"
 # DATASET_NAME = "cochrane_context_some"
 # DATASET_NAME = "asset_context_all"
-DATASET_NAME = "radiology_full"
+# DATASET_NAME = "radiology_full"
+# DATASET_NAME = "tico19"
+DATASET_NAME = "medeasi"
 
 dataset = load_dataset(
     "json", data_files=f"data/{DATASET_NAME}_multiple.json", field="test"
 )["train"]
-# test_output = []
+
 for idx, text in enumerate(dataset["input"]):
+    time.sleep(0.01)
     try:
         response = openai.ChatCompletion.create(
             model="gpt-4",
@@ -46,16 +50,19 @@ for idx, text in enumerate(dataset["input"]):
         simplified_sen = simplified_sen.replace("\n", " ")
         simplified_sen = re.sub(" +", " ", simplified_sen)
 
-        # test_output.append(simplified_sen)
         # open file in write mode
-        with open(f"output/{DATASET_NAME}_gpt4_basic_128.txt", "a") as fp:
-            # for item in test_output:
-            fp.write("%s\n" % simplified_sen)
-        # print(idx, simplified_sen)
+        # with open(f"output/{DATASET_NAME}_gpt4_basic_128.txt", "a") as fp:
+        #     # for item in test_output:
+        #     fp.write("%s\n" % simplified_sen)
+        print(idx, simplified_sen)
+
     except Exception as e:
         print(f"Error on {idx}: {e}")
         print(text)
-        continue
+        # with open(f"output/{DATASET_NAME}_gpt4_basic_128.txt", "a") as fp:
+        #     # for item in test_output:
+        #     fp.write("%s\n" % "")
+        # continue
     
 print(f"{DATASET_NAME} Done")
 

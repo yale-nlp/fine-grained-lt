@@ -9,6 +9,7 @@ import torch
 import wandb
 
 from datasets import load_dataset, Dataset
+from nltk.tokenize import sent_tokenize
 from transformers import (
     Seq2SeqTrainer,
     Seq2SeqTrainingArguments,
@@ -54,6 +55,9 @@ args = parser.parse_args()
 assert args.hyperparameter_tune in ["True", "False"]
 assert args.predict_only in ["True", "False"]
 
+lambda_read  = 0.00075
+lambda_const = 0.00015
+
 # Load in the model and tokenizer, for this we're using BART,
 # which is good at generation tasks
 model_name_dict = {
@@ -62,12 +66,6 @@ model_name_dict = {
     "flant5": ("FLANT5_LARGE", "google/flan-t5-large"),
     "flant5_base": ("FLANT5_BASE", "google/flan-t5-base"),
 }
-
-if args.loss_type in ["rl_qe", "rl_policy_qe"]:
-    from questeval.questeval_metric import QuestEval
-
-    questeval = QuestEval(no_cuda=False)
-
 
 class SimplificationTrainer(Seq2SeqTrainer):
     def shift_tokens_right(self, input_ids, pad_token_id):
@@ -129,29 +127,39 @@ class SimplificationTrainer(Seq2SeqTrainer):
             # labels = self.shift_tokens_right(labels, self.tokenizer.pad_token_id)
             batch_size, seq_len, vocab_size = logits.size()
             
-            # First generate the readability weights
-            weight_mask = self.ul_weights
-            weight_mask = (
-                weight_mask.unsqueeze(0)
-                .unsqueeze(0)
-                .expand(batch_size, seq_len, vocab_size)
-                .clone()
-            )
+            # Generate UL weights
+            ul_weight = torch.zeros((batch_size, 
+                                     seq_len, 
+                                     vocab_size)).float().cuda()
 
-            # Readability Penalty
-            selective_penalty = True
+            selective_penalty   = True
+            readability_penalty = True
 
+            # Selectivity Option
             if selective_penalty:
                 # Generate logits indices mask to determine generated words
+                # This is called selective penalty in the NAPSS paper
                 logits_indices = torch.argmax(logits, dim=-1)
                 logits_indices_mask = torch.nn.functional.one_hot(
                     logits_indices, num_classes=vocab_size
                 )  # (N,s,v)
-                
-                # This is called selective penalty in the NAPSS paper
+            else:
+                logits_indices_mask = torch.ones(
+                    batch_size, seq_len, vocab_size
+                )
+
+            # Readability Penalty
+            if readability_penalty:
+                read_mask = self.ul_weights
+                read_mask = (
+                    read_mask.unsqueeze(0)
+                    .unsqueeze(0)
+                    .expand(batch_size, seq_len, vocab_size)
+                    .clone()
+                )
                 # Applying this penalizes ONLY the generated words by their complexity
                 # This improves readability
-                weight_mask *= 0.00150 * logits_indices_mask
+                ul_weight += lambda_read * read_mask * logits_indices_mask
 
             # Hallucination Penalty
             hallucination_penalty = []
@@ -161,7 +169,7 @@ class SimplificationTrainer(Seq2SeqTrainer):
                 hallucination_penalty.append("labels")
 
             if hallucination_penalty:
-                indices_mask = (
+                hall_mask = (
                     torch.zeros((batch_size, seq_len, vocab_size)).float().cuda()
                 )
                 if "labels" in hallucination_penalty:
@@ -170,29 +178,27 @@ class SimplificationTrainer(Seq2SeqTrainer):
                     labels_indices_mask = torch.nn.functional.one_hot(
                         labels, num_classes=vocab_size
                     )
-                    indices_mask += (
+                    hall_mask += (
                         labels_indices_mask.sum(axis=1)
                         .unsqueeze(1)
                         .expand(batch_size, seq_len, vocab_size)
-                        * logits_indices_mask
                     )
                 if "inputs" in hallucination_penalty:
                     inputs_indices_mask = torch.nn.functional.one_hot(
                         inputs["input_ids"], num_classes=vocab_size
                     )
-                    indices_mask += (
+                    hall_mask += (
                         inputs_indices_mask.sum(axis=1)
                         .unsqueeze(1)
                         .expand(batch_size, seq_len, vocab_size)
-                        * logits_indices_mask
                     )
                 # Get the tokens which do not appear in either label or input
-                neg_indices_mask = 1.0 * (indices_mask == 0)
+                neg_indices_mask = 1.0 * (hall_mask == 0) 
                 # Penalize these non-appearing tokens with a fixed weight
-                weight_mask += 0.00050 * neg_indices_mask
+                ul_weight += lambda_const * neg_indices_mask * logits_indices_mask
 
             ul_loss = self.unlikelihood_loss(
-                decoder_input_ids=labels, logits=logits, weight_mask=weight_mask
+                decoder_input_ids=labels, logits=logits, weight_mask=ul_weight
             )
             loss = outputs["loss"]
             loss += ul_loss
@@ -242,10 +248,8 @@ def decode_and_compute_metrics(eval_pred):
     #     pickle.dump([sources, predictions, labels], f)  # serialize the list
 
     result = compute_metrics(
-        sources, predictions, labels, ["rouge", "sari", "flesch_kincaid_grade", "ari"]
+        sources, predictions, labels, ["fkgl_easse", "ari_score", "sari_easse"]
     )
-    result.pop("flesch_kincaid_grade_counts")
-    result.pop("ari_counts")
     return result
 
 
@@ -299,13 +303,12 @@ def train(config=None, project=None):
             # Training parameters
             num_train_epochs=int(config.epochs),
             learning_rate=float(config.learning_rate),
-            lr_scheduler_type="linear",
+            lr_scheduler_type="constant",
             warmup_steps=int(config.warmup_steps),
             per_device_train_batch_size=int(config.batch_size),
             gradient_accumulation_steps=int(config.gradient_accumulation_steps),
             weight_decay=float(config.weight_decay),
             fp16=False,
-            # max_steps=10000,
             # Evaluation parameters
             evaluation_strategy="steps",  # "epoch",
             eval_steps=500, 
@@ -320,8 +323,8 @@ def train(config=None, project=None):
             run_name=f"{DATASET_NAME}_{MODEL_NAME}_{EFFECTIVE_BATCH}_{config.learning_rate}",
             report_to="wandb",
             # Saving parameters
-            save_strategy="steps",  # "epoch",
-            load_best_model_at_end=True,
+            save_strategy="epoch", # "steps"
+            # load_best_model_at_end=True,
             save_total_limit=5,
         )
 
@@ -402,15 +405,7 @@ PRETRAIN_NAME = (
     else "_PRETRAIN"
 )
 if args.predict_only == "True":
-    if "_rl_policy_qe" in args.checkpoint:
-        LOSS_TYPE_NAME = "_rl_policy_qe"
-    elif "_rl_policy" in args.checkpoint:
-        LOSS_TYPE_NAME = "_rl_policy"
-    elif "_rl_qe" in args.checkpoint:
-        LOSS_TYPE_NAME = "_rl_qe"
-    elif "_rl" in args.checkpoint:
-        LOSS_TYPE_NAME = "_rl"
-    elif "_ul_2voc" in args.checkpoint:
+    if "_ul_2voc" in args.checkpoint:
         LOSS_TYPE_NAME = "_ul_2voc"
     elif "_ul_inp_lab" in args.checkpoint:
         LOSS_TYPE_NAME = "_ul_inp_lab"
@@ -426,7 +421,7 @@ if args.predict_only == "True":
         LOSS_TYPE_NAME = ""
 else:
     LOSS_TYPE_NAME = "" if args.loss_type == "standard" else f"_{args.loss_type}"
-MODEL_OUT_NAME = f"{MODEL_NAME}{PRETRAIN_NAME}_{DATASET_NAME}{LOSS_TYPE_NAME}"
+MODEL_OUT_NAME = f"{MODEL_NAME}{PRETRAIN_NAME}_{DATASET_NAME}{LOSS_TYPE_NAME}{args.suffix}"
 PROJECT_NAME = f"{DATASET_NAME}_{args.model}{PRETRAIN_NAME.lower()}{LOSS_TYPE_NAME}"
 
 # Load and preprocess the datasets
@@ -437,29 +432,7 @@ dataset["test"] = load_dataset(
 
 
 def split_sent(s):
-    input_dict = tokenizer(s)
-    num_toks = len(input_dict["input_ids"])
-    if num_toks <= 768:
-        return [s]
-    elif num_toks <= 768 * 2:
-        lst = s.split(". ")
-        first = ". ".join(lst[: len(lst) // 2])
-        second = ". ".join(lst[len(lst) // 2 :])
-        return [first, second]
-    elif num_toks <= 768 * 3:
-        lst = s.split(". ")
-        first = ". ".join(lst[: len(lst) // 3])
-        second = ". ".join(lst[len(lst) // 3 : 2 * len(lst) // 3])
-        third = ". ".join(lst[2 * len(lst) // 3 :])
-        return [first, second, third]
-    else:
-        lst = s.split(". ")
-        first = ". ".join(lst[: len(lst) // 4])
-        second = ". ".join(lst[len(lst) // 4 : 2 * len(lst) // 4])
-        third = ". ".join(lst[2 * len(lst) // 4 : 3 * len(lst) // 4])
-        fourth = ". ".join(lst[3 * len(lst) // 4 :])
-        return [first, second, third, fourth]
-
+    return sent_tokenize(s)
 
 if args.pred_split_sent == "True":
     df = pd.DataFrame(dataset["test"])

@@ -4,6 +4,7 @@ import numpy as np
 import openai
 import re
 import textstat
+import time
 
 from collections import Counter
 from easse.fkgl import corpus_fkgl
@@ -11,7 +12,7 @@ from easse.sari import corpus_sari
 from evaluate import load
 from questeval.questeval_metric import QuestEval
 from rouge_score import rouge_scorer, scoring
-from typing import List, Dict, Tuple
+from typing import List, Dict
 
 metric_bertscore = load("bertscore")
 metric_sari = load("sari")
@@ -23,12 +24,16 @@ def add_newline_to_end_of_each_sentence(s):
     return "\n".join(nltk.sent_tokenize(s))
 
 
-def calculate_g_eval(sources, predictions, model, **kwargs):
+def calculate_g_eval(sources: List[str], 
+                     predictions: List[str], 
+                     model: str, 
+                     **kwargs):
 
     openai.api_key_path = "openai_key"
 
     result = []
     for document, summary in zip(sources, predictions):
+        time.sleep(0.1)
         try:
             response = openai.ChatCompletion.create(
                 model=model,
@@ -41,11 +46,11 @@ def calculate_g_eval(sources, predictions, model, **kwargs):
                         "role": "user",
                         "content": (
                             "Human Evaluation of Text Summarization Systems: \n"
-                            "Factual Consistency: Does the summary untruthful or "
+                            "Factual Consistency: Does the summary have untruthful or "
                             "misleading facts that are not supported by the source text? \n"
                             f"Source Text: {document} \n"
                             f"Summary: {summary} \n"
-                            "Does the summary contain factual inconsistency? \n"
+                            "Does the summary contain factual inconsistencies? \n"
                             "Answer: "
                         ),
                     },
@@ -60,7 +65,11 @@ def calculate_g_eval(sources, predictions, model, **kwargs):
     return result
 
 
-def calculate_questeval(sources, predictions, labels, questeval, both=True):
+def calculate_questeval(sources: List[str], 
+                        predictions: List[str], 
+                        labels: List[List[str]], 
+                        questeval, 
+                        both=True):
     """_summary_
 
     Args:
@@ -101,8 +110,8 @@ def calculate_questeval(sources, predictions, labels, questeval, both=True):
 
 
 def calculate_rouge(
-    predictions,
-    references,
+    predictions: List[str],
+    references: List[List[str]],
 ):
     """Calculate rouge using rouge_scorer package.
     Args:
@@ -125,7 +134,8 @@ def calculate_rouge(
     return {k: round(v.mid.fmeasure * 100, 4) for k, v in result.items()}
 
 
-def get_readability_score(text, metric="flesch_reading_grade"):
+def get_readability_score(text: str, 
+                          metric = "flesch_reading_grade"):
     """get the readability score and grade level of text"""
     if metric == "flesch_reading_ease":
         score = textstat.flesch_reading_ease(text)
@@ -220,7 +230,8 @@ def get_readability_score(text, metric="flesch_reading_grade"):
     else:
         raise ValueError(f"Unknown metric {metric}")
 
-def calculate_bertscore(predictions, references):
+def calculate_bertscore(predictions: List[str], 
+                        references: List[List[str]]):
     result_bert = []
     for (pred, label) in zip(predictions, references):
         result_bert_temp = metric_bertscore.compute(
@@ -234,7 +245,9 @@ def calculate_bertscore(predictions, references):
             result_bert.append(result_bert_temp["f1"])
     return np.mean(result_bert)
 
-def calculate_sari(sources, predictions, references):
+def calculate_sari(sources: List[str], 
+                   predictions: List[str], 
+                   references: List[List[str]]):
     result_sari = metric_sari.compute(sources=sources, 
                                         predictions=predictions, 
                                         references=references)[
@@ -242,18 +255,20 @@ def calculate_sari(sources, predictions, references):
     ]
     return result_sari
 
-def calculate_fkgl_easse(predictions):
+def calculate_fkgl_easse(predictions: List[str]):
     return corpus_fkgl(sentences=predictions,
                        tokenizer="13a")
 
-def calculate_sari_easse(sources, predictions, references):
+def calculate_sari_easse(sources: List[str], 
+                         predictions: List[str], 
+                         references: List[List[str]]):
     return corpus_sari(orig_sents=sources, 
                        sys_sents=predictions, 
                        refs_sents=references,
                        lowercase=True,
                        tokenizer="13a")
 
-def clean_string(s):
+def clean_string(s: str):
     s = s.replace("-lrb-"," ").replace("-rrb-", " ")
     s = s.replace("<s>", "").replace("</s>", "").replace("<pad>", "")
     return re.sub(" +", " ", s)
@@ -325,7 +340,7 @@ def compute_metrics(
     if "bert_score_l" in metrics:
         result["bert_score_l"] = calculate_bertscore(
             predictions=predictions, 
-            references=sources
+            references=[[item] for item in sources]
         )
 
     readability_dict = {}
@@ -366,6 +381,6 @@ def compute_metrics(
             d["choices"][0]["message"]["content"] if "choices" in d else ""
             for d in geval_dict
         ]
-        result["geval"] = Counter(geval_answers)
+        result["geval"] = (geval_answers, Counter(geval_answers))
 
     return {k: round(v, 4) if type(v) in [float, int] else v for k, v in result.items()}
