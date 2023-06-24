@@ -13,12 +13,12 @@ wandb/*
 scratch/*
 test*
 output/archived/*
-output/*/archived/*
 nohups/*
 openai_key
 *__pycache__
 scratch.ipynb
 scratch_napss.ipynb
+generate.py
 .vscode
 contrastive_training.py
 preprocess_tico.ipynb
