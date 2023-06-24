@@ -1,7 +1,0 @@
-pytest
-transformers
-sentencepiece
-datasets
-bert_score
-Unidecode
-spacy
