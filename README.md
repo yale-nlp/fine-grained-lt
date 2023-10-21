@@ -127,3 +127,4 @@ To evaluate the model's performance, we use the following metrics:
   * Flesch Kincaid Grade
   * Dale Chall
   * Gunning Fog
+# simplification-project
