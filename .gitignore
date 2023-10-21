@@ -31,7 +31,7 @@ wandb/*
 contrastive_training.py
 eval_gpt.ipynb
 eval_human.ipynb
-eval.py
+eval.ipynb
 generate.py
 gpt_explain.ipynb
 gpt_summarize.ipynb
