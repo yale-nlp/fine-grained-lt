@@ -4,6 +4,8 @@ data/archived/*
 data/contrastive/*
 data/raw/*
 data/scratch/*
+data/cnn*
+data/xsum*
 data/radiology*
 data/test*
 dpo/*
@@ -29,6 +31,7 @@ contrastive_training.py
 eval_gpt.ipynb
 eval_human.ipynb
 eval.py
+generate.py
 gpt_explain.ipynb
 gpt_summarize.ipynb
 gpt.ipynb
@@ -38,5 +41,4 @@ train_causal.py
 train_dpo.py
 scratch.ipynb
 scratch_napss.ipynb
-generate.py
 .vscode
