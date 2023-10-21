@@ -21,6 +21,7 @@ output/dpo/*
 output/human_eval/*
 output/mi/*
 output/ul/archived/*
+output/*radiology*
 QuestEval/*
 RL4LMs/*
 wandb/*
