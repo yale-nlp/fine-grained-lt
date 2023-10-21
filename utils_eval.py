@@ -10,7 +10,8 @@ from collections import Counter
 from easse.fkgl import corpus_fkgl
 from easse.sari import corpus_sari
 from evaluate import load
-from questeval.questeval_metric import QuestEval
+# from questeval.questeval_metric import QuestEval
+from nltk.util import ngrams
 from rouge_score import rouge_scorer, scoring
 from typing import List, Dict
 
@@ -18,10 +19,72 @@ metric_bertscore = load("bertscore")
 metric_sari = load("sari")
 
 
+def get_entities(input, ner_model_lst, linker_lst=None):
+
+    SEMTYPES = ["T023","T028","T046","T047","T048",
+                "T059","T060","T061","T074","T109",
+                "T116","T121","T122","T123","T125",
+                "T129","T184","T191","T195"]
+
+    output_entities = set()
+
+    if type(ner_model_lst) is not list:
+        ner_model_lst = [ner_model_lst]
+        linker_lst    = [linker_lst]
+
+    for (ner_model, linker) in zip(ner_model_lst, linker_lst):
+        entity_lst = ner_model(input).ents
+
+        if "scispacy_linker" in ner_model.pipe_names:
+            filtered_entities = []
+            for e in set(entity_lst):
+                if len(e._.kb_ents) > 0:
+                    umls_ent_id, _ = e._.kb_ents[0]  # Get top hit from UMLS
+                    umls_ent  = linker.kb.cui_to_entity[umls_ent_id]  # Get UMLS entity
+                    umls_semt = umls_ent[3]
+                    if any([t in SEMTYPES for t in umls_semt]):
+                        e = str(e)
+                        if e not in filtered_entities:
+                            filtered_entities.append(e)
+            output_entities.update(set(filtered_entities))
+        else:
+            output_entities.update(set([str(e) for e in entity_lst]))
+
+    return output_entities
+
+def check_unsupported_entities(input, output, ner_model_lst, linker_lst):
+    input_entities  = get_entities(input.lower(), ner_model_lst, linker_lst)
+    output_entities = get_entities(output.lower(), ner_model_lst, linker_lst)
+
+    input_entities  = set(input_entities)
+    output_entities = set(output_entities)
+
+    differences = list(output_entities.difference(input_entities))
+    if len(differences) > 0:
+        return True, differences
+    else:
+        return False, differences
+
 def add_newline_to_end_of_each_sentence(s):
     """This was added to get rougeLsum scores matching published rougeL scores for BART and PEGASUS."""
     s = s.replace("\n", "")
     return "\n".join(nltk.sent_tokenize(s))
+
+def check_n_gram_overlap(
+        sources: List[str],
+        predictions: List[str]
+        ):
+    
+    def extract_ngrams(data, num):
+        n_grams = ngrams(nltk.word_tokenize(data), num)
+        return [ ' '.join(grams) for grams in n_grams]
+
+    result = []
+    for (s,p) in zip(sources, predictions):
+        ngrams_4 = extract_ngrams(p, 4)
+        num_overlap_ngrams = [1 if ngram in s else 0 for ngram in ngrams_4]
+        result.append(np.mean(num_overlap_ngrams))
+    return np.mean(result)
 
 
 def calculate_g_eval(sources: List[str], 
@@ -33,7 +96,7 @@ def calculate_g_eval(sources: List[str],
 
     result = []
     for document, summary in zip(sources, predictions):
-        time.sleep(0.1)
+        time.sleep(1.0)
         try:
             response = openai.ChatCompletion.create(
                 model=model,
@@ -64,6 +127,46 @@ def calculate_g_eval(sources: List[str],
         # simplified_sen = response["choices"][0]["message"]["content"]
     return result
 
+def calculate_g_explain(sources: List[str], 
+                     predictions: List[str], 
+                     model: str, 
+                     **kwargs):
+
+    openai.api_key_path = "openai_key"
+
+    result = []
+    for document, summary in zip(sources, predictions):
+        time.sleep(0.3)
+        try:
+            response = openai.ChatCompletion.create(
+                model=model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Your task is to rate the summary on one metric.",
+                    },
+                    {
+                        "role": "user",
+                        "content": (
+                            "Human Evaluation of Text Summarization Systems: \n"
+                            "Factual Consistency: Does the summary have untruthful or "
+                            "misleading facts that are not supported by the source text? \n"
+                            f"Source Text: {document} \n"
+                            f"Summary: {summary} \n"
+                            "Does the summary contain factual inconsistencies? \n"
+                            "Answer: \n"
+                            "If yes, why: "
+                        ),
+                    },
+                ],
+                **kwargs,
+            )
+        except Exception as e:
+            response = {}
+            print(e)
+        result.append(response)
+        # simplified_sen = response["choices"][0]["message"]["content"]
+    return result
 
 def calculate_questeval(sources: List[str], 
                         predictions: List[str], 
@@ -363,10 +466,10 @@ def compute_metrics(
             )
     result.update(readability_dict)
 
-    if "questeval" in metrics:
-        questeval = QuestEval(no_cuda=False)
-        questeval_dict = calculate_questeval(sources, predictions, labels, questeval)
-        result.update(questeval_dict)
+    # if "questeval" in metrics:
+    #     questeval = QuestEval(no_cuda=False)
+    #     questeval_dict = calculate_questeval(sources, predictions, labels, questeval)
+    #     result.update(questeval_dict)
 
     if ("geval-3.5" in metrics) or ("geval-4" in metrics):
         if "geval-3.5" in metrics:
@@ -375,12 +478,51 @@ def compute_metrics(
             )
         else:
             geval_dict = calculate_g_eval(
-                sources, predictions, model="gpt-4", n=1, temperature=1, top_p=1
+                sources, predictions, model="gpt-4", n=1, temperature=0, top_p=1
             )
         geval_answers = [
             d["choices"][0]["message"]["content"] if "choices" in d else ""
             for d in geval_dict
         ]
         result["geval"] = (geval_answers, Counter(geval_answers))
+
+    if ("gexplain-3.5" in metrics) or ("gexplain-4" in metrics):
+        if "gexplain-3.5" in metrics:
+            geval_dict = calculate_g_explain(
+                sources, predictions, model="gpt-3.5-turbo", temperature=0
+            )
+        else:
+            geval_dict = calculate_g_explain(
+                sources, predictions, model="gpt-4", n=1, temperature=0, top_p=1
+            )
+        geval_answers = [
+            d["choices"][0]["message"]["content"] if "choices" in d else ""
+            for d in geval_dict
+        ]
+        result["geval"] = geval_answers
+
+    if "check_entities" in metrics:
+        import spacy
+        import scispacy
+        from scispacy.linking import EntityLinker
+        ner_model_web = spacy.load("en_core_web_lg")
+        ner_model_sci = spacy.load("en_core_sci_lg")
+        ner_model_sci.add_pipe(
+            "scispacy_linker",
+            config={"resolve_abbreviations": True, "linker_name": "umls"},
+        )
+        linker_sci = ner_model_sci.get_pipe("scispacy_linker")
+        ner_lst    = [ner_model_sci, ner_model_web]
+        linker_lst = [linker_sci, None]
+        
+        check_entity_results = [
+            check_unsupported_entities(i, o, ner_lst, linker_lst) \
+                for (i,o) in zip(sources, predictions)]
+        num_true = Counter([item[0] for item in check_entity_results])[True]
+        result["check_entities"] = f"{num_true}/{len(check_entity_results)}"
+        result["check_entities_ents"] = [item[1] for item in check_entity_results]
+
+    if "check_overlap" in metrics:
+        result["check_overlap"] = check_n_gram_overlap(sources, predictions)
 
     return {k: round(v, 4) if type(v) in [float, int] else v for k, v in result.items()}

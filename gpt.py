@@ -1,14 +1,10 @@
 import openai
-import pandas as pd
-import numpy as np
-import nltk
 from datasets import Dataset, DatasetDict, load_metric, load_dataset
-import argparse
 import os
 import re
 import time
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 

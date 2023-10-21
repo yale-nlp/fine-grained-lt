@@ -34,13 +34,14 @@ result = compute_metrics(
     [
         "rouge",
         "bert_score",
-        "bert_score_l",
-        "sari",
+        # "bert_score_l",
+        # "sari",
         "sari_easse",
-        "flesch_kincaid_grade",
+        # "flesch_kincaid_grade",
         "fkgl_easse",
         "ari",
         # "questeval",
+        "check_entities"
     ],
 )
 print(result)
@@ -50,17 +51,18 @@ print(
         [
             str(result[key])
             for key in [
+                "check_entities",
                 "fkgl_easse",
                 "ari_score",
                 "bert_score",
                 "sari_easse",
                 "rougeLsum",
-                "rouge1",
-                "rouge2",
-                "rougeL",
-                "bert_score_l",
-                "sari",
-                "flesch_kincaid_grade_score",
+                # "rouge1",
+                # "rouge2",
+                # "rougeL",
+                # "bert_score_l",
+                # "sari",
+                # "flesch_kincaid_grade_score",
                 # "questeval_no_ref",
                 # "questeval_ref",
             ]
