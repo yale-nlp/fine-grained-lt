@@ -1,11 +1,12 @@
 import argparse
 from datasets import load_dataset
-from utils_eval import compute_metrics
+from utils_questeval import compute_metrics
 
 # Get dataset from arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", required=True)
 parser.add_argument("--preds_path", required=True)
+parser.add_argument("--num_samples", required=False, type=int, default=None)
 args = parser.parse_args()
 print(f"Using dataset: {args.dataset}")
 print(f"Using prediction text file: {args.preds_path}")
@@ -27,20 +28,16 @@ with open(args.preds_path) as f:
 if len(preds) > len(sources):
     preds = list(filter(lambda s: s != "", preds))
 
+if args.num_samples is not None:
+    sources = sources[:args.num_samples]
+    preds   = preds[:args.num_samples]
+    labels  = labels[:args.num_samples]
 result = compute_metrics(
     sources,
     preds,
     labels,
     [
-        "rouge",
-        # "bert_score",
-        "bert_score_l",
-        # "sari",
-        "sari_easse",
-        # "flesch_kincaid_grade",
-        "fkgl_easse",
-        "ari",
-        "check_entities"
+        "questeval",
     ],
 )
 print(result)
@@ -50,18 +47,8 @@ print(
         [
             str(result[key])
             for key in [
-                "check_entities",
-                "fkgl_easse",
-                "ari_score",
-                "bert_score",
-                "sari_easse",
-                # "rougeLsum",
-                # "rouge1",
-                # "rouge2",
-                "rougeL",
-                # "bert_score_l",
-                # "sari",
-                # "flesch_kincaid_grade_score",
+                "questeval_no_ref",
+                "questeval_ref",
             ]
         ]
     )

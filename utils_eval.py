@@ -10,7 +10,6 @@ from collections import Counter
 from easse.fkgl import corpus_fkgl
 from easse.sari import corpus_sari
 from evaluate import load
-# from questeval.questeval_metric import QuestEval
 from nltk.util import ngrams
 from rouge_score import rouge_scorer, scoring
 from typing import List, Dict
@@ -167,40 +166,6 @@ def calculate_g_explain(sources: List[str],
         result.append(response)
         # simplified_sen = response["choices"][0]["message"]["content"]
     return result
-
-def calculate_questeval(sources: List[str], 
-                        predictions: List[str], 
-                        labels: List[List[str]], 
-                        questeval, 
-                        both=True):
-    """_summary_
-
-    Args:
-        source (list[str]): List of input sources
-        prediction (list[str]): List of output sources
-        labels (list[list[str]]): List of list of reference strings
-
-    Returns:
-        dict: Output of computed metrics
-    """
-    result = {}
-    if both:
-        score = questeval.corpus_questeval(
-            hypothesis=predictions, sources=sources, list_references=labels
-        )
-        result["questeval_ref"] = score["corpus_score"]
-        result["questeval_ref_std"] = np.std(score["ex_level_scores"])
-
-    score = questeval.corpus_questeval(
-        hypothesis=predictions,
-        sources=sources,
-    )
-    result["questeval_no_ref"] = score["corpus_score"]
-    result["questeval_no_ref_raw"] = score["ex_level_scores"]
-    result["questeval_no_ref_std"] = np.std(score["ex_level_scores"])
-
-    return result
-
 
 # def calculate_bleurt(predictions, labels, scorer):
 #     bleurt = []
@@ -465,11 +430,6 @@ def compute_metrics(
                 list(map(lambda item: item[0], result_readability))
             )
     result.update(readability_dict)
-
-    # if "questeval" in metrics:
-    #     questeval = QuestEval(no_cuda=False)
-    #     questeval_dict = calculate_questeval(sources, predictions, labels, questeval)
-    #     result.update(questeval_dict)
 
     if ("geval-3.5" in metrics) or ("geval-4" in metrics):
         if "geval-3.5" in metrics:

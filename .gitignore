@@ -22,6 +22,7 @@ output/human_eval/*
 output/mi/*
 output/ul/archived/*
 output/**/radiology*
+QuestEval
 QuestEval/*
 RL4LMs/*
 wandb/*

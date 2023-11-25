@@ -5,6 +5,7 @@ notebook
 matplotlib
 argparse
 wandb
+scikit-learn 
 
 # Pre-commit
 pre-commit
@@ -23,6 +24,7 @@ sacrebleu
 sacremoses
 textstat
 sentencepiece
+git+https://github.com/feralvam/easse.git
 
 # Preprocessing
 wikipedia # ==1.4.0

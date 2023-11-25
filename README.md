@@ -17,11 +17,13 @@ pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/e
  
 ```
 
-<b> EASSE (Evaluation Package): </b> We also install EASSE package (in addition to the HuggingFace version) as some papers use this.
+We also set up a separate `simplification_questeval` environment to use QuestEval separately, as it conflicts with `simplification`.
+
 ```
-git clone https://github.com/feralvam/easse.git
-cd easse
-pip install -e .
+# Set up the environment
+conda create --name simplification_questeval python=3.9
+conda activate simplification_questeval
+pip install -r requirements_questeval.txt 
 ```
 
 <b>OpenAI: </b> We also use the OpenAI API for various generation and evaluation tasks. To save your key (and use the evaluation script), first create a file called `openai_key` (no `.txt` extension!), then paste your key there! The script will look for this file and read the key from it. This key is also automatically excluded using the `.gitignore`, so we don't push our keys here online.
