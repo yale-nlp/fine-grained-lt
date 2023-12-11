@@ -2,6 +2,7 @@
 
 Welcome to the medical text simplification project repository! 
 We aim to explore ways to train language models to simplify reports to make them more accessible to laypeople.
+This repository contains the experiments presented in <a href=https://aclanthology.org/2023.findings-emnlp.322/>EMNLP 2023 Findings</a>.
 
 ## Set-up
 To get started, clone this repository and set up a `simplification` environment as follows:
@@ -90,4 +91,14 @@ CUDA_VISIBLE_DEVICES=<gpu_id> python decode.py --dataset <dataset> --model <mode
 To run the evaluation script that compares the output `.txt` file to the reference summaries in the `.json` file, run this command:
 ```
 CUDA_VISIBLE_DEVICES=<gpu_id> python eval.py --dataset <dataset> --preds_path <model predictions>
+```
+
+## Citing
+
+If you found our work useful, kindly cite it for more people to learn about it! Check out our <a href=https://aclanthology.org/2023.findings-emnlp.322/>paper</a> too!
+```
+Lorenzo Jaime Yu Flores, Heyuan Huang, Kejian Shi, Sophie Chheang, and Arman Cohan. 2023.
+Medical Text Simplification: Optimizing for Readability with Unlikelihood Training and Reranked Beam Search Decoding.
+In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 4859–4873, Singapore.
+Association for Computational Linguistics.
 ```
