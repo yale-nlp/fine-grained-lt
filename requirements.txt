@@ -24,7 +24,7 @@ sacrebleu
 sacremoses
 textstat
 sentencepiece
-git+https://github.com/feralvam/easse.git
+# git+https://github.com/feralvam/easse.git
 
 # Preprocessing
 wikipedia # ==1.4.0
@@ -36,3 +36,4 @@ openai
 
 # Miscellaneous
 typing
+streamlit
