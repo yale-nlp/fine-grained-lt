@@ -87,6 +87,14 @@ model_name_dict = {
 
 class SimplificationTrainer(Seq2SeqTrainer):
     def clean(self, s):
+        """Replace all special tokens with the empty string
+
+        Args:
+            s (str): Original string
+
+        Returns:
+            str: Cleaned string
+        """
         for t in self.tokenizer.all_special_tokens_extended:
             s = s.replace(str(t), "")
         return s
