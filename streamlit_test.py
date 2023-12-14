@@ -26,13 +26,12 @@ model_dictionary = {
 
 st.title("Text Simplification Model")
 
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load(dataset_name, model_variant_name):
     tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name])
     model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name])
     return tokenizer, model
 
-@st.cache_data
 def encode(text, _tokenizer):
     """This function takes a batch of samples,
     and tokenizes them into IDs for the model."""
@@ -75,4 +74,3 @@ if st.button("Simplify!"):
     tokenizer_ul, model_ul = load(dataset_option, "ul")
     model_outputs_ul = predict(st.session_state.text, model_ul, tokenizer_ul)
     f"Unlikelihood Learning: {clean(model_outputs_ul[0])}"
-    
