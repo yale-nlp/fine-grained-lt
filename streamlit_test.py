@@ -26,7 +26,7 @@ model_dictionary = {
 
 st.title("Text Simplification Model")
 
-@st.cache_resource
+@st.cache(allow_output_mutation=True)
 def load(dataset_name, model_variant_name):
     tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name])
     model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name])
@@ -42,11 +42,10 @@ def encode(text, _tokenizer):
     )
     return model_inputs
 
-@st.cache_resource
-def predict(text, _model, _tokenizer):
-    model_inputs = encode(text, _tokenizer)
-    model_outputs = _model.generate(**model_inputs, max_length=768)
-    return _tokenizer.batch_decode(model_outputs)
+def predict(text, model, tokenizer):
+    model_inputs = encode(text, tokenizer)
+    model_outputs = model.generate(**model_inputs, max_length=768).detach()
+    return tokenizer.batch_decode(model_outputs)
 
 def clean(s):
     return s.replace("<s>","").replace("</s>","")
