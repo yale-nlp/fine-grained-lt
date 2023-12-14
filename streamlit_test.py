@@ -26,24 +26,27 @@ model_dictionary = {
 
 st.title("Text Simplification Model")
 
+@st.cache_resource
 def load(dataset_name, model_variant_name):
     tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name])
     model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name])
     return tokenizer, model
 
-def encode(text, tokenizer):
+@st.cache_data
+def encode(text, _tokenizer):
     """This function takes a batch of samples,
     and tokenizes them into IDs for the model."""
     # Tokenize the Findings (the input)
-    model_inputs = tokenizer(
+    model_inputs = _tokenizer(
         [text], padding=True, truncation=True, return_tensors="pt"
     )
     return model_inputs
 
-def predict(text, model, tokenizer):
-    model_inputs = encode(text, tokenizer)
-    model_outputs = model.generate(**model_inputs, max_length=768)
-    return tokenizer.batch_decode(model_outputs)
+@st.cache_resource
+def predict(text, _model, _tokenizer):
+    model_inputs = encode(text, _tokenizer)
+    model_outputs = _model.generate(**model_inputs, max_length=768)
+    return _tokenizer.batch_decode(model_outputs)
 
 def clean(s):
     return s.replace("<s>","").replace("</s>","")
