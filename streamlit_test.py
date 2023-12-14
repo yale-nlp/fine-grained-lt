@@ -34,7 +34,7 @@ def load(dataset_name, model_variant_name):
         )
 
 def predict(text, pipeline):
-    return pipeline(text)
+    return pipeline(text, max_length=768)
 
 # @st.cache_resource
 # def load(dataset_name, model_variant_name):
