@@ -1,7 +1,6 @@
 import streamlit as st
-import torch
 
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 
 dataset_example_dictionary = {
     "cochrane": [
@@ -29,23 +28,33 @@ st.title("Text Simplification Model")
 
 @st.cache_resource
 def load(dataset_name, model_variant_name):
-    tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name], device_map="auto", torch_dtype=torch.float16)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name], device_map="auto", torch_dtype=torch.float16)
-    return tokenizer, model
+    return pipeline(
+        "text2text-generation", 
+        model=model_dictionary[dataset_name][model_variant_name]
+        )
 
-def encode(text, _tokenizer):
-    """This function takes a batch of samples,
-    and tokenizes them into IDs for the model."""
-    # Tokenize the Findings (the input)
-    model_inputs = _tokenizer(
-        [text], padding=True, truncation=True, return_tensors="pt"
-    )
-    return model_inputs
+def predict(text, pipeline):
+    return pipeline(text)
 
-def predict(text, model, tokenizer):
-    model_inputs = encode(text, tokenizer)
-    model_outputs = model.generate(**model_inputs, max_length=768).detach()
-    return tokenizer.batch_decode(model_outputs)
+# @st.cache_resource
+# def load(dataset_name, model_variant_name):
+#     tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name])
+#     model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name])
+#     return pipeline("text2text-generation", model="ljyflores/bart_xsum_cochrane_finetune")
+
+# def encode(text, _tokenizer):
+#     """This function takes a batch of samples,
+#     and tokenizes them into IDs for the model."""
+#     # Tokenize the Findings (the input)
+#     model_inputs = _tokenizer(
+#         [text], padding=True, truncation=True, return_tensors="pt"
+#     )
+#     return model_inputs
+
+# def predict(text, model, tokenizer):
+#     model_inputs = encode(text, tokenizer)
+#     model_outputs = model.generate(**model_inputs, max_length=768).detach()
+#     return tokenizer.batch_decode(model_outputs)
 
 def clean(s):
     return s.replace("<s>","").replace("</s>","")
@@ -64,14 +73,18 @@ st.text(dataset_example_dictionary[dataset_option][1])
 
 # Get user input for text
 st.subheader("Input Text to Simplify")
-st.text_input("Text to Simplify:", key="text")
+st.text_area("Text to Simplify:", key="text", height=275)
 
 # Load model and run inference
 if st.button("Simplify!"):
-    tokenizer_baseline, model_baseline = load(dataset_option, "baseline")
-    model_outputs_baseline = predict(st.session_state.text, model_baseline, tokenizer_baseline)
-    f"Baseline: {clean(model_outputs_baseline[0])}"
+    # tokenizer_baseline, model_baseline = load(dataset_option, "baseline")
+    # model_outputs_baseline = predict(st.session_state.text, model_baseline, tokenizer_baseline)[0]
+    pipeline_baseline = load(dataset_option, "baseline")
+    model_outputs_baseline = predict(st.session_state.text, pipeline_baseline)[0]["generated_text"]
+    f"Baseline: {clean(model_outputs_baseline)}"
 
-    tokenizer_ul, model_ul = load(dataset_option, "ul")
-    model_outputs_ul = predict(st.session_state.text, model_ul, tokenizer_ul)
-    f"Unlikelihood Learning: {clean(model_outputs_ul[0])}"
+    # tokenizer_ul, model_ul = load(dataset_option, "ul")
+    # model_outputs_ul = predict(st.session_state.text, model_ul, tokenizer_ul)[0]
+    pipeline_ul = load(dataset_option, "ul")
+    model_outputs_ul = predict(st.session_state.text, pipeline_ul)[0]["generated_text"]
+    f"Unlikelihood Learning: {clean(model_outputs_ul)}"
