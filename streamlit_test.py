@@ -42,7 +42,7 @@ def encode(text, tokenizer):
 
 def predict(text, model, tokenizer):
     model_inputs = encode(text, tokenizer)
-    model_outputs = model.generate(**model_inputs)
+    model_outputs = model.generate(**model_inputs, max_length=768)
     return tokenizer.batch_decode(model_outputs)
 
 def clean(s):
