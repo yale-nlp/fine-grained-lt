@@ -4,6 +4,7 @@ Welcome to the medical text simplification project repository!
 We aim to explore ways to train language models to simplify reports to make them more accessible to laypeople.
 This repository contains the experiments presented in <a href=https://aclanthology.org/2023.findings-emnlp.322/>EMNLP 2023 Findings</a>.
 
+Check out the demo through this <a href="https://ljyflores-simplification-project-streamlit-test-hmhnfg.streamlit.app/">Streamlit app</a>!
 ## Set-up
 To get started, clone this repository and set up a `simplification` environment as follows:
 ```
