@@ -1,4 +1,5 @@
 import streamlit as st
+import torch
 
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
@@ -28,8 +29,8 @@ st.title("Text Simplification Model")
 
 @st.cache_resource
 def load(dataset_name, model_variant_name):
-    tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name])
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name])
+    tokenizer = AutoTokenizer.from_pretrained(model_dictionary[dataset_name][model_variant_name], device_map="auto", torch_dtype=torch.float16)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_dictionary[dataset_name][model_variant_name], device_map="auto", torch_dtype=torch.float16)
     return tokenizer, model
 
 def encode(text, _tokenizer):
