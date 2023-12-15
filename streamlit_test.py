@@ -26,7 +26,7 @@ model_dictionary = {
 
 st.title("Text Simplification Model")
 
-@st.cache_resource
+@st.cache(allow_output_mutation=True)
 def load(dataset_name, model_variant_name):
     return pipeline(
         "text2text-generation", 
@@ -77,33 +77,35 @@ st.text_area("Text to Simplify:", key="text", height=275)
 
 # Load model and run inference
 if st.button("Simplify!"):
-    # tokenizer_baseline, model_baseline = load(dataset_option, "baseline")
-    # model_outputs_baseline = predict(st.session_state.text, model_baseline, tokenizer_baseline)[0]
+    # Number 1
+    # # tokenizer_baseline, model_baseline = load(dataset_option, "baseline")
+    # # model_outputs_baseline = predict(st.session_state.text, model_baseline, tokenizer_baseline)[0]
     
     # pipeline_baseline = load(dataset_option, "baseline")
-    # model_outputs_baseline = predict(st.session_state.text, pipeline_baseline)[0]["generated_text"]
+    # # model_outputs_baseline = predict(st.session_state.text, pipeline_baseline)[0]["generated_text"]
 
-    pipeline_baseline = pipeline(
-        "text2text-generation", 
-        model=model_dictionary[dataset_option]["baseline"]
-        )
-    model_outputs_baseline = pipeline_baseline(
-        st.session_state.text, 
-        max_length=768, 
-        do_sample=False
-        )
-    st.write(f"Baseline: {clean(model_outputs_baseline)}")
+    # # pipeline_baseline = pipeline(
+    # #     "text2text-generation", 
+    # #     model=model_dictionary[dataset_option]["baseline"]
+    # #     )
+    # model_outputs_baseline = pipeline_baseline(
+    #     st.session_state.text, 
+    #     max_length=768, 
+    #     do_sample=False
+    #     )
+    # st.write(f"Baseline: {clean(model_outputs_baseline)}")
 
+    # Number 2
     # tokenizer_ul, model_ul = load(dataset_option, "ul")
     # model_outputs_ul = predict(st.session_state.text, model_ul, tokenizer_ul)[0]
     
-    # pipeline_ul = load(dataset_option, "ul")
+    pipeline_ul = load(dataset_option, "ul")
     # model_outputs_ul = predict(st.session_state.text, pipeline_ul)[0]["generated_text"]
 
-    pipeline_ul = pipeline(
-        "text2text-generation", 
-        model=model_dictionary[dataset_option]["ul"]
-        )
+    # pipeline_ul = pipeline(
+    #     "text2text-generation", 
+    #     model=model_dictionary[dataset_option]["ul"]
+    #     )
     model_outputs_ul = pipeline_ul(
         st.session_state.text, 
         max_length=768, 
