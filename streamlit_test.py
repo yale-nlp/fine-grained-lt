@@ -79,12 +79,34 @@ st.text_area("Text to Simplify:", key="text", height=275)
 if st.button("Simplify!"):
     # tokenizer_baseline, model_baseline = load(dataset_option, "baseline")
     # model_outputs_baseline = predict(st.session_state.text, model_baseline, tokenizer_baseline)[0]
-    pipeline_baseline = load(dataset_option, "baseline")
-    model_outputs_baseline = predict(st.session_state.text, pipeline_baseline)[0]["generated_text"]
-    f"Baseline: {clean(model_outputs_baseline)}"
+    
+    # pipeline_baseline = load(dataset_option, "baseline")
+    # model_outputs_baseline = predict(st.session_state.text, pipeline_baseline)[0]["generated_text"]
+
+    pipeline_baseline = pipeline(
+        "text2text-generation", 
+        model=model_dictionary[dataset_option]["baseline"]
+        )
+    model_outputs_baseline = pipeline_baseline(
+        st.session_state.text, 
+        max_length=768, 
+        do_sample=False
+        )
+    st.write(f"Baseline: {clean(model_outputs_baseline)}")
 
     # tokenizer_ul, model_ul = load(dataset_option, "ul")
     # model_outputs_ul = predict(st.session_state.text, model_ul, tokenizer_ul)[0]
-    pipeline_ul = load(dataset_option, "ul")
-    model_outputs_ul = predict(st.session_state.text, pipeline_ul)[0]["generated_text"]
-    f"Unlikelihood Learning: {clean(model_outputs_ul)}"
+    
+    # pipeline_ul = load(dataset_option, "ul")
+    # model_outputs_ul = predict(st.session_state.text, pipeline_ul)[0]["generated_text"]
+
+    pipeline_ul = pipeline(
+        "text2text-generation", 
+        model=model_dictionary[dataset_option]["ul"]
+        )
+    model_outputs_ul = pipeline_ul(
+        st.session_state.text, 
+        max_length=768, 
+        do_sample=False
+        )
+    st.write(f"Unlikelihood Learning: {clean(model_outputs_ul)}")
