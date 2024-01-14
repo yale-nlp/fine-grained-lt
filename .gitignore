@@ -10,6 +10,7 @@ data/radiology*
 data/test*
 dpo/*
 gexplain/*
+loss-library
 muss/*
 misc/*
 models/*
