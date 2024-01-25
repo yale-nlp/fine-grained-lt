@@ -8,9 +8,10 @@ data/cnn*
 data/xsum*
 data/radiology*
 data/test*
+deprecated
 dpo/*
 gexplain/*
-loss-library
+loss-library/*
 muss/*
 misc/*
 models/*
@@ -40,6 +41,7 @@ gpt_summarize.ipynb
 gpt.ipynb
 nohup.out
 openai_key
+plot.ipynb
 train_causal.py
 train_dpo.py
 scratch.ipynb
