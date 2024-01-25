@@ -224,7 +224,7 @@ def train(config=None, project=None):
                 loss_type = "ul", 
                 tokenizer = trainer.tokenizer, 
                 model = trainer.model, 
-                ul_weights_path = f"{ROOT_PATH}/fk_weights.pkl",
+                ul_weights_path = f"{ROOT_PATH}/assets/fk_weights.pkl",
                 ul_lambda_read  = 5e-4,
                 ul_lambda_const = 1.5e-4,
                 ul_check_input_ents = True,
@@ -351,7 +351,8 @@ MODEL_OUT_NAME = f"{MODEL_NAME}{PRETRAIN_NAME}_{DATASET_NAME}{DATASET_PROPERTY}{
 PROJECT_NAME = f"{DATASET_NAME}{DATASET_PROPERTY}_{args.model}{PRETRAIN_NAME.lower()}{LOSS_TYPE_NAME}"
 
 # Load the datasets
-ROOT_PATH = "/home/lyf6/simplification-project"
+ROOT_PATH = "simplification-project"
+
 dataset = load_dataset(
     "json", 
     data_files=f"{ROOT_PATH}/data/{DATASET_NAME}.json", 
@@ -371,6 +372,7 @@ dataset["test"] = dataset["test"].map(encode, batched=True, remove_columns=colum
 if args.hyperparameter_tune == "True":
     sweep_id = wandb.sweep(sweep_config, project=PROJECT_NAME)
     wandb.agent(sweep_id, function=train, count=args.hyperparameter_trials)
+    
 # Otherwise, run one train loop with the given configuration
 else:
     config = {
