@@ -15,7 +15,9 @@ loss-library/*
 muss/*
 misc/*
 models/*
-nli/*
+loss_truncation_eda/data
+loss_truncation_eda/logits
+loss_truncation_eda/scratch
 nohups/*
 output/archived/*
 output/cutoff/*
@@ -41,7 +43,6 @@ gpt_summarize.ipynb
 gpt.ipynb
 nohup.out
 openai_key
-plot.ipynb
 train_causal.py
 train_dpo.py
 scratch.ipynb

@@ -1,6 +1,6 @@
 import argparse
 from datasets import load_dataset
-from utils_eval import compute_metrics
+from utils.utils_eval import compute_metrics
 
 # Get dataset from arguments
 parser = argparse.ArgumentParser()

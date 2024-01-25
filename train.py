@@ -17,7 +17,7 @@ from transformers import (
 from transformers.modeling_utils import unwrap_model
 from transformers.models.auto.modeling_auto import MODEL_FOR_CAUSAL_LM_MAPPING_NAMES
 from typing import Any, Dict, List, Optional, Tuple, Union
-from utils_eval import compute_metrics
+from utils.utils_eval import compute_metrics
 
 torch.autograd.set_detect_anomaly(True)
 
