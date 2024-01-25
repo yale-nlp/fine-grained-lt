@@ -8,6 +8,7 @@ data/cnn*
 data/xsum*
 data/radiology*
 data/test*
+data/tico*
 deprecated
 dpo
 gexplain
