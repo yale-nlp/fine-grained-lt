@@ -30,6 +30,14 @@ git clone https://github.com/ljyflores/loss-library.git
 cd loss-library
 pip install .
 ```
+
+Then install the evaluation package `easse`
+```
+git clone https://github.com/feralvam/easse.git
+cd easse
+pip install -e .
+```
+
 We also set up a separate `simplification_questeval` environment to use QuestEval separately, as it conflicts with `simplification`.
 
 ```
