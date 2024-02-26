@@ -119,8 +119,26 @@ CUDA_VISIBLE_DEVICES=<gpu_id> python eval.py --dataset <dataset> --preds_path <m
 
 If you found our work useful, kindly cite it for more people to learn about it! 
 ```
-Lorenzo Jaime Yu Flores, Heyuan Huang, Kejian Shi, Sophie Chheang, and Arman Cohan. 2023.
-Medical Text Simplification: Optimizing for Readability with Unlikelihood Training and Reranked Beam Search Decoding.
-In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 4859–4873, Singapore.
-Association for Computational Linguistics.
+@inproceedings{flores-etal-2023-medical,
+    title = "Medical Text Simplification: Optimizing for Readability with Unlikelihood Training and Reranked Beam Search Decoding",
+    author = "Flores, Lorenzo Jaime  and Huang, Heyuan  and Shi, Kejian  and Chheang, Sophie  and Cohan, Arman",
+    editor = "Bouamor, Houda  and Pino, Juan  and Bali, Kalika",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-emnlp.322",
+    doi = "10.18653/v1/2023.findings-emnlp.322",
+    pages = "4859--4873",
+}
+
+@inproceedings{
+ anonymous2024on,
+ title={On the Benefits of Fine-Grained Loss Truncation: A Case Study on Factuality in Summarization},
+ author={Flores, Lorenzo Jaime and Cohan, Arman},
+ booktitle={18th Conference of the European Chapter of the Association for Computational Linguistics},
+ year={2024},
+ url={https://openreview.net/forum?id=tv1NSTp0GE}
+}
 ```
