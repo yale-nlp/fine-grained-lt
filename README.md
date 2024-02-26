@@ -1,4 +1,4 @@
-# simplification-project
+# fine-grained-lt
 
 Welcome to the Simplification Projects repository!
 
@@ -134,11 +134,11 @@ If you found our work useful, kindly cite it for more people to learn about it!
 }
 
 @inproceedings{
- anonymous2024on,
- title={On the Benefits of Fine-Grained Loss Truncation: A Case Study on Factuality in Summarization},
- author={Flores, Lorenzo Jaime and Cohan, Arman},
- booktitle={18th Conference of the European Chapter of the Association for Computational Linguistics},
- year={2024},
- url={https://openreview.net/forum?id=tv1NSTp0GE}
+    anonymous2024on,
+    title = "On the Benefits of Fine-Grained Loss Truncation: A Case Study on Factuality in Summarization",
+    author = "Flores, Lorenzo Jaime and Cohan, Arman",
+    booktitle = "18th Conference of the European Chapter of the Association for Computational Linguistics",
+    year = "2024",
+    url = "https://openreview.net/forum?id=tv1NSTp0GE"
 }
 ```
