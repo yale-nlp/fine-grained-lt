@@ -134,7 +134,7 @@ If you found our work useful, kindly cite it for more people to learn about it!
 }
 
 @inproceedings{
-    anonymous2024on,
+    flores2024on,
     title = "On the Benefits of Fine-Grained Loss Truncation: A Case Study on Factuality in Summarization",
     author = "Flores, Lorenzo Jaime and Cohan, Arman",
     booktitle = "18th Conference of the European Chapter of the Association for Computational Linguistics",
